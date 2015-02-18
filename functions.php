@@ -121,7 +121,7 @@ function information_postype() {
 		register_post_type( 'information', $args);
 }
 
-add_action( 'init', 'information_postype' )
+add_action( 'init', 'information_postype' );
 
 // profile
 function profile_postype() {
