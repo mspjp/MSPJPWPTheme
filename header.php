@@ -24,12 +24,13 @@
                 <div class="box__right">
                     <!-- <img class="menu" src="img/menu.png" alt=""> -->
                     <nav>
-                        <?php wp_nav_menu( array(
-                            'theme_location'=>'header-nav', 
-                            'container'     =>'', 
-                            'menu_class'    =>'',
-                            'items_wrap'    =>'<div class="navbar_box">%3$s</div>'));
-                        ?>
+                        <div class="navbar_box"><a href="/">Top</a></div>
+                        <div class="navbar_box"><a href="/about">About</a></div>
+                        <div class="navbar_box"><a href="/info/">Info</a></div>
+                        <div class="navbar_box"><a href="/profile/">Profile</a></div>
+                        <div class="navbar_box"><a href="/project/">Project</a></div>
+                        <div class="navbar_box"><a href="/blog/">Blog</a></div>
+                        <div class="navbar_box"><a href="/contact">Contact</a></div>
                     </nav>
                 </div>
             </div>
