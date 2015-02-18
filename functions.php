@@ -101,7 +101,7 @@ function profile_postype() {
 				'new_item' => '新規メンバー',
 				'view_item' => 'メンバーを表示',
 				'search_items' => 'メンバーを検索',
-				'not_found' =>  'お探しのメンバーは見つかりませんでした。',
+				'not_found' =>  '投稿されたメンバーはいません。',
 				'not_found_in_trash' => 'ゴミ箱にメンバー情報はありません。',
 				'parent_item_colon' => '',
 		);
@@ -134,7 +134,7 @@ function project_postype() {
 				'new_item' => '新規プロジェクト',
 				'view_item' => 'プロジェクトを表示',
 				'search_items' => 'プロジェクトを検索',
-				'not_found' =>  'お探しのプロジェクトは見つかりませんでした。',
+				'not_found' =>  '投稿されたプロジェクトはまだありません。',
 				'not_found_in_trash' => 'ゴミ箱にプロジェクト情報はありません。',
 				'parent_item_colon' => '',
 		);
