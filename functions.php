@@ -90,6 +90,39 @@ function article_postype() {
 
 add_action( 'init', 'article_postype' );
 
+// add
+function information_postype() {
+		$labels = array(
+				'name' => 'お知らせ',
+				'singular_name' => 'お知らせ',
+				'add_new' => '新規追加',
+				'add_new_item' => '新規お知らせを追加',
+				'edit_item' => 'お知らせを編集',
+				'new_item' => '新規お知らせ',
+				'view_item' => 'お知らせを表示',
+				'search_items' => 'お知らせを検索',
+				'not_found' =>  '投稿されたお知らせはありません',
+				'not_found_in_trash' => 'ゴミ箱にお知らせはありません。',
+				'parent_item_colon' => '',
+		);
+		$args = array(
+				'labels' => $labels,
+				'public' => true,
+				'publicly_queryable' => true, //フロントエンドで post_type クエリが実行可能かどうか
+				'show_ui' => true, //この投稿タイプを管理するデフォルト UI を生成するかどうか
+				'exclude_from_search' => false, //この投稿タイプを検索結果から除外するかどうか
+				'capability_type' => 'page', //投稿タイプの閲覧／編集／削除権限をチェックするのに使用。初期値： "post"
+				'rewrite' => array('slug' => 'articles'), //このフォーマットでパーマリンクをリライトする
+				'hierarchical' => false, //この投稿タイプが階層(親の指定が許可されている)かどうか
+				'menu_position' => 5,
+				'has_archive' => true, // 一覧画面から見れるようにする
+				'supports'=> array('title', 'thumbnail', 'author', 'editor') ,
+		);
+		register_post_type( 'information', $args);
+}
+
+add_action( 'init', 'information_postype' )
+
 // profile
 function profile_postype() {
 		$labels = array(
