@@ -20,9 +20,9 @@ $taxonomy = $wp_query->get_queried_object();
                                 <p><img class="clearfix" src="<?php if( has_post_thumbnail() ){echo get_thumbnail_url();}else{echo get_template_directory_uri()."/img/noimage.png";} ?>" alt="" ></p>
                             </div>
                             <div class="box__right content__right clearfix">
-                                <!-- 
                                 <h2 class="content_title"><i class="fa fa-star"></i><?php echo mb_substr(get_the_title(), 0, 30); ?></h2>
                                 <?php if(function_exists("wp_social_bookmarking_light_output_e")){wp_social_bookmarking_light_output_e(null, get_permalink(), the_title("", "", false));}?>
+                                <!-- 
                                 <p class="outline"><?php echo mb_substr(strip_tags($post-> post_content), 0, 60)."..."; ?></p>
                                 <p class="content_info">by <?php the_author(); ?> | <?php the_time('Y年n月j日') ;?> | <?php comments_popup_link('Comment : 0', 'Comment : 1', 'Comments : %'); ?></p>
                                 -->
