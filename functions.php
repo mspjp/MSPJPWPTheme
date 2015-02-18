@@ -186,7 +186,7 @@ function profile_postype() {
         'show_ui' => true, //この投稿タイプを管理するデフォルト UI を生成するかどうか
         'exclude_from_search' => false, //この投稿タイプを検索結果から除外するかどうか
         'capability_type' => 'post', //投稿タイプの閲覧／編集／削除権限をチェックするのに使用。初期値： "post"
-        'rewrite' => array('slug' => 'articles'), //このフォーマットでパーマリンクをリライトする
+        'rewrite' => array('slug' => 'profile'), //このフォーマットでパーマリンクをリライトする
         'hierarchical' => false, //この投稿タイプが階層(親の指定が許可されている)かどうか
         'menu_position' => 5,
         'has_archive' => true, // 一覧画面から見れるようにする
@@ -219,7 +219,7 @@ function project_postype() {
         'show_ui' => true, //この投稿タイプを管理するデフォルト UI を生成するかどうか
         'exclude_from_search' => false, //この投稿タイプを検索結果から除外するかどうか
         'capability_type' => 'post', //投稿タイプの閲覧／編集／削除権限をチェックするのに使用。初期値： "post"
-        'rewrite' => array('slug' => 'articles'), //このフォーマットでパーマリンクをリライトする
+        'rewrite' => array('slug' => 'project'), //このフォーマットでパーマリンクをリライトする
         'hierarchical' => false, //この投稿タイプが階層(親の指定が許可されている)かどうか
         'menu_position' => 5,
         'has_archive' => true, // 一覧画面から見れるようにする
