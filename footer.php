@@ -8,7 +8,7 @@
                 <div class="box__left">
                   <div class="box">
                     <div class="box__left">
-                      <img class="msplogo" src="img/logo.png" alt="">
+                      <img class="msplogo" src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="">
                     </div>
                     <div class="box__right" style="margin:30px 0 0 20px;"> <!-- box in box -->
                       <h3>このサイトについて</h3>
