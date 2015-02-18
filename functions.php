@@ -150,14 +150,14 @@ function topslide_postype() {
     $args = array(
         'labels' => $labels,
         'public' => false,
-        'publicly_queryable' => true, //フロントエンドで post_type クエリが実行可能かどうか
+        'publicly_queryable' => false, //フロントエンドで post_type クエリが実行可能かどうか
         'show_ui' => true, //この投稿タイプを管理するデフォルト UI を生成するかどうか
-        'exclude_from_search' => false, //この投稿タイプを検索結果から除外するかどうか
+        'exclude_from_search' => true, //この投稿タイプを検索結果から除外するかどうか
         'capability_type' => 'page', //投稿タイプの閲覧／編集／削除権限をチェックするのに使用。初期値： "post"
         'rewrite' => array('slug' => 'topslide'), //このフォーマットでパーマリンクをリライトする
         'hierarchical' => false, //この投稿タイプが階層(親の指定が許可されている)かどうか
         'menu_position' => 5,
-        'has_archive' => true, // 一覧画面から見れるようにする
+        'has_archive' => false, // 一覧画面から見れるようにする
         'supports'=> array('title', 'thumbnail', 'author', 'excerpt') ,
     );
     register_post_type( 'topslide', $args);
