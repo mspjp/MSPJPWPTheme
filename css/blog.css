@@ -78,8 +78,7 @@
 }
 
 .blog .box .content__right{
-  float:right;
-  width:400px;
+  float:left;
 }
 
 .blog .box .content__right .content_title {

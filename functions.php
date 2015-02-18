@@ -41,7 +41,7 @@ function get_thumbnail_url() {
 }
 
 // カスタムメニューの「場所」を設定
-register_nav_menu( 'header-navi', 'ヘッダーのナビゲーション' );
+register_nav_menu( 'header-nav', 'ヘッダーのナビゲーション' );
 
 // Info
 function info_postype() {

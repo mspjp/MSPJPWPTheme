@@ -23,15 +23,14 @@
                 </div>
                 <div class="box__right">
                     <!-- <img class="menu" src="img/menu.png" alt=""> -->
-                    <div class="navbar">
-                      <div class="navbar_box"><a href="#">Top</a></div>
-                      <div class="navbar_box"><a href="#">About</a></div>
-                      <div class="navbar_box"><a href="#">Info</a></div>
-                      <div class="navbar_box"><a href="#">Profile</a></div>
-                      <div class="navbar_box"><a href="#">Project</a></div>
-                      <div class="navbar_box"><a href="#">Blog</a></div>
-                      <div class="navbar_box"><a href="#">Contact</a></div>
-                    </div>
+                    <nav>
+                        <?php wp_nav_menu( array(
+                            'theme_location'=>'header-nav', 
+                            'container'     =>'', 
+                            'menu_class'    =>'',
+                            'items_wrap'    =>'<div class="navbar_box">%3$s</ul>'));
+                        ?>
+                    </nav>
                 </div>
             </div>
         </div>

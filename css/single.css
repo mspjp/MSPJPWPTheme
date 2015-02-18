@@ -109,22 +109,36 @@
      border-color:green;
    }
 
-   .section_content{
-     margin:0 20px;
+
+
+   p.section_content{
      font-size:20px;
+     margin:0 20px 10px 20px;
    }
 
    .image_desc{
      font-size:20px;
    }
 
-   .post_image{
-
+   .post_image img{
+     width:192px;
+     height:192px;
+     margin:4px;
    }
 
-   .post_image img{
-     width:296px;
-     height:296px;
+
+   .post_image{
+     display:block;
+     width:200px;
+     height:280px;
+     border-radius:1px;
+     background-color:#ccc;
+     box-shadow:4px 4px 4px 0 rgba(100, 100, 100, 0.4);
+   }
+
+   .post_image .image_desc{
+     margin:0 8px;
+     text-align:center;
    }
 
 

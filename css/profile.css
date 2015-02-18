@@ -53,21 +53,26 @@
 /* Profiles - Top 一覧
    ========================================================================== */
 
-.profile_list{
-  display:block;
-  margin:0 auto;
-  width:1020px;
+
+.profile_base{
+  display:table;
+  list-style-type:none;
+  width:100%;
+  padding:0;
 }
 
 
+
+
+
 .profile_box {
-  display:block;
+  display:table-cell;
   text-decoration:none;
   width:200px;
   border-radius:1px;
   background-color:rgba(120,120,120,0.4);
   height:300px;
-  float:left;
+  float:right;
   margin:20px 27px;
   color:black;
   box-shadow: 5px 5px 5px rgba(0,0,0,0.4);
