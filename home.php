@@ -17,7 +17,9 @@
                 while ($myQuery->have_posts()) : $myQuery->the_post(); ?>
                 <div class="topslider-item">
                     <h3><?php echo mb_substr(get_the_title(), 0, 30); ?></h3>
-                    <div class="slideritem-image" style="background-image: url('<?php if( has_post_thumbnail() ){echo get_thumbnail_url();}else{echo get_template_directory_uri()."/images/noimage.jpg";} ?>')"></div>
+                    <div class="slideritem-image">
+                         <p><img src="url('<?php if( has_post_thumbnail() ){echo get_thumbnail_url();}else{echo get_template_directory_uri()."/images/noimage.jpg";} ?>')"></p>
+                    </div>
                     <div class="slideritem-meta">
                         <p class="slideritem-date">公開日: <?php echo get_the_date(); ?></p>
                     </div>
