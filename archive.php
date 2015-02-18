@@ -9,7 +9,6 @@ $taxonomy = $wp_query->get_queried_object();
 
             <!-- Box -->
             <div class="box">
-                <div class="box__left blog__left">
                 <?php
                 query_posts( $query_string . "&posts_per_page=5&paged=".$paged );
                 if (have_posts()) : // WordPress ループ
@@ -24,7 +23,7 @@ $taxonomy = $wp_query->get_queried_object();
                             <h2 class="content_title"><i class="fa fa-star"></i><?php echo mb_substr(get_the_title(), 0, 30); ?></h2>
                             <?php if(function_exists("wp_social_bookmarking_light_output_e")){wp_social_bookmarking_light_output_e(null, get_permalink(), the_title("", "", false));}?>
                             <!-- 場合によってはイメージで -->
-                            <div class="outine"><?php echo mb_substr(strip_tags($post-> post_content), 0, 60)."..."; ?></div>
+                            <div class="outline"><?php echo mb_substr(strip_tags($post-> post_content), 0, 60)."..."; ?></div>
                             <div class="content_info">by <?php the_author(); ?> | <?php the_time('Y年n月j日') ;?> | <?php comments_popup_link('Comment : 0', 'Comment : 1', 'Comments : %'); ?></div>
                         </div>
                     </div>
