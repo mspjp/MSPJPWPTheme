@@ -93,8 +93,8 @@ add_action( 'init', 'article_postype' );
 // profile
 function profile_postype() {
 		$labels = array(
-				'name' => '名前',
-				'singular_name' => '名前',
+				'name' => 'メンバー',
+				'singular_name' => 'メンバー',
 				'add_new' => '新規メンバーを追加',
 				'add_new_item' => '新規メンバーを追加',
 				'edit_item' => 'メンバーを編集',
