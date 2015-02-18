@@ -233,9 +233,9 @@ add_action( 'init', 'project_postype' );
 
 // サイドバーウィジットを有効化
 register_sidebar( array(
-    'name' => 'サイドバーウィジット',
-    'id' => 'sidebar',
-    'description' => 'サイドバーのウィジットエリアです。',
+    'name' => 'サイドバーウィジット下',
+    'id' => 'sidebar-bottom',
+    'description' => 'サイドバーのウィジットエリア(下)です。',
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget' => '</div>',
     'before_title' => '<h2>',
@@ -244,9 +244,9 @@ register_sidebar( array(
 
 // サイドバーウィジットを有効化
 register_sidebar( array(
-    'name' => 'トップサイドバーウィジット',
+    'name' => 'トップサイドバーウィジット上',
     'id' => 'sidebar-top',
-    'description' => 'サイドバーのウィジットエリアです。',
+    'description' => 'サイドバーのウィジットエリア(上)です。',
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget' => '</div>',
     'before_title' => '<h2>',
