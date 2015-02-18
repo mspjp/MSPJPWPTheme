@@ -28,7 +28,7 @@
                             'theme_location'=>'header-nav', 
                             'container'     =>'', 
                             'menu_class'    =>'',
-                            'items_wrap'    =>'<div class="navbar_box">%3$s</ul>'));
+                            'items_wrap'    =>'<div class="navbar_box">%3$s</div>'));
                         ?>
                     </nav>
                 </div>
