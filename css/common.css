@@ -1,0 +1,129 @@
+/* ==========================================================================
+   Config - 一般的な設定
+   ========================================================================== */
+html, body, div, h1, h2, h3, h4, h5, h6, p, ul, li{
+    margin: 0;
+}
+body{
+    font-family: "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "メイリオ", Meiryo, serif;
+    background-image:
+        url("../img/flower.png"),
+        url("../img/washi.jpg");
+    background-repeat:
+        no-repeat,
+        repeat;
+    background-position:
+        right bottom,
+        left top;
+    background-attachment:
+        fixed,
+        scroll;
+}
+
+/* ==========================================================================
+   Utility - サイト全体で使う便利なもの
+   ========================================================================== */
+/* container: 横幅1020px, 中央寄せの枠 */
+.container{
+    margin: 0 auto;
+    width: 1020px;
+}
+
+/* box: 要素の左右への振り分け */
+.box:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.box > .box__left{
+    float: left;
+}
+.box > .box__right{
+    float: right;
+}
+
+/* clearfix: クリアフィックス */
+.clearfix:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* ==========================================================================
+   Header - ヘッダー
+   ========================================================================== */
+header{
+    z-index:100;
+    width: 100%;
+    position: fixed;
+    padding: 50px 0 0 0;
+    background-image:
+        url("../img/header.png"),
+        url("../img/washi.jpg");
+    background-repeat:
+        repeat-x,
+        repeat;
+}
+header .title{
+    font-family: 'Segoe UI Semibold';
+    font-size:26px;
+    padding:20px 0;
+}
+/*
+header .msplogo{
+    vertical-align: middle;
+    margin-right: 20px;
+}*/
+/*
+header .menu{
+    margin-top: 30px;
+}*/
+
+header .navbar{
+  margin:30px 0;
+  display:table;
+  margin-right:20px;
+}
+
+header .navbar_box {
+  display:table-cell;
+  width:60px;
+  height:30px;
+  border-left:1px #333 solid;
+}
+
+header .navbar_box a{
+  display:block;
+  line-height:30px;
+  text-decoration:none;
+  text-align:center;
+  color:#333;
+  font-size:15px;
+}
+
+header .navbar_box:last-child{
+  border-right:1px #333 solid;
+}
+
+/* ==========================================================================
+  Footer- フッター
+   ========================================================================== */
+
+
+
+footer{
+    width: 100%;
+    padding: 15px 0;
+    background-image: url("../img/underline.png");
+    background-repeat: repeat-x;
+}
+footer .copyright{
+    font-size: 12px;
+    text-align: center;
+}
+footer .social-icons{
+    margin-top: 20px;
+}
+footer .social-icons i{
+    margin-right: 20px;
+}
