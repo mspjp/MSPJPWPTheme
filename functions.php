@@ -149,7 +149,7 @@ function topslide_postype() {
     );
     $args = array(
         'labels' => $labels,
-        'public' => true,
+        'public' => false,
         'publicly_queryable' => true, //フロントエンドで post_type クエリが実行可能かどうか
         'show_ui' => true, //この投稿タイプを管理するデフォルト UI を生成するかどうか
         'exclude_from_search' => false, //この投稿タイプを検索結果から除外するかどうか
