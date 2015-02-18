@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title><?php wp_title( '|', true, 'right' ); bloginfo('name'); ?></title>
@@ -11,7 +12,6 @@
     <![endif]-->
     <?php if ( is_singular() ) wp_enqueue_script( "comment-reply" );
         wp_head(); ?>
-    </head>
 </head>
 <body <?php body_class(); ?>>
     <!-- Header -->
