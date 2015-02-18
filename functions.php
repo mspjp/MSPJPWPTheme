@@ -152,6 +152,27 @@ function profile_postype() {
 				'supports'=> array('title', 'thumbnail', 'editor') ,
 		);
 		register_post_type( 'profile', $args);
+		$taxonomy = array(
+				'label' => 'タグ',
+				'labels' => array(
+						'name' => 'タグ',
+						'singular_name' => 'タグ',
+						'search_items' => 'タグを検索',
+						'popular_items' => 'よく使われているタグ',
+						'all_items' => 'すべてのタグ',
+						'parent_item' => '',
+						'edit_item' => 'タグの編集',
+						'update_item' => '更新',
+						'add_new_item' => '新規タグを追加',
+						'new_item_name' => '新しいタグ',
+				),
+				'public' => true,
+				'show_ui' => true,
+				'hierarchical' => false, //fales→通常投稿のタグのような扱いになります。
+				'show_tagcloud' => true,
+				'rewrite' => array( 'slug' => 'technology' ),
+		);
+		register_taxonomy('member_tag', 'profile', $taxonomy );//('タクソノミー名', '所属する投稿タイプ', array);
 }
 
 add_action( 'init', 'profile_postype' );
