@@ -18,7 +18,7 @@
                 <div class="topslider-item">
                     <h3><?php echo mb_substr(get_the_title(), 0, 30); ?></h3>
                     <div class="slideritem-image">
-                         <p><img src='<?php if( has_post_thumbnail() ){echo get_thumbnail_url();}else{echo get_template_directory_uri()."/images/noimage.jpg";} ?>'></p>
+                         <p><img src='<?php if( has_post_thumbnail() ){echo get_thumbnail_url();}else{echo get_template_directory_uri()."/img/noimage.png";} ?>'></p>
                     </div>
                     <div class="slideritem-meta">
                         <p class="slideritem-date">公開日: <?php echo get_the_date(); ?></p>

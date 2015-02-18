@@ -9,7 +9,7 @@ add_theme_support( 'automatic-feed-links' );
 remove_filter('the_content', 'wpautop');
 
 function custom_login_logo() {
-    echo '<style type="text/css">h1 a { background: url('.get_bloginfo('template_directory').'/images/noimage.jpg) contain no-repeat !important; }</style>';
+    echo '<style type="text/css">h1 a { background: url('.get_bloginfo('template_directory').'/img/noimage.jpg) contain no-repeat !important; }</style>';
 }
 
 add_action('login_head', 'custom_login_logo');

@@ -18,7 +18,7 @@ $taxonomy = $wp_query->get_queried_object();
                 <a class="blog" id="post-<?php the_ID(); ?>" <?php post_class('blog'); ?> href="<?php the_permalink(); ?>">
                     <div class="box content">
                         <div class="box__left content__left">
-                            <img class="clearfix" src="<?php if( has_post_thumbnail() ){echo get_thumbnail_url();}else{echo get_template_directory_uri()."/images/noimage200.png";} ?>" alt="" />
+                            <p><img class="clearfix" src="<?php if( has_post_thumbnail() ){echo get_thumbnail_url();}else{echo get_template_directory_uri()."/img/noimage.png";} ?>" alt="" ></p>
                         </div>
                         <div class="box__right content__right clearfix">
                             <h2 class="content_title"><i class="fa fa-star"></i><?php echo mb_substr(get_the_title(), 0, 30); ?></h2>
