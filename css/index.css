@@ -10,6 +10,11 @@
     .topslider{
         margin-bottom: 30px;
     }
+
+    .slick-dots{
+      margin-bottom:20px;
+      /*Slickのbuttomを強制的に動かしてる*/
+    }
     .topinfo:after{
         content: "";
         display: block;

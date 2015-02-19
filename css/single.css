@@ -65,6 +65,15 @@
      border-bottom:1px solid #ccc;
    }
 
+   .post_title h1 a:link,
+   .post_title h1 a:hover,
+   .post_title h1 a:visited
+   {
+     color: black;
+     text-decoration: none;
+   }
+
+
    .post_category ul {
      list-style-type:none;
    }
@@ -139,6 +148,14 @@
    .post_image .image_desc{
      margin:0 8px;
      text-align:center;
+   }
+
+   .entry_auther{
+     color:#222222;
+     margin-top:10px;
+     font-size:20px;
+     float:right;
+     border-bottom:1px solid gray;
    }
 
 

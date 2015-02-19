@@ -19,7 +19,7 @@
         <div class="container">
             <div class="box">
                 <div class="box__left">
-                    <h1 class="title">Microsoft Student Partners JAPAN</h1>
+                    <h1 class="title"><a href="/">Microsoft Student Partners JAPAN</a></h1>
                 </div>
                 <div class="box__right">
                     <!-- <img class="menu" src="img/menu.png" alt=""> -->

@@ -69,6 +69,15 @@ header .title{
     font-size:26px;
     padding:20px 0;
 }
+
+header .title a:link,
+header .title a:hover,
+header .title a:visited
+{
+  color: black;
+  text-decoration: none;
+}
+
 /*
 header .msplogo{
     vertical-align: middle;
@@ -79,7 +88,7 @@ header .menu{
     margin-top: 30px;
 }*/
 
-header .navbar{
+header nav {
   margin:30px 0;
   display:table;
   margin-right:20px;
