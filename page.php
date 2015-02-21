@@ -10,6 +10,7 @@
 					while (have_posts()) : the_post(); // 繰り返し処理開始 ?>
 						<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 							
+							<!-- ここに謎に表示されるソーシャルボタンたちを消したい -->
 							
 							<?php the_content(); ?>
 							
