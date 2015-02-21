@@ -1,0 +1,103 @@
+/* ==========================================================================
+   Main - メイン部分
+   ========================================================================== */
+.main{
+    padding: 150px 0 50px; /* ヘッダーの分だけ下げる */
+}
+
+/* Top - サイトトップ
+   ========================================================================== */
+    .topslider{
+        margin-bottom: 30px;
+    }
+    .topinfo:after{
+        content: "";
+        display: block;
+        clear: both;
+    }
+    .topinfo__left,
+    .topinfo__right{
+        width: 450px;
+        box-sizing: border-box;
+        padding: 20px 40px;
+    }
+    .topinfo__left{
+        float: left;
+        margin-left: 20px;
+        border: 2px solid #ffa500;
+    }
+    .topinfo__left .topinfo__list li{
+        border-bottom: 1px dashed #ffa500;
+    }
+    .topinfo__right{
+        float: right;
+        margin-right: 20px;
+        border: 2px solid #2e8b57;
+    }
+    .topinfo__right .topinfo__list li{
+        border-bottom: 1px dashed #2e8b57;
+    }
+    .topinfo__list{
+        list-style: none;
+        padding-left: 0;
+    }
+    .topinfo__list li a{
+        color: #000;
+        display: block;
+        text-decoration: none;
+    }
+    .topinfo__date{
+        margin-right: 30px;
+    }
+
+/* Profiles - Top 一覧
+   ========================================================================== */
+
+
+.profile_base{
+  display:table;
+  list-style-type:none;
+  width:100%;
+  padding:0;
+}
+
+
+
+
+
+.profile_box {
+  display:table-cell;
+  text-decoration:none;
+  width:200px;
+  border-radius:1px;
+  background-color:rgba(120,120,120,0.4);
+  height:300px;
+  float:right;
+  margin:20px 27px;
+  color:black;
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.4);
+}
+
+.profile_icon{
+  display:block;
+  margin:3px;
+  width:194px;
+  height:194px;
+}
+
+.profile_header{
+  margin:0 5px;
+}
+
+
+.profile_content{
+  font-size:12px;
+  margin:4px 5px;
+}
+
+
+/*Table cell化 or ul li*/
+
+
+/* Post - ブログ記事
+   ========================================================================== */
