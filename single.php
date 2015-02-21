@@ -1,7 +1,8 @@
 <?php get_header(); ?>
 <?php wp_link_pages(); ?>
             <!-- Left Col -->
-            <div id="leftcol">
+            <div class="box">
+            <div id="box__left">
             <?php
             if (have_posts()) : // WordPress ループ
                 while (have_posts()) : the_post(); // 繰り返し処理開始 ?>
@@ -74,7 +75,11 @@
                 endif;
                 ?>
             </div>
-            <!-- /Leftcol -->
+            <!-- Box Left -->
+
             <?php get_sidebar(); ?>
+            </div>
+            <!-- /Leftcol -->
+
 
 <?php get_footer(); ?>

@@ -1,7 +1,8 @@
 <?php get_header();
 $taxonomy = $wp_query->get_queried_object();
 ?>
-            <div id="leftcol">
+            <div id="box">
+            <div id="box__left">
                 <div class="headline">
                     <h1 class="headline_title">アーカイブ</h1>
                     <?php if(function_exists("wp_social_bookmarking_light_output_e")){wp_social_bookmarking_light_output_e(null, get_permalink(), the_title("", "", false));}?>
@@ -48,6 +49,8 @@ $taxonomy = $wp_query->get_queried_object();
                 endif;
                 ?>
             </div>
-            <!-- LeftCol -->
+            <!-- BoxLeft -->
             <?php get_sidebar(); ?>
+            </div>
+            <!-- LeftCol -->
 <?php get_footer(); ?>

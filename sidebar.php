@@ -1,5 +1,5 @@
             <!-- sidebar -->
-            <div id="sidebar">
+            <div class="box__right">
                 <?php if ( is_active_sidebar( 'sidebar-top' ) ) :
                 dynamic_sidebar( 'sidebar-top' );
                 else: ?>
