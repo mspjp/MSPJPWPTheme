@@ -1,13 +1,13 @@
 <?php get_header(); ?>
 			<!-- main -->
 			<div id="main">
-				<?php 
-				if (have_posts()) : // WordPress ループ
-					while (have_posts()) : the_post(); // 繰り返し処理開始 ?>
 				<div class="headline">
                     <h1 class="headline_title"><?php echo get_the_title(); ?></h1>
 					<?php if(function_exists("wp_social_bookmarking_light_output_e")){wp_social_bookmarking_light_output_e(null, get_permalink(), the_title("", "", false));}?>
                 </div>
+				<?php 
+				if (have_posts()) : // WordPress ループ
+					while (have_posts()) : the_post(); // 繰り返し処理開始 ?>
 						<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 							
 							
