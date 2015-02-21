@@ -48,11 +48,11 @@
     padding: 20px;
 }
 .blog__left{
-    width: 630px;
+    max-width: 630px;
     margin-left: 20px;
 }
 .blog__right{
-    width: 350px;
+    max-width: 350px;
     margin-right: 20px;
 }
 
@@ -79,6 +79,7 @@
 
 .blog .box .content__right{
   float:left;
+  max-width: 400px;
 }
 
 .blog .box .content__right .content_title {

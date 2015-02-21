@@ -25,8 +25,9 @@ body{
    ========================================================================== */
 /* container: 横幅1020px, 中央寄せの枠 */
 .container{
-    margin: 0 auto;
-    width: 1020px;
+    margin: 5px auto;
+    max-width: 1020px;
+    width: 100%;
 }
 
 /* box: 要素の左右への振り分け */
@@ -40,6 +41,14 @@ body{
 }
 .box > .box__right{
     float: right;
+}
+
+.box > .column__left{
+    width: 80%;
+}
+
+.box > .column__right{
+    width: 20%;
 }
 
 /* clearfix: クリアフィックス */
