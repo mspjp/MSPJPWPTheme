@@ -48,7 +48,7 @@
             </div>
             <!-- Box Left -->
 
-            <?php get_sidebar(); ?>
+
             </div>
             <!-- /Leftcol -->
 
