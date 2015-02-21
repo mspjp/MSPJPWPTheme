@@ -166,56 +166,6 @@ add_action( 'init', 'topslide_postype' );
 
 // profile
 function profile_postype() {
-<<<<<<< HEAD
-		$labels = array(
-				'name' => 'メンバー',
-				'singular_name' => 'メンバー',
-				'add_new' => '新規メンバーを追加',
-				'add_new_item' => '新規メンバーを追加',
-				'edit_item' => 'メンバーを編集',
-				'new_item' => '新規メンバー',
-				'view_item' => 'メンバーを表示',
-				'search_items' => 'メンバーを検索',
-				'not_found' =>  '投稿されたメンバーはいません。',
-				'not_found_in_trash' => 'ゴミ箱にメンバー情報はありません。',
-				'parent_item_colon' => '',
-		);
-		$args = array(
-				'labels' => $labels,
-				'public' => true,
-				'publicly_queryable' => true, //フロントエンドで post_type クエリが実行可能かどうか
-				'show_ui' => true, //この投稿タイプを管理するデフォルト UI を生成するかどうか
-				'exclude_from_search' => false, //この投稿タイプを検索結果から除外するかどうか
-				'capability_type' => 'post', //投稿タイプの閲覧／編集／削除権限をチェックするのに使用。初期値： "post"
-				'rewrite' => array('slug' => 'articles'), //このフォーマットでパーマリンクをリライトする
-				'hierarchical' => false, //この投稿タイプが階層(親の指定が許可されている)かどうか
-				'menu_position' => 5,
-				'has_archive' => true, // 一覧画面から見れるようにする
-				'supports'=> array('title', 'thumbnail', 'editor') ,
-		);
-		register_post_type( 'profile', $args);
-		$taxonomy = array(
-				'label' => 'タグ',
-				'labels' => array(
-						'name' => 'タグ',
-						'singular_name' => 'タグ',
-						'search_items' => 'タグを検索',
-						'popular_items' => 'よく使われているタグ',
-						'all_items' => 'すべてのタグ',
-						'parent_item' => '',
-						'edit_item' => 'タグの編集',
-						'update_item' => '更新',
-						'add_new_item' => '新規タグを追加',
-						'new_item_name' => '新しいタグ',
-				),
-				'public' => true,
-				'show_ui' => true,
-				'hierarchical' => false, //fales→通常投稿のタグのような扱いになります。
-				'show_tagcloud' => true,
-				'rewrite' => array( 'slug' => 'technology' ),
-		);
-		register_taxonomy('member_tag', 'profile', $taxonomy );//('タクソノミー名', '所属する投稿タイプ', array);
-=======
     $labels = array(
         'name' => 'メンバー',
         'singular_name' => 'メンバー',
@@ -243,7 +193,6 @@ function profile_postype() {
         'supports'=> array('title', 'thumbnail', 'editor') ,
     );
     register_post_type( 'profile', $args);
->>>>>>> 1634900d9fb7f32e6b3b44b4342c76c0e65d6d63
 }
 
 add_action( 'init', 'profile_postype' );
