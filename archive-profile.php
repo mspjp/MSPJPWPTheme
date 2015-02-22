@@ -42,5 +42,4 @@ $post_type = $wp_query->get_queried_object();
             <?php 
             endif;
             ?>
-            <?php get_sidebar(); ?>
 <?php get_footer(); ?>
