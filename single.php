@@ -13,7 +13,10 @@
                         <ul class="report__category">
                             <?php wp_list_categories(); ?>
                         </ul>
-                        <p><?php comments_popup_link('Comment : 0', 'Comment : 1', 'Comments : %'); ?></p>
+                        <?php if ( comments_open() ) : ?>
+                            <p><?php comments_popup_link('Comment : 0', 'Comment : 1', 'Comments : %'); ?></p>
+                        <?php endif; // comments_open() ?>
+
                         <p class="report__info">by <?php the_author(); ?> | <?php echo get_the_date(); ?></p>
                     </div>
 
