@@ -37,6 +37,10 @@ a:active{
     max-width: 1020px;
     width: 100%;
 }
+/* 文字寄せ用 */
+.align-left  { text-align: left; }
+.align-center{ text-align: center; }
+.align-right { text-align: right; }
 
 /* box: 要素の左右への振り分け */
 .box:after{

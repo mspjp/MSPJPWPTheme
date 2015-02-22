@@ -2,106 +2,49 @@
    Single - 詳細ページ
    ========================================================================== */
 
-/* container - メイン部分
+.report{
+  background-color: rgba(255,255,255,0.7);
+  padding: 10px;
+}
+
+/* Meta - 記事ページのメタ情報
    ========================================================================== */
-   .post_title {
-     margin:10px 0;
-   }
+.report__meta{
+  margin-bottom: 20px;
+}
+.report__title {
+  height: 40px;
+  line-height: 40px;
+  background-image: url("../img/title-icon.png");
+  background-repeat: no-repeat;
+  border-bottom: 2px solid #f08300;
+  padding-left: 28px;
+  font-size: 28px;
+  font-weight: bold;
+}
+.report__info{
+  text-align: right;
+}
+.report__category{
+  list-style-type:none;
+  text-align: right;
+}
+.report__category li{
+  display: inline;
+  margin-left:5px;
+}
+.report__category li a{
+  color:#fff;
+  padding:4px 10px;
+  background-color:#999;
+}
 
-   .post_title h1{
-     font-size:50px;
-     border-bottom:1px solid #ccc;
-   }
+/* Body - 記事ページの本文
+   ========================================================================== */
+.report__body h4,
+.report__body p,
+.report__body .report__image{
+  margin-bottom: 10px;
+}
 
-   .post_title h1 a:link,
-   .post_title h1 a:hover,
-   .post_title h1 a:visited
-   {
-     color: black;
-     text-decoration: none;
-   }
-
-
-   .post_category ul {
-     list-style-type:none;
-   }
-
-   .post_category ul li{
-     float:right;
-     margin-left:5px;
-   }
-
-   .post_category ul li a{
-     text-decoration:none;
-     background-color:#888;
-     color:#fff;
-     padding:4px 10px;
-   }
-
-   .entry_body {
-     margin:20px 0;
-   }
-
-   .post_section{
-     margin:30px 0;
-   }
-
-   .post_section h2{
-     font-size:30px;
-     padding:5px 0 5px 5px;
-     border-left:8px solid black;
-     border-bottom:1px solid black;
-     margin-bottom:10px;
-   }
-
-   h2.header_red{
-     border-color:red;
-   }
-
-   h2.header_blue{
-     border-color:blue;
-   }
-
-   h2.header_green{
-     border-color:green;
-   }
-
-
-
-   p.section_content{
-     font-size:20px;
-     margin:0 20px 10px 20px;
-   }
-
-   .image_desc{
-     font-size:20px;
-   }
-
-   .post_image img{
-     width:192px;
-     height:192px;
-     margin:4px;
-   }
-
-
-   .post_image{
-     display:block;
-     width:200px;
-     height:280px;
-     border-radius:1px;
-     background-color:#ccc;
-     box-shadow:4px 4px 4px 0 rgba(100, 100, 100, 0.4);
-   }
-
-   .post_image .image_desc{
-     margin:0 8px;
-     text-align:center;
-   }
-
-   .entry_auther{
-     color:#222222;
-     margin-top:10px;
-     font-size:20px;
-     float:right;
-     border-bottom:1px solid gray;
-   }
+/* 以下，Wordpressで吐き出されるHTMLに合わせてCSSを書く */
