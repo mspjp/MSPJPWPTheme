@@ -15,7 +15,16 @@
             $myQuery->query($param);
             if ($myQuery->have_posts()) :
                 while ($myQuery->have_posts()) : $myQuery->the_post(); ?>
-                <img src="<?php if( has_post_thumbnail() ){echo get_thumbnail_url();}else{echo "http://dummyimage.com/1020x300/ccc/fff";} ?>" alt="">
+                <div class="slide">
+                    <a href="<?php the_permalink(); ?>" title="<?php echo mb_substr(get_the_title(), 0, 30); ?>">
+                        <img src="<?php if( has_post_thumbnail() ){echo get_thumbnail_url();}else{echo "http://dummyimage.com/1020x300/ccc/fff";} ?>" alt="<?php echo mb_substr(get_the_title(), 0, 30); ?>">
+                        <div class="slide__description">
+                            <h3 class="slide__title"><?php echo mb_substr(get_the_title(), 0, 30); ?></h3>
+                            <p class="slide__date"><?php echo get_the_date(); ?></p>
+                            <p class="slide__text"><?php echo mb_substr(strip_tags($post-> post_content), 0, 60)."..."; ?></p>
+                        </div>
+                    </a>
+                </div>
             <?php
             endwhile;
             else :?>
