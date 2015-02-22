@@ -1,56 +1,51 @@
 <?php get_header();
 $post_type = $wp_query->get_queried_object();
 ?>
-            <div id="box">
-            <div id="box__left">
-                <div class="headline">
-                    <h1 class="headline_title"><?php post_type_archive_title(); ?></h1>
+            <div class="headline">
+                <h2 class="headline_title"><?php post_type_archive_title(); ?></h2>
+                <div class="headline__snsbtns">
                     <?php if(function_exists("wp_social_bookmarking_light_output_e")){wp_social_bookmarking_light_output_e(null, get_post_type_archive_link(), $post_type->labels->name );}?>
                 </div>
+            </div>
 
-                <!-- Box -->
-                <div class="box">
-                    <?php
-                    query_posts( $query_string . "&posts_per_page=5&paged=".$paged );
-                    if (have_posts()) : // WordPress ループ
-                        while (have_posts()) : the_post(); // 繰り返し処理開始 ?>
-
-                    <a class="blog" id="post-<?php the_ID(); ?>" <?php post_class('blog'); ?> href="<?php the_permalink(); ?>">
-                        <div class="box content">
-                            <div class="box__left content__left">
-                                <p><img class="clearfix" src="<?php if( has_post_thumbnail() ){echo get_thumbnail_url();}else{echo get_template_directory_uri()."/img/noimage.png";} ?>" alt="" ></p>
-                            </div>
-                            <div class="box__right content__right clearfix">
-                                <h2 class="content_title"><i class="fa fa-star"></i><?php echo mb_substr(get_the_title(), 0, 30); ?></h2>
-                                <p class="outline"><?php echo mb_substr(strip_tags($post-> post_content), 0, 60)."..."; ?></p>
-                                <p class="content_info">by <?php the_author(); ?> | <?php the_time('Y年n月j日') ;?> | <?php comments_popup_link('Comment : 0', 'Comment : 1', 'Comments : %'); ?></p>
-                            </div>
+            <!-- Main Content -->
+            <div class="main__content">
+                <?php
+                query_posts( $query_string . "&posts_per_page=5&paged=".$paged );
+                if (have_posts()) : // WordPress ループ
+                    while (have_posts()) : the_post(); // 繰り返し処理開始 ?>
+                <article class="post" id="post-<?php the_ID(); ?>" <?php post_class('blog'); ?>>
+                    <a href="<?php the_permalink(); ?>">
+                        <div class="post__thumb">
+                            <img src="<?php if( has_post_thumbnail() ){echo get_thumbnail_url();}else{echo get_template_directory_uri()."/img/noimage.png";} ?>" alt="">
+                        </div>
+                        <div class="post__content">
+                          <h3 class="post__title"><?php echo mb_substr(get_the_title(), 0, 30); ?></h3>
+                          <p class="post__text"><?php echo mb_substr(strip_tags($post-> post_content), 0, 60)."..."; ?></p>
+                          <p class="post__info">by <?php the_author(); ?> | <?php the_time('Y年n月j日') ;?> | <?php comments_popup_link('Comment : 0', 'Comment : 1', 'Comments : %'); ?></p>
                         </div>
                     </a>
-                    <?php
-                    endwhile; // 繰り返し処理終了
-                    else : // ここから記事が見つからなかった場合の処理 ?>
-                    <div class="post">
-                        <h2>アーカイブはありません</h2>
-                        <p>お探しのアーカイブは見つかりませんでした。</p>
-                    </div>
-                    <?php
-                    endif;
-                    ?>
-                </div>
-                <!-- /Box -->
+                </article>
                 <?php
-                if ( $wp_query -> max_num_pages > 1 ) : ?>
-                <div class="navigation">
-                    <div class="alignleft"><?php next_posts_link('&laquo; PREV'); ?></div>
-                    <div class="alignright"><?php previous_posts_link('NEXT &raquo;'); ?></div>
+                endwhile; // 繰り返し処理終了
+                else : // ここから記事が見つからなかった場合の処理 ?>
+                <div class="post">
+                    <h2>アーカイブはありません</h2>
+                    <p>お探しのアーカイブは見つかりませんでした。</p>
                 </div>
-                <?php 
+                <?php
                 endif;
                 ?>
             </div>
-            <!-- BoxLeft -->
-            <?php get_sidebar(); ?>
+            <!-- /Main Content -->
+            <?php
+            if ( $wp_query -> max_num_pages > 1 ) : ?>
+            <div class="navigation">
+                <div class="alignleft"><?php next_posts_link('&laquo; PREV'); ?></div>
+                <div class="alignright"><?php previous_posts_link('NEXT &raquo;'); ?></div>
             </div>
-            <!-- LeftCol -->
+            <?php 
+            endif;
+            ?>
+            <?php get_sidebar(); ?>
 <?php get_footer(); ?>
