@@ -5,7 +5,7 @@ $taxonomy = $wp_query->get_queried_object();
             <div id="box__left">
                 <div class="headline">
                     <h1 class="headline_title"><?php post_type_archive_title(); ?></h1>
-                    <?php if(function_exists("wp_social_bookmarking_light_output_e")){wp_social_bookmarking_light_output_e(null, get_permalink(), post_type_archive_title();}?>
+                    <?php if(function_exists("wp_social_bookmarking_light_output_e")){wp_social_bookmarking_light_output_e(null, get_permalink(), post_type_archive_title());}?>
                 </div>
 
                 <!-- Box -->
