@@ -1,120 +1,51 @@
-
 /* ==========================================================================
-   Main - メイン部分
+   Blog - アーカイブページ
    ========================================================================== */
-.main{
-    padding: 150px 0 50px; /* ヘッダーの分だけ下げる */
-}
-
-.headline{
-    display:table;
-    width:100%;
-    margin: 20px 0px 20px 0px;
-    border-bottom: 5px solid #50A320;
-    /*x軸のみ伸びる画像に変更*/
-}
-
-.headline_title{
-    display:table-cell;
-    width:60%;
-    height: 24px;
-    font-family: 'Segoe UI Semibold';
-    line-height:24px;
-    padding:0 0 10px 30px;
-}
-
-
-
-/* Top - サイトトップ
-   ========================================================================== */
-.topslider{
-    margin-bottom: 30px;
-}
-
-.sns_links {
-  display:table;
-  float:right;
-}
-
-.sns_links .sns_link{
-  display:table-cell;
-  width:100px;
-  border:1px soild black;
-}
-
-.blog__left,
-.blog__right{
-    box-sizing: border-box;
-    padding: 20px;
-}
-.blog__left{
-    max-width: 630px;
-    margin-left: 20px;
-}
-.blog__right{
-    max-width: 350px;
-    margin-right: 20px;
-}
 
 /* Blogs - ブログ一覧
    ========================================================================== */
 
-.blog{
-  color:black;
-  text-decoration:none;
+.post{
+  box-sizing: border-box;
+  display: table;
+  border: 1px solid #666;
+  padding: 10px;
+  margin-bottom: 20px;
 }
-
-.blog .content{
-    margin-bottom: 20px;
-    padding: 20px;
-    border: 2px solid #999999;
+.post > a{
+  display: block;
 }
-.blog .box .content__left img{
-    background-color: #ff0;
-    margin-right: 20px;
-    width: 120px;
-    float: left;
-
+.post__thumb{
+  display: table-cell;
+  vertical-align: top;
 }
-
-.blog .box .content__right{
-  float:left;
-  max-width: 400px;
+.post__content{
+  display: table-cell;
+  vertical-align: top;
+  padding-left: 20px;
 }
-
-.blog .box .content__right .content_title {
+.post__title{
+  height: 32px;
+  line-height: 32px;
+  background-image: url("../img/title-icon.png");
+  background-repeat: no-repeat;
   border-bottom: 2px solid #f08300;
-  margin:0 0 10px 0;
+  padding-left: 28px;
+  font-weight: bold;
 }
-
-.blog .box .content__right .content_info{
-  margin:10px 0 0 0;
-  float:right;
+.post__text{
+  margin-top: 10px;
 }
-
-
-/* Post - ブログ記事
-   ========================================================================== */
-
-
-/* Search - 検索ウィンドウ
-   ========================================================================== */
-
-#search{
-    margin: 0px auto;
-    width: 250px;
-    height: 50px;
-    border: 2px solid #999999;
-    background-color: #ddd;
-    margin-bottom: 30px;
+.post__info{
+  text-align: right;
+  margin-top: 10px;
 }
-
-
-/* Calendar - カレンダー
-   ========================================================================== */
-
-#calendar{
-    width: 310px;
-    height: 300px;
-    border: 2px solid #999999;
+/* 1024px 以下の処理 */
+@media screen and (max-width: 768px){
+  .post__thumb,
+  .post__content{
+    display: block;
+    width: 100%;
+    padding: 0;
+  }
 }

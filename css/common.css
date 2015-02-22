@@ -19,6 +19,14 @@ body{
         fixed,
         scroll;
 }
+a:link,
+a:visited,
+a:hover,
+a:active{
+  /* aタグのスタイルをリセット */
+  color: black;
+  text-decoration: none;
+}
 
 /* ==========================================================================
    Utility - サイト全体で使う便利なもの
@@ -58,6 +66,14 @@ body{
     clear: both;
 }
 
+/* ただの箱、レイアウト確認用 */
+.tmpbox{
+  width: 100%;
+  height: 200px;
+  border: 1px solid #666;
+  margin-bottom: 20px;
+}
+
 /* ==========================================================================
    Header - ヘッダー
    ========================================================================== */
@@ -79,35 +95,17 @@ header .title{
     padding:20px 0;
 }
 
-header .title a:link,
-header .title a:hover,
-header .title a:visited
-{
-  color: black;
-  text-decoration: none;
-}
-
-/*
-header .msplogo{
-    vertical-align: middle;
-    margin-right: 20px;
-}*/
-/*
-header .menu{
-    margin-top: 30px;
-}*/
-
 header nav {
   margin:30px 0;
   display:table;
-  margin-right:20px;
+  /*margin-right:20px;*/
 }
 
 header .navbar_box {
   display:table-cell;
   width:60px;
   height:30px;
-  border-left:1px #333 solid;
+  border-left:1px #666 solid;
 }
 
 header .navbar_box a{
@@ -115,25 +113,91 @@ header .navbar_box a{
   line-height:30px;
   text-decoration:none;
   text-align:center;
-  color:#333;
+  color:#666;
   font-size:15px;
 }
 
 header .navbar_box:last-child{
-  border-right:1px #333 solid;
+  border-right:1px #666 solid;
 }
+
+/* ==========================================================================
+   Main - メイン
+   ========================================================================== */
+.main{
+    padding: 150px 0 50px; /* ヘッダーの分だけ下げる */
+}
+.main:after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* コンテンツとサイドバーの振り分け
+   ========================================================================== */
+  .main__content,
+  .main__sidebar{
+    box-sizing: border-box;
+    padding: 20px;
+  }
+  .main__content{
+    float: left;
+    width: 75%;
+  }
+  .main__sidebar{
+    float: right;
+    width: 25%;
+  }
+  /* 1024px 以下の処理 */
+  @media screen and (max-width: 768px){
+    .main__content,
+    .main__sidebar{
+      width: 100%;
+    }
+  }
+
+/* 見出し
+   ========================================================================== */
+  .headline{
+      margin: 20px 0px 20px 0px;
+      border-bottom: 5px solid #50A320;
+      /*x軸のみ伸びる画像に変更*/
+  }
+  .headline:after{
+      content: "";
+      display: block;
+      clear: both;
+  }
+  .headline__title{
+      float: left;
+      height: 24px;
+      font-size: 30px;
+      font-family: 'Segoe UI Semibold';
+      line-height:24px;
+      padding:0 0 10px 30px;
+  }
+  .headline__snsbtns{
+    display:table;
+    float:right;
+  }
+
+  .headline__snsbtn{
+    display:table-cell;
+    vertical-align: middle;
+    width:100px;
+  }
 
 /* ==========================================================================
   Footer- フッター
    ========================================================================== */
-
-
-
 footer{
     width: 100%;
     padding: 15px 0;
     background-image: url("../img/underline.png");
     background-repeat: repeat-x;
+}
+footer .footer-desc{
+    margin: 15px 0 0 20px;
 }
 footer .copyright{
     font-size: 12px;

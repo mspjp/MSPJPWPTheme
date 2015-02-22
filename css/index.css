@@ -1,65 +1,70 @@
 /* ==========================================================================
-   Main - メイン部分
+   Top - サイトトップ
    ========================================================================== */
-.main{
-    padding: 150px 0 50px; /* ヘッダーの分だけ下げる */
+
+/* スライダー
+   ========================================================================== */
+.topslider{
+    margin-bottom: 30px;
 }
 
-/* Top - サイトトップ
+.slick-dots{
+  margin-bottom:20px;
+  /*Slickのbuttomを強制的に動かしてる*/
+}
+
+/* 更新情報
    ========================================================================== */
-    .topslider{
-        margin-bottom: 30px;
-    }
+.topinfo{
+    padding: 20px;
+}
+.topinfo:after{
+    content: "";
+    display: block;
+    clear: both;
+}
 
-    .slick-dots{
-      margin-bottom:20px;
-      /*Slickのbuttomを強制的に動かしてる*/
-    }
-    .topinfo:after{
-        content: "";
-        display: block;
-        clear: both;
-    }
+.topinfo__left,
+.topinfo__right{
+    width: 100%;
+    max-width: 450px;
+    box-sizing: border-box;
+    padding: 20px 40px;
+}
+.topinfo__left{
+    float: left;
+    border: 2px solid #ffa500;
+}
+.topinfo__left .topinfo__list li{
+    border-bottom: 1px dashed #ffa500;
+}
+.topinfo__right{
+    float: right;
+    border: 2px solid #2e8b57;
+}
+.topinfo__right .topinfo__list li{
+    border-bottom: 1px dashed #2e8b57;
+}
+.topinfo__list{
+    list-style: none;
+    padding-left: 0;
+}
+.topinfo__list li a{
+    color: #000;
+    display: block;
+    text-decoration: none;
+}
+.topinfo__date{
+    margin-right: 30px;
+}
 
+/* 1024px 以下の処理 */
+@media screen and (max-width: 1024px){
     .topinfo__left,
     .topinfo__right{
-        max-width: 450px;
-        box-sizing: border-box;
-        padding: 20px 40px;
-    }
-    .topinfo__left{
-        float: left;
-        width: 100%;
-        margin: 1em;
-        border: 2px solid #ffa500;
-    }
-    .topinfo__left .topinfo__list li{
-        border-bottom: 1px dashed #ffa500;
+        max-width: 100%;
     }
     .topinfo__right{
-        float: left;
-        width: 100%;
-        margin: 1em;
-        border: 2px solid #2e8b57;
+        margin-top: 20px;
     }
-    .topinfo__right .topinfo__list li{
-        border-bottom: 1px dashed #2e8b57;
-    }
-    .topinfo__list{
-        list-style: none;
-        padding-left: 0;
-    }
-    .topinfo__list li a{
-        color: #000;
-        display: block;
-        text-decoration: none;
-    }
-    .topinfo__date{
-        margin-right: 30px;
-    }
-
-/* Blogs - ブログ一覧
-   ========================================================================== */
-
-/* Post - ブログ記事
-   ========================================================================== */
+}
