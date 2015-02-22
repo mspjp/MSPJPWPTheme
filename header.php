@@ -6,6 +6,7 @@
     <title><?php wp_title( '|', true, 'right' ); bloginfo('name'); ?></title>
     <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/img/favicon.ico">
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Marcellus+SC'  rel="stylesheet">
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" media="screen">
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
