@@ -1,5 +1,3 @@
-            <!-- sidebar -->
-            <div class="main__sidebar">
                 <?php if ( is_active_sidebar( 'sidebar-top' ) ) :
                 dynamic_sidebar( 'sidebar-top' );
                 else: ?>
@@ -20,5 +18,3 @@
                 <?php
                 endif;
                 ?>
-            </div>
-            <!-- /sidebar -->
