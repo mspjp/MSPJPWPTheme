@@ -3,7 +3,7 @@
             <!-- Left Col -->
             <div class="headline">
                 <h1 class="headline_title">メンバー</h1>
-                <?php if(function_exists("wp_social_bookmarking_light_output_e")){wp_social_bookmarking_light_output_e(null, get_permalink(), the_title("", "", false));}?>
+                <?php if(function_exists("wp_social_bookmarking_light_output_e")){wp_social_bookmarking_light_output_e(null, get_permalink(), post_type_archive_title();}?>
             </div>
             <div class="profile_base">
                 <ul>
