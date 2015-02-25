@@ -84,8 +84,8 @@
     margin-right: 30px;
 }
 
-/* 1024px 以下の処理 */
-@media screen and (max-width: 1024px){
+/* タブレット */
+@media screen and (max-width: 1020px){
     .topinfo__left,
     .topinfo__right{
         max-width: 100%;

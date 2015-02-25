@@ -33,7 +33,7 @@ a:active{
    ========================================================================== */
 /* container: 横幅1020px, 中央寄せの枠 */
 .container{
-    margin: 5px auto;
+    margin: 0px auto;
     max-width: 1020px;
     width: 100%;
 }
@@ -48,19 +48,11 @@ a:active{
     display: block;
     clear: both;
 }
-.box > .box__left{
+.box__left{
     float: left;
 }
-.box > .box__right{
+.box__right{
     float: right;
-}
-
-.box > .column__left{
-    width: 80%;
-}
-
-.box > .column__right{
-    width: 20%;
 }
 
 /* clearfix: クリアフィックス */
@@ -76,6 +68,15 @@ a:active{
   height: 200px;
   border: 1px solid #666;
   margin-bottom: 20px;
+}
+
+/* タブレット用 */
+@media screen and (max-width: 1020px){
+  .box__left,
+  .box__right{
+    text-align: center;
+    float: none;
+  }
 }
 
 /* ==========================================================================
@@ -102,7 +103,6 @@ header .title{
 header nav {
   margin:30px 0;
   display:table;
-  /*margin-right:20px;*/
 }
 
 header .navbar_box {
@@ -125,6 +125,17 @@ header .navbar_box:last-child{
   border-right:1px #666 solid;
 }
 
+/* タブレット用 */
+@media screen and (max-width: 1020px){
+  header{
+    position: static;
+    padding: 20px 0 10px 0;
+  }
+  header nav{
+    margin: 0 auto;
+  }
+}
+
 /* ==========================================================================
    Main - メイン
    ========================================================================== */
@@ -135,6 +146,11 @@ header .navbar_box:last-child{
   content: "";
   display: block;
   clear: both;
+}
+@media screen and (max-width: 1020px){
+  .main{
+    padding: 0 0 50px; /* スマホサイズの時は上paddingなし */
+  }
 }
 
 /* コンテンツとサイドバーの振り分け
@@ -152,8 +168,8 @@ header .navbar_box:last-child{
     float: right;
     width: 25%;
   }
-  /* 1024px 以下の処理 */
-  @media screen and (max-width: 768px){
+  /* タブレット用 */
+  @media screen and (max-width: 1020px){
     .main__content,
     .main__sidebar{
       width: 100%;

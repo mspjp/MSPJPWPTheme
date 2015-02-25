@@ -47,7 +47,7 @@
 }
 
 /* 以下，Wordpressで吐き出されるHTMLに合わせてCSSを書く */
-
+<<<<<<< HEAD
 
 /* report body 内のh2 ~ h6, ul li , dl 等を追加 */
 .report__body h2 {
@@ -104,9 +104,8 @@
 
 .report__body p{
   margin:0 10px;
-
-}
+=======
 .report__body .report__image > img{
   max-width: 100%;
-
+>>>>>>> 4ed08de24bd8b017f5529a6472cea0d8e9c8e705
 }
