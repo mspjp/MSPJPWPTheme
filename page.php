@@ -57,9 +57,9 @@
                 ?>
                 </div>
                 <!-- /Report -->
-                <div class="main__sidebar">
-                    <?php get_sidebar(); ?>
-                </div>
+                
+                <!-- removed sidebar -->
+                
             </div>
             <!-- /Main Content -->
 <?php get_footer(); ?>
