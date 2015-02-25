@@ -18,28 +18,29 @@
 <?php 
  $custom_fields = get_post_custom();
 
-
  $teams = $custom_fields['team'];
-  foreach ( $team as $key => $value )
+  foreach ( $team[0] as $key => $value )
          echo $key . " => " . $value . "<br />"; 
 
   echo "==================<br>";
 
+  /*
  $wp_username = $custom_fields['wordpress_username'];
-  foreach ( $wp_username as $key => $value )
+  foreach ( $wp_username[0] as $key => $value )
          echo $key . " => " . $value . "<br />"; 
 
   echo "==================<br>";
+   */
 
  $rarticles = $custom_fields['related_articles'];
-  foreach ( $rarticles as $key => $value )
+  foreach ( $rarticles[0] as $key => $value )
          echo $key . " => " . $value . "<br />"; 
 
   echo "==================<br>";
 
 
  $years = $custom_fields['year'];
-  foreach ( $years as $key => $value )
+  foreach ( $years[0] as $key => $value )
          echo $key . " => " . $value . "<br />"; 
 
   echo "==================<br>";
