@@ -13,9 +13,6 @@
                         <ul class="report__category">
                             <?php wp_list_categories(); ?>
                         </ul>
-                        <?php if ( comments_open() ) : ?>
-                            <p><?php comments_popup_link('Comment : 0', 'Comment : 1', 'Comments : %'); ?></p>
-                        <?php endif; // comments_open() ?>
 
                         <p class="report__info">by <?php the_author(); ?> | <?php echo get_the_date(); ?></p>
                     </div>
@@ -49,7 +46,6 @@
                     ?>
                 </div>
                 <!-- /post navigation -->
-                <?php comments_template(); // コメント欄の表示 ?>
                 <?php
                 endwhile; // 繰り返し処理終了
                 else : // ここから記事が見つからなかった場合の処理 ?>
