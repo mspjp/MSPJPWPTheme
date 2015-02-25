@@ -2,29 +2,37 @@
 <?php wp_link_pages(); ?>
             <div class="main__content">
                 <!-- Report -->
-                <div id="post-<?php the_ID(); ?>" <?php post_class("report"); ?>>
+                <div id="profile-<?php the_ID(); ?>" <?php post_class("profilepage"); ?>>
                     <?php
                     if (have_posts()) : // WordPress ループ
                         while (have_posts()) : the_post(); // 繰り返し処理開始 ?>
-                    <div class="report__meta">
-                        <div class="post_title">
-                            <h3 class="report__title"><a href="<?php the_permalink(); ?>"><?php echo get_the_title(); ?></a></h3>
-                        </div>
-                        <ul class="report__category">
-                            <?php wp_list_categories(); ?>
-                        </ul>
-                        <?php if ( comments_open() ) : ?>
-                            <p><?php comments_popup_link('Comment : 0', 'Comment : 1', 'Comments : %'); ?></p>
-                        <?php endif; // comments_open() ?>
-
-                        <p class="report__info">by <?php the_author(); ?> | <?php echo get_the_date(); ?></p>
+                    <h3 class="profilepage__name"><a href="<?php the_permalink(); ?>"><?php echo get_the_title(); ?></a></h3>
+                    <div class="profilepage__image alignn-center">
+                        <img src="http://" alt="">
                     </div>
+                    <ul class="report__category">
+                        <?php wp_list_categories(); ?>
+                    </ul>
+                    <p><?php the_meta(); ?></p>
+                    <p class="profilepage__year"><a href="">所属年度：2014年度</a></p>
+                    <p class="profilepage__username"><a href="#">ユーザ名：@admin_admin</a></p>
+                    <p>所属プロジェクト：</p>
+                    <ul class="profilepage__projects">
+                        <li><a href="#">プレゼンテーション道場</a></li>
+                        <li><a href="#">ハッカソンモンスター</a></li>
+                        <li><a href="#">GreenHack</a></li>
+                        <li><a href="#">その他</a></li>
+                        <li><a href="#">その他</a></li>
+                    </ul>
 
-                    <div class="entry_body">
-                    <?php the_content(); ?>
+                    <div class="profilepage__introduce">
+                        <?php the_content(); ?>
                     </div>
 
                 </div>
+
+                <h3>関連投稿</h3>
+
                 <?php if(function_exists("wp_social_bookmarking_light_output_e")){wp_social_bookmarking_light_output_e(null, get_permalink(), the_title("", "", false));}?>
                 <?php
                 $args = array(
