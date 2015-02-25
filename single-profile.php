@@ -23,26 +23,26 @@
   foreach ( $team as $key => $value )
          echo $key . " => " . $value . "<br />"; 
 
-  echo "==================<br>"
+  echo "==================<br>";
 
  $wp_username = $custom_fields['wordpress_username'];
   foreach ( $wp_username as $key => $value )
          echo $key . " => " . $value . "<br />"; 
 
-  echo "==================<br>"
+  echo "==================<br>";
 
  $rarticles = $custom_fields['related_articles'];
   foreach ( $rarticles as $key => $value )
          echo $key . " => " . $value . "<br />"; 
 
-  echo "==================<br>"
+  echo "==================<br>";
 
 
  $years = $custom_fields['year'];
   foreach ( $years as $key => $value )
          echo $key . " => " . $value . "<br />"; 
 
-  echo "==================<br>"
+  echo "==================<br>";
 
 
 
