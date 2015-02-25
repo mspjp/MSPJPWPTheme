@@ -16,11 +16,7 @@
                     <?php the_content(); ?>
                     
                     <div class="report__meta">
-                        <ul class="report__category">
-                            <?php wp_list_categories(); ?>
-                        </ul>
-
-                        <p class="report__info">by <?php the_author(); ?> | <?php echo get_the_date(); ?></p>
+                        <p class="report__info">Last update : <?php echo get_the_date(); ?></p>
                     </div>
                     </div>
 
