@@ -15,6 +15,38 @@
                     </ul>
                     <p><?php the_meta(); ?></p>
                     <p class="profilepage__year"><a href="">所属年度：2014年度</a></p>
+<?php 
+ $custom_fields = get_post_custom();
+
+
+ $teams = $custom_fields['team'];
+  foreach ( $team as $key => $value )
+         echo $key . " => " . $value . "<br />"; 
+
+  echo "==================<br>"
+
+ $wp_username = $custom_fields['wordpress_username'];
+  foreach ( $wp_username as $key => $value )
+         echo $key . " => " . $value . "<br />"; 
+
+  echo "==================<br>"
+
+ $rarticles = $custom_fields['related_articles'];
+  foreach ( $rarticles as $key => $value )
+         echo $key . " => " . $value . "<br />"; 
+
+  echo "==================<br>"
+
+
+ $years = $custom_fields['year'];
+  foreach ( $years as $key => $value )
+         echo $key . " => " . $value . "<br />"; 
+
+  echo "==================<br>"
+
+
+
+?>
                     <p class="profilepage__username"><a href="#">ユーザ名：@admin_admin</a></p>
                     <p>所属プロジェクト：</p>
                     <ul class="profilepage__projects">
