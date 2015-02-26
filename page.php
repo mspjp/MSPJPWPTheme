@@ -10,15 +10,14 @@
                         <div class="post_title">
                             <h3 class="report__title"><a href="<?php the_permalink(); ?>"><?php echo get_the_title(); ?></a></h3>
                         </div>
-                        <ul class="report__category">
-                            <?php wp_list_categories(); ?>
-                        </ul>
-
-                        <p class="report__info">by <?php the_author(); ?> | <?php echo get_the_date(); ?></p>
                     </div>
 
                     <div class="entry_body">
                     <?php the_content(); ?>
+                    
+                    <div class="report__meta">
+                        <p class="report__info">Last update : <?php echo get_the_date(); ?></p>
+                    </div>
                     </div>
 
                 </div>
@@ -34,16 +33,7 @@
 
                 <!-- post navigation -->
                 <div class="navigation">
-                    <?php
-                    if( get_previous_post() ): ?>
-                    <div class="alignleft"><?php previous_post_link('%link', '&laquo; %title'); ?></div>
-                    <?php
-                    endif;
-                    if( get_next_post() ): ?>
-                    <div class="alignright"><?php next_post_link('%link', '%title &raquo;'); ?></div>
-                    <?php
-                        endif;
-                    ?>
+                    <!-- remove navigation -->
                 </div>
                 <!-- /post navigation -->
                 <?php
@@ -58,9 +48,9 @@
                 ?>
                 </div>
                 <!-- /Report -->
-                <div class="main__sidebar">
-                    <?php get_sidebar(); ?>
-                </div>
+                
+                <!-- removed sidebar -->
+                
             </div>
             <!-- /Main Content -->
 <?php get_footer(); ?>
