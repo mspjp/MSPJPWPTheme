@@ -197,7 +197,7 @@ function profile_postype() {
 
 add_action( 'init', 'profile_postype' );
 
-// profile
+// project
 function project_postype() {
     $labels = array(
         'name' => 'プロジェクト',
