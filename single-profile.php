@@ -48,6 +48,7 @@
 
 
 ?>
+					<a href="<?php the_field('page_link'); ?>">Read this!</a>
                     <p class="profilepage__username"><a href="#">ユーザ名：@admin_admin</a></p>
                     <p>所属プロジェクト：</p>
                     <ul class="profilepage__projects">
