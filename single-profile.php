@@ -25,9 +25,9 @@
 
 						foreach($teams as $teamid)
 						{
-							echo '<li>';
+							echo '<li><a href="#">';
 							echo $teamid;
-							echo '</li>';
+							echo '</a></li>';
 						}
 
 						echo '</ul>';
