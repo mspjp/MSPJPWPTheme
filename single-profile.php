@@ -17,15 +17,18 @@
 
                     <?php if(get_field( "year" )): ?>
 						<p class="profilepage__year"><a href="#">所属年度：<?php the_field( "year" ); ?></a></p>
+						<!-- 所属年度がそのまま出てくるようにしたい(今は3,とかで出てくる) -->
 					<?php endif; ?>
 
                     <?php if(get_field( "wordpress_username" )): ?>
 						<p class="profilepage__username"><a href="#">ユーザ名：<?php the_field( "wordpress_username" ); ?></a></p>
+						<!-- ユーザー情報の中でも重要なのだけ抽出したい -->
 					<?php endif; ?>
                     
                     
                     <p>所属プロジェクト：</p>
                     <ul class="profilepage__projects">
+						<!-- プロジェクトの記事idは取得できた。あとはURLとタイトルの取得&表示 -->
 						<?php
 
 						$teams = get_field('team');
@@ -58,6 +61,8 @@
                 </div>
 
                 <h3>関連投稿</h3>
+						<!-- 手つかずなう -->
+						<!-- 参考コード  http://www.advancedcustomfields.com/resources/code-examples/ -->
 
                 <?php if(function_exists("wp_social_bookmarking_light_output_e")){wp_social_bookmarking_light_output_e(null, get_permalink(), the_title("", "", false));}?>
                 <?php
