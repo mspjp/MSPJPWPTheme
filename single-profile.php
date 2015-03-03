@@ -18,21 +18,21 @@
 
 					<?php
 
-					$values = get_field('team');
-					if($values)
+					$teams = get_field('team');
+					if($teams)
 					{
 						echo '<ul>';
 
-						foreach($values as $value)
+						foreach($teams as $teamid)
 						{
-							echo '<li>' . $value . '</li>';
+							echo '<li><a href="' . echo $permalink = get_permalink( echo $teamid ); . '">' . $teamid . '</a></li>';
 						}
 
 						echo '</ul>';
 					}
 
 					// always good to see exactly what you are working with
-					var_dump($values);
+					var_dump($teams);
 
 					?>
 
