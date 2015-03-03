@@ -16,34 +16,36 @@
                     <p><?php the_meta(); ?></p>
                     <p class="profilepage__year"><a href="">所属年度：2014年度</a></p>
 
-					<?php
 
-					$teams = get_field('team');
-					if($teams)
-					{
-						echo '<ul>';
 
-						foreach($teams as $teamid)
-						{
-							echo '<li><a href="#">';
-							echo $teamid;
-							echo '</a></li>';
-						}
-
-						echo '</ul>';
-					}
-
-					// always good to see exactly what you are working with
-					var_dump($teams);
-
-					?>
-
-                    <p class="profilepage__username"><a href="#">ユーザ名：@admin_admin</a></p>
+                    <?php if(get_field( "field_name" )): ?>
+						<p class="profilepage__username"><a href="#">ユーザ名：<?php the_field( "wordpress_username" ); ?></a></p>
+					<?php endif; ?>
+                    
+                    
                     <p>所属プロジェクト：</p>
                     <ul class="profilepage__projects">
-                        <li><a href="#">プレゼンテーション道場</a></li>
-                        <li><a href="#">ハッカソンモンスター</a></li>
-                        <li><a href="#">GreenHack</a></li>
+						<?php
+
+						$teams = get_field('team');
+						if($teams)
+						{
+							echo '<ul>';
+
+							foreach($teams as $teamid)
+							{
+								echo '<li><a href="#">';
+								echo $teamid;
+								echo '</a></li>';
+							}
+
+							echo '</ul>';
+						}
+
+						// always good to see exactly what you are working with
+						var_dump($teams);
+
+						?>
                         <li><a href="#">その他</a></li>
                         <li><a href="#">その他</a></li>
                     </ul>
