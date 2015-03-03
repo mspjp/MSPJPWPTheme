@@ -17,15 +17,24 @@
                     <p class="profilepage__year"><a href="">所属年度：2014年度</a></p>
 
 					<?php
-					if (get_field("team")): ?>
-					<ul>
-						<?php
-					    $teams = get_field("team");
-					    foreach ($teams as $teamid) : ?>
-					        <li><?php echo $teamid; ?></li>
-					    <?php endforeach; ?>
-					</ul>
-					<?php endif; ?>
+
+					$values = get_field('team');
+					if($values)
+					{
+						echo '<ul>';
+
+						foreach($values as $value)
+						{
+							echo '<li>' . $value . '</li>';
+						}
+
+						echo '</ul>';
+					}
+
+					// always good to see exactly what you are working with
+					var_dump($values);
+
+					?>
 
                     <p class="profilepage__username"><a href="#">ユーザ名：@admin_admin</a></p>
                     <p>所属プロジェクト：</p>
