@@ -17,10 +17,10 @@
                     <p class="profilepage__year"><a href="">所属年度：2014年度</a></p>
 
 					<?php
-					if (the_field("team")): ?>
+					if (get_field("team")): ?>
 					<ul>
 						<?php
-					    $teams = the_field("team");
+					    $teams = get_field("team");
 					    foreach ($teams as $teamid) : ?>
 					        <li><?php echo $teamid; ?></li>
 					    <?php endforeach; ?>
