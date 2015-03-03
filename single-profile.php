@@ -31,7 +31,6 @@
 					
 					
 					
-					
 <!-- <?php 
  $custom_fields = get_post_custom();
 
