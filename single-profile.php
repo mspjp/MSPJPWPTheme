@@ -15,68 +15,6 @@
                     </ul>
                     <p><?php the_meta(); ?></p>
                     <p class="profilepage__year"><a href="">所属年度：2014年度</a></p>
-<!--
-                    <?php
-					if (get_field("team")): ?>
-					<ul>
-						<?php
-					    $teams = get_field("team");
-					    foreach ($teams as $teamid) : ?>
-					        <li><?php echo $teamid; ?></li>
-					    <?php endforeach; ?>
-					</ul>
-					<?php endif; ?>
-                    
-                    
-                    -->
-                    <!-- test
-                    <?php the_field("team", $post->ID); ?>
-                    <?php
-						if (get_field("team")): ?>
-						<ul>
-							<?php
-						    $teams = get_field("team");
-						    foreach ($teams as $teamid) : ?>
-						        <li><a href="<?php echo $permalink = get_permalink( echo $teamid ); ?>"><?php echo get_the_title( echo $teamid ) ; ?></a></li>
-						    <?php endforeach; ?>
-						</ul>
-					<?php endif; ?>
-					
-					-->
-<!-- <?php 
- $custom_fields = get_post_custom();
-
- $teams = $custom_fields['team'];
-  foreach ( $team[0] as $key => $value )
-         echo $key . " => " . $value . "<br />"; 
-
-  echo "==================<br>";
-
-  /*
- $wp_username = $custom_fields['wordpress_username'];
-  foreach ( $wp_username[0] as $key => $value )
-         echo $key . " => " . $value . "<br />"; 
-
-  echo "==================<br>";
-   */
-
- $rarticles = $custom_fields['related_articles'];
-  foreach ( $rarticles[0] as $key => $value )
-         echo $key . " => " . $value . "<br />"; 
-
-  echo "==================<br>";
-
-
- $years = $custom_fields['year'];
-  foreach ( $years[0] as $key => $value )
-         echo $key . " => " . $value . "<br />"; 
-
-  echo "==================<br>";
-
-
-
-?> -->
-
 
 
 
