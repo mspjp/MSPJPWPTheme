@@ -22,13 +22,10 @@
 							<?php
 						    $teams = get_field("team");
 						    foreach ($teams as $teamkey) : ?>
-						        <li><a href="<?php echo $permalink = get_permalink( echo $teamkey ); ?>"> ちーむ名を出したい </a></li>
+						        <li><a href="<?php echo $permalink = get_permalink( echo $teamkey ); ?>"><?php echo $teamkey; ?></a></li>
 						    <?php endforeach; ?>
 						</ul>
 					<?php endif; ?>
-					
-					
-					
 					
 					
 <!-- <?php 
