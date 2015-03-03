@@ -20,12 +20,12 @@
 
 					$teams = get_field('team');
 					if($teams)
-					{
+					{</li>
 						echo '<ul>';
 
 						foreach($teams as $teamid)
 						{ ?>
-							<li><a href="<?php $permalink = get_permalink( echo $teamid ); ?>"><?php echo $teamid ; ?></a></li>';
+							<li><a href="<?php $permalink = get_permalink( echo $teamid ); ?>"><?php echo $teamid; ?></a></li>
 						<?php}
 
 						echo '</ul>';
