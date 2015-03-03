@@ -22,7 +22,7 @@
 							<?php
 						    $teams = get_field("team");
 						    foreach ($teams as $teamkey) : ?>
-						        <li><a href="<?php echo $permalink = get_permalink( $teamkey ); ?>"><?php echo $teamkey; ?></a></li>
+						        <li><a href="<?php echo $permalink = get_permalink( echo $teamkey ); ?>"><?php echo $teamkey; ?></a></li>
 						    <?php endforeach; ?>
 						</ul>
 					<?php endif; ?>
@@ -60,43 +60,6 @@
 
 ?> -->
 
-
-<!-- test here -->
-<?php
-
-$post_objects = get_field('post_objects');
-
-if( $post_objects ): ?>
-    <ul>
-    <?php foreach( $post_objects as $post): // variable must be called $post (IMPORTANT) ?>
-        <?php setup_postdata($post); ?>
-        <li>
-            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-            <span>Post Object Custom Field: <?php the_field('field_name'); ?></span>
-        </li>
-    <?php endforeach; ?>
-    </ul>
-    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
-<?php endif;
-
-
-
-$post_objects = get_field('post_objects');
-
-if( $post_objects ): ?>
-    <ul>
-    <?php foreach( $post_objects as $post_object): ?>
-        <li>
-            <a href="<?php echo get_permalink($post_object->ID); ?>"><?php echo get_the_title($post_object->ID); ?></a>
-            <span>Post Object Custom Field: <?php the_field('field_name', $post_object->ID); ?></span>
-        </li>
-    <?php endforeach; ?>
-    </ul>
-<?php endif;
-
-?>
-
-<!-- test end -->
 
 
 
