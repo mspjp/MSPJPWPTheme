@@ -15,7 +15,7 @@
                     </ul>
                     <p><?php the_meta(); ?></p>
                     <p class="profilepage__year"><a href="">所属年度：2014年度</a></p>
-                    <?php the_field('team', '35'); ?>
+                    <?php the_field("team", $post->ID); ?>
 <!-- <?php 
  $custom_fields = get_post_custom();
 
