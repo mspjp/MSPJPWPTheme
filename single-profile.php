@@ -21,7 +21,7 @@
 							<?php
 						    $teams = get_field("team");
 						    foreach ($teams as $teamkey) : ?>
-						        <li><a href="<?php echo $permalink = get_permalink( echo $teamkey ); ?>"><?php echo $title = get_the_title( echo $teamkey ); ?></a></li>
+						        <li><a href="<?php echo $permalink = get_permalink( echo $teamkey ); ?>"><?php echo $title = get_the_title( 35 ); ?></a></li>
 						    <?php endforeach; ?>
 						</ul>
 					<?php endif; ?>
