@@ -26,7 +26,7 @@
 						foreach($teams as $teamid)
 						{
 							echo '<li>';
-							echo get_permalink(echo $teamid);
+							echo $teamid;
 							echo '</li>';
 						}
 
