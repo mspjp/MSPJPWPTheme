@@ -24,9 +24,9 @@
 						echo '<ul>';
 
 						foreach($teams as $teamid)
-						{
-							echo '<li>' . $teamid . '</li>';
-						}
+						{ ?>
+							<li><a href="<?php echo get_permalink(echo $teamid) ; ?>"><?php echo $teamid ; ?></a></li>';
+						<?php}
 
 						echo '</ul>';
 					}
