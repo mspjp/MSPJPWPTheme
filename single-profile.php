@@ -16,7 +16,16 @@
                     <p><?php the_meta(); ?></p>
                     <p class="profilepage__year"><a href="">所属年度：2014年度</a></p>
 
-
+					<?php
+					if (get_field("team")): ?>
+					<ul>
+						<?php
+					    $teams = get_field("team");
+					    foreach ($teams as $teamid) : ?>
+					        <li><?php echo $teamid; ?></li>
+					    <?php endforeach; ?>
+					</ul>
+					<?php endif; ?>
 
                     <p class="profilepage__username"><a href="#">ユーザ名：@admin_admin</a></p>
                     <p>所属プロジェクト：</p>
