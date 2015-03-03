@@ -15,14 +15,13 @@
                     </ul>
                     <p><?php the_meta(); ?></p>
                     <p class="profilepage__year"><a href="">所属年度：2014年度</a></p>
-                    <?php the_field("team", $post->ID); ?>
                     <?php
 						if (get_field("team")): ?>
 						<ul>
 							<?php
 						    $teams = get_field("team");
 						    foreach ($teams as $teamkey) : ?>
-						        <li><a href="<?php $permalink = get_permalink( echo $teamkey ); ?>"><?php echo $teamkey; ?></a></li>
+						        <li><a href="<?php echo $permalink = get_permalink( $teamkey ); ?>"><?php echo $teamkey; ?></a></li>
 						    <?php endforeach; ?>
 						</ul>
 					<?php endif; ?>
