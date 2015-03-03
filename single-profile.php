@@ -14,11 +14,12 @@
                         <?php wp_list_categories(); ?>
                     </ul>
                     <p><?php the_meta(); ?></p>
-                    <p class="profilepage__year"><a href="">所属年度：2014年度</a></p>
 
+                    <?php if(get_field( "year" )): ?>
+						<p class="profilepage__year"><a href="#">所属年度：<?php the_field( "year" ); ?></a></p>
+					<?php endif; ?>
 
-
-                    <?php if(get_field( "field_name" )): ?>
+                    <?php if(get_field( "wordpress_username" )): ?>
 						<p class="profilepage__username"><a href="#">ユーザ名：<?php the_field( "wordpress_username" ); ?></a></p>
 					<?php endif; ?>
                     
