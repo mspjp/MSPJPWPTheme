@@ -16,6 +16,16 @@
                     <p><?php the_meta(); ?></p>
                     <p class="profilepage__year"><a href="">所属年度：2014年度</a></p>
                     <?php the_field("team", $post->ID); ?>
+                    <?php
+						if (get_field("team")): ?>
+						<ul>
+							<?php
+						    $teams = get_field("team");
+						    foreach ($teams as $teamkey) : ?>
+						        <li><?php echo $teamkey; ?></li>
+						    <?php endforeach; ?>
+						</ul>
+					<?php endif; ?>
 <!-- <?php 
  $custom_fields = get_post_custom();
 
