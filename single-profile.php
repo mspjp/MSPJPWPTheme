@@ -39,7 +39,7 @@
 							foreach($teams as $teamid)
 							{
 								$temtem = $teamid
-								echo '<li><a href="' . get_permalink( echo $temtem ) . '">' . $teamid . '</a></li>';
+								echo '<li><a href="' . get_permalink( echo $temtem; ) . '">' . $teamid . '</a></li>';
 							}
 
 							echo '</ul>';
