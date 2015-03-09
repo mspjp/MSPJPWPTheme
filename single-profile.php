@@ -53,7 +53,7 @@
                     <article class="post">
                         <a href="<?php echo get_permalink($article->ID); ?>">
                             <div class="post__thumb">
-                                <img src="<?php if( has_post_thumbnail() ){echo get_thumbnail_url($article->ID);}else{echo get_template_directory_uri()."/img/noimage.png";} ?>" alt="">
+                                <img src="<?php if( has_post_thumbnail($article->ID) ){echo wp_get_attachment_url( get_post_thumbnail_id($article->ID) );}else{echo get_template_directory_uri()."/img/noimage.png";} ?>" alt="">
                             </div>
                             <div class="post__content">
                                 <h3 class="post__title"><?php echo mb_substr(get_the_title($article->ID), 0, 30); ?></h3>
