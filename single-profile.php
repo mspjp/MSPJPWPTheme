@@ -13,7 +13,6 @@
                     <ul class="report__category">
                         <?php wp_list_categories(); ?>
                     </ul>
-                    <p><?php the_meta(); ?></p>
 
                     <?php if(get_field( "year" )): ?>
                         <p class="profilepage__year">所属年度：
@@ -37,7 +36,9 @@
                     <?php 
                         $teams = get_field("team");
                         foreach($teams as $team): ?>
+                        <li>
                             <a href="<?php echo get_permalink($team->ID); ?>"><?php echo get_the_title($team->ID); ?></a>
+                        </li>
                         <?php endforeach; ?>
                     </ul>
                     <?php endif; ?>
@@ -46,30 +47,29 @@
                         <?php the_content(); ?>
                     </div>
 
+                    <?php if(get_field( "related_articles" )): ?>
+                    <h3>関連投稿</h3>
+                    <?php 
+                        $articles = get_field("related_articles");
+                        foreach($articles as $article): ?>
+                        <?php setup_postdata($article); ?>
+                        <article class="post">
+                            <a href="#">
+                                <div class="post__thumb">
+                                    <img src="<?php if( has_post_thumbnail() ){echo get_thumbnail_url();}else{echo get_template_directory_uri()."/img/noimage.png";} ?>" alt="">
+                                </div>
+                                <div class="post__content">
+                                    <h3 class="post__title"><?php echo mb_substr(get_the_title(), 0, 30); ?></h3>
+                                    <p class="post__text"><?php echo mb_substr(strip_tags($article->post_content), 0, 60)."..."; ?></p>
+                                    <p class="post__info">by <?php the_author(); ?> | <?php the_time('Y年n月j日') ;?> | <?php comments_popup_link('Comment : 0', 'Comment : 1', 'Comments : %'); ?></p>
+                                </div>
+                        </a>
+                      </article>
+                    <?php endforeach; ?>
+                    <?php wp_reset_postdata(); ?>
+                    </ul>
+                    <?php endif; ?>
                 </div>
-
-                <?php if(get_field( "related_articles" )): ?>
-                <h3>関連投稿</h3>
-                <?php 
-                    $articles = get_field("related_articles");
-                    foreach($articles as $article): ?>
-                    <?php setup_postdata($article); ?>
-                    <article class="post">
-                        <a href="#">
-                            <div class="post__thumb">
-                                <img src="<?php if( has_post_thumbnail() ){echo get_thumbnail_url();}else{echo get_template_directory_uri()."/img/noimage.png";} ?>" alt="">
-                            </div>
-                            <div class="post__content">
-                                <h3 class="post__title"><?php echo mb_substr(get_the_title(), 0, 30); ?></h3>
-                                <p class="post__text"><?php echo mb_substr(strip_tags($article->post_content), 0, 60)."..."; ?></p>
-                                <p class="post__info">by <?php the_author(); ?> | <?php the_time('Y年n月j日') ;?> | <?php comments_popup_link('Comment : 0', 'Comment : 1', 'Comments : %'); ?></p>
-                            </div>
-                    </a>
-                  </article>
-                <?php endforeach; ?>
-                <?php wp_reset_postdata(); ?>
-                </ul>
-                <?php endif; ?>
 
                 <?php if(function_exists("wp_social_bookmarking_light_output_e")){wp_social_bookmarking_light_output_e(null, get_permalink(), the_title("", "", false));}?>
                 <?php
