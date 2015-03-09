@@ -19,53 +19,30 @@
                         <p class="profilepage__year">所属年度：
                             <?php 
                                 $years = get_field("year");
-                                foreach($years as $year)
-                                {
-                                    $post = get_posts(array(
-                                            'post_type' => 'info',
-                                            'tax_query' => array(
-                                                            array(
-                                                                'taxonomy' => 'year',
-                                                                'field' => 'term_id',
-                                                                'terms' => $year)
-                                                            ))
-                                    );
-                                    echo '<a href="#">' . var_dump($post) . '</a>';
-                                }
-                            ?>
+                                foreach($years as $year): ?>
+                                    <a href="<?php echo get_term_link($year); ?>"><?php echo $year->name ?></a>';
+                            <?php endforeach; ?>
                         </p>
                     <?php endif; ?>
 
                     <?php if(get_field( "wordpress_username" )): ?>
                         <p class="profilepage__username"><a href="#">ユーザ名：<?php the_field( "wordpress_username" ); ?></a></p>
+                        <?php echo var_dump(get_field("wordpress_username")); ?>
                         <!-- ユーザー情報の中でも重要なのだけ抽出したい -->
                     <?php endif; ?>
 
 
+                    <?php if(get_field( "team" )): ?>
                     <p>所属プロジェクト：</p>
                     <ul class="profilepage__projects">
-                        <?php
-                            $teams = get_field('team');
-                            if($teams)
-                            {
-                                echo '<ul>';
-
-                                foreach($teams as $teamid)
-                                {
-                                    $post = get_posts($teamid);
-                                    echo '<li><a href="' . get_permalink( 35 ) . '">' . var_dump($post) . '</a></li>';
-                                }
-
-                                echo '</ul>';
-                            }
-
-                            // always good to see exactly what you are working with
-                            var_dump($teams);
-
-                        ?>
-                        <li><a href="#">その他</a></li>
-                        <li><a href="#">その他</a></li>
+                    <?php 
+                        $teams = get_field("team");
+                        foreach($teams as $team): ?>
+                            <?php setup_postdata($team); ?>
+                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>';
+                        <?php endforeach; ?>
                     </ul>
+                    <?php endif; ?>
 
                     <div class="profilepage__introduce">
                         <?php the_content(); ?>
