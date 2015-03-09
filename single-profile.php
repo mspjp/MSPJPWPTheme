@@ -55,7 +55,7 @@
                             <div class="post__thumb">
                                 <?php 
 								if(has_post_thumbnail($article->ID)) {
-									get_the_post_thumbnail($article->ID);
+									echo get_the_post_thumbnail($article->ID);
 								} else {
 									echo '<img src="'. get_template_directory_uri() .'/img/shinchoku.jpg" />';
 								}
