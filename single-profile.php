@@ -53,10 +53,10 @@
                     <article class="post">
                         <a href="#">
                             <div class="post__thumb">
-                                <img src="<?php if( has_post_thumbnail() ){echo get_thumbnail_url();}else{echo get_template_directory_uri()."/img/noimage.png";} ?>" alt="">
+                                <img src="<?php if( has_post_thumbnail() ){echo get_thumbnail_url($article->ID);}else{echo get_template_directory_uri()."/img/noimage.png";} ?>" alt="">
                             </div>
                             <div class="post__content">
-                                <h3 class="post__title"><?php echo mb_substr(get_the_title(), 0, 30); ?></h3>
+                                <h3 class="post__title"><?php echo mb_substr(get_the_title($article->ID), 0, 30); ?></h3>
                                 <p class="post__text"><?php echo mb_substr(strip_tags($article->post_content), 0, 60)."..."; ?></p>
                                 <p class="post__info">by <?php the_author(); ?> | <?php the_time('Y年n月j日') ;?> | <?php comments_popup_link('Comment : 0', 'Comment : 1', 'Comments : %'); ?></p>
                             </div>
