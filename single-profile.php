@@ -16,38 +16,45 @@
                     <p><?php the_meta(); ?></p>
 
                     <?php if(get_field( "year" )): ?>
-						<p class="profilepage__year"><a href="#">所属年度：<?php the_field( "year" ); ?></a></p>
-						<!-- 所属年度がそのまま出てくるようにしたい(今は3,とかで出てくる) -->
-					<?php endif; ?>
+                        <p class="profilepage__year">所属年度：
+                            <?php 
+                                $years = get_field("year");
+                                foreach($years as $year)
+                                {
+                                    $post = get_post($year);
+                                    echo '<a href="#">' . var_dump($post) . '</a>';
+                                }
+                            ?>
+                        </p>
+                    <?php endif; ?>
 
                     <?php if(get_field( "wordpress_username" )): ?>
-						<p class="profilepage__username"><a href="#">ユーザ名：<?php the_field( "wordpress_username" ); ?></a></p>
-						<!-- ユーザー情報の中でも重要なのだけ抽出したい -->
-					<?php endif; ?>
-                    
-                    
+                        <p class="profilepage__username"><a href="#">ユーザ名：<?php the_field( "wordpress_username" ); ?></a></p>
+                        <!-- ユーザー情報の中でも重要なのだけ抽出したい -->
+                    <?php endif; ?>
+
+
                     <p>所属プロジェクト：</p>
                     <ul class="profilepage__projects">
-						<!-- プロジェクトの記事idは取得できた。あとはURLとタイトルの取得&表示 -->
-						<?php
+                        <?php
+                            $teams = get_field('team');
+                            if($teams)
+                            {
+                                echo '<ul>';
 
-						$teams = get_field('team');
-						if($teams)
-						{
-							echo '<ul>';
+                                foreach($teams as $teamid)
+                                {
+                                    $post = get_post($teamid);
+                                    echo '<li><a href="' . get_permalink( 35 ) . '">' . var_dump($post) . '</a></li>';
+                                }
 
-							foreach($teams as $teamid)
-							{
-								echo '<li><a href="' . get_permalink( 35 ) . '">' . $teamid . '</a></li>';
-							}
+                                echo '</ul>';
+                            }
 
-							echo '</ul>';
-						}
+                            // always good to see exactly what you are working with
+                            var_dump($teams);
 
-						// always good to see exactly what you are working with
-						var_dump($teams);
-
-						?>
+                        ?>
                         <li><a href="#">その他</a></li>
                         <li><a href="#">その他</a></li>
                     </ul>
