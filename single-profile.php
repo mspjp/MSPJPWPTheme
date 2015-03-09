@@ -26,8 +26,7 @@
                     <?php endif; ?>
 
                     <?php if(get_field( "wordpress_username" )): ?>
-                        <p class="profilepage__username"><a href="#">ユーザ名：<?php the_field( "wordpress_username" ); ?></a></p>
-                        <?php echo var_dump(get_field("wordpress_username")); ?>
+                        <p class="profilepage__username"><a href="#">ユーザ名：<?php echo get_field( "wordpress_username" )["display_name"]; ?></a></p>
                         <!-- ユーザー情報の中でも重要なのだけ抽出したい -->
                     <?php endif; ?>
 
