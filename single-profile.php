@@ -54,12 +54,10 @@
                         <a href="<?php echo get_permalink($article->ID); ?>">
                             <div class="post__thumb">
                                 <?php 
-								//ループの中で使用します
-
 								if(has_post_thumbnail($article->ID)) {
 									get_the_post_thumbnail($article->ID);
 								} else {
-									echo '<img src="'. get_template_directory_uri() .'/img/noimage.png" />';
+									echo '<img src="'. get_template_directory_uri() .'/img/shinchoku.png" />';
 								}
 								?>
                                 <!--<img src="<?php if( has_post_thumbnail($article->ID) ){echo wp_get_attachment_url( get_post_thumbnail_id($article->ID) );}else{echo get_template_directory_uri()."/img/noimage.png";} ?>" alt="">-->
