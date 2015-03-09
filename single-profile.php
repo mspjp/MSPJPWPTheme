@@ -21,7 +21,15 @@
                                 $years = get_field("year");
                                 foreach($years as $year)
                                 {
-                                    $post = get_post($year);
+                                    $post = get_posts(array(
+                                            'post_type' => 'info',
+                                            'tax_query' => array(
+                                                            array(
+                                                                'taxonomy' => 'year',
+                                                                'field' => 'name',
+                                                                'terms' => $year)
+                                                            ))
+                                    );
                                     echo '<a href="#">' . var_dump($post) . '</a>';
                                 }
                             ?>
