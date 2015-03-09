@@ -60,11 +60,9 @@
                 <?php
                 endif;
                 ?>
-                </div>
-                <!-- /Report -->
-                <div class="main__sidebar">
-                    <?php get_sidebar(); ?>
-                </div>
             </div>
             <!-- /Main Content -->
+            <div class="main__sidebar">
+                <?php get_sidebar(); ?>
+            </div>
 <?php get_footer(); ?>
