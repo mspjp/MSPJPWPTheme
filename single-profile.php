@@ -26,7 +26,7 @@
                                             'tax_query' => array(
                                                             array(
                                                                 'taxonomy' => 'year',
-                                                                'field' => 'name',
+                                                                'field' => 'term_id',
                                                                 'terms' => $year)
                                                             ))
                                     );
@@ -52,7 +52,7 @@
 
                                 foreach($teams as $teamid)
                                 {
-                                    $post = get_post($teamid);
+                                    $post = get_posts($teamid);
                                     echo '<li><a href="' . get_permalink( 35 ) . '">' . var_dump($post) . '</a></li>';
                                 }
 
