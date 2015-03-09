@@ -68,7 +68,7 @@
                     </a>
                   </article>
                 <?php endforeach; ?>
-                <?php wp_reset_postdata();
+                <?php wp_reset_postdata(); ?>
                 </ul>
                 <?php endif; ?>
 
