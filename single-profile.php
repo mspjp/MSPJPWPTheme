@@ -7,7 +7,7 @@
                     if (have_posts()) : // WordPress ループ
                         while (have_posts()) : the_post(); // 繰り返し処理開始 ?>
                     <h3 class="profilepage__name"><a href="<?php the_permalink(); ?>"><?php echo get_the_title(); ?></a></h3>
-                    <div class="profilepage__image alignn-center">
+                    <div class="profilepage__image">
                         <img src="<?php if( has_post_thumbnail() ){echo get_thumbnail_url();}else{echo get_template_directory_uri()."/img/noimage.png";} ?>" alt="">
                     </div>
 
