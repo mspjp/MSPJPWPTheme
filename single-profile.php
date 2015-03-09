@@ -38,8 +38,7 @@
                     <?php 
                         $teams = get_field("team");
                         foreach($teams as $team): ?>
-                            <?php setup_postdata($team); ?>
-                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>';
+                            <a href="<?php echo get_permalink($team->ID); ?>"><?php echo get_the_title($team->ID); ?></a>
                         <?php endforeach; ?>
                     </ul>
                     <?php endif; ?>
