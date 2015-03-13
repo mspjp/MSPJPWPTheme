@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 <?php wp_link_pages(); ?>
             <div class="main__content">
+            <div class="align-left"><a href="<?php echo get_post_type_archive_link(get_post_type()); ?>">&laquo; プロジェクト一覧に戻る</a></div>
                 <!-- Report -->
                 <div id="post-<?php the_ID(); ?>" <?php post_class("report"); ?>>
                     <?php
@@ -64,7 +65,7 @@
             <!-- /Main Content -->
             <div class="main__sidebar">
             	<div class="project__list">
-            		<h3>プロジェクト一覧</h3>
+            		<h3>プロジェクト</h3>
             		<div class="project__listbody">
 		                <ul>
 						  <?php $args = array(
