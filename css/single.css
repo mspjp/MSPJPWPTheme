@@ -111,22 +111,51 @@
 
 }
 
-/* Profile - ProfileページのSidebarに関するcss
+
+/* WPMisc - WordPress Singleページ全般に関するcss
    ========================================================================== */
-.project__list{
-  margin-top: 50px;
-  /*background-color: rgba(255,255,255,0.7);*/
+
+.entry_body h1{
+    border-bottom:2px solid orange;
+    padding:5px;
+    margin:5px;
 }
 
-.project__listbody{
-  padding: 10px;
-  border-style: solid;
-  border-color: #f08300;
-  border-width: 1px;
-  background-color: rgba(255,255,255,0.7);
+.entry_body table caption{
+    font-size:20px;
 }
 
-.project__list ul{
-  margin: 0 0 0 1em;
-  padding: 0;
+.entry_body table tbody{
+    display:block;
+    margin:0 10px 10px 10px;
+    padding:10px;
+    background:lightgray;
 }
+
+
+.entry_body table tbody tr th{
+    padding:10px;
+    border:1px solid black;
+    text-align:center;
+    vertical-align:middle;
+}
+
+
+.entry_body table tbody tr td{
+    padding:5px;
+    border:1px solid black;
+    text-align:center;
+    vertical-align:middle;
+}
+
+.entry_body .wp-caption{
+    padding:10px;
+    background:gray;
+}
+
+.entry_body .wp-caption .wp-caption-text{
+    text-align:center;
+    margin:8px;
+}
+
+
