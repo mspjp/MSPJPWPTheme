@@ -18,7 +18,7 @@ $post_type = $wp_query->get_queried_object();
                     <a class="profile" href="<?php the_permalink(); ?>">
                         <img class="profile__icon" src="<?php if( has_post_thumbnail() ){echo get_thumbnail_url();}else{echo get_template_directory_uri()."/img/noimage.png";} ?>" alt="">
                         <h3 class="profile__name"><?php echo mb_substr(get_the_title(), 0, 30); ?></h3>
-                        <p class="profile__text"><?php echo mb_substr(strip_tags($post-> post_content), 0, 40)."..."; ?></p>
+                        <p class="profile__text"><?php echo mb_substr(strip_tags($post-> post_content), 0, 20)."..."; ?></p>
                     </a>
                 </li>
                 <?php
