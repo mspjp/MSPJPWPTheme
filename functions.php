@@ -26,6 +26,18 @@ function get_mtime($format) {
     }
 }
 
+function get_lastupdated_time($format) {
+    $mtime = get_the_modified_time('Ymd');
+    $ptime = get_the_time('Ymd');
+    if ($ptime > $mtime) {
+        return get_the_time($format);
+    } elseif ($ptime === $mtime) {
+        return get_the_time($format);
+    } else {
+        return get_the_modified_time($format);
+    }
+}
+
 // カスタムメニューを有効化
 add_theme_support( 'menus' );
 

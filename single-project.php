@@ -18,7 +18,7 @@
                             <p><?php comments_popup_link('Comment : 0', 'Comment : 1', 'Comments : %'); ?></p>
                         <?php endif; // comments_open() ?>
 
-                        <p class="report__info">by <?php the_author(); ?> | <?php echo get_the_date(); ?></p>
+                        <p class="report__info">Last Updated:<?php echo get_lastupdated_time("Y年n月j日"); ?></p>
                     </div>
 
                     <div class="entry_body">
