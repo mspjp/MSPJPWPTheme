@@ -45,7 +45,10 @@
 }
 .post__info{
   text-align: right;
-  margin-top: 10px;
+}
+.post__info p{
+  position: absolute;
+  bottom: 0;
 }
 /* 1024px 以下の処理 */
 @media screen and (max-width: 768px){
