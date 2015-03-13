@@ -114,7 +114,8 @@
 /* Profile - ProfileページのSidebarに関するcss
    ========================================================================== */
 .project__list{
-  padding-top: 70px;
+  padding: 70px 10px 10px 10px;
+  background-color: rgba(255,255,255,0.7);
 }
 
 .project__list ul{
@@ -123,7 +124,8 @@
 }
 
 .project__list h2{
-  border-style: solid;
+  border-bottom: 1px solid #f08300;
+  /*border-style: solid;
   border-color: #f08300;
-  border-width: 1px;
+  border-width: 1px;*/
 }
