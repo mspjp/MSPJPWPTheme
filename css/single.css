@@ -110,3 +110,10 @@
   max-width: 100%;
 
 }
+
+/* Profile - ProfileページのSidebarに関するcss
+   ========================================================================== */
+.project__list ul{
+  margin: 0 0 0 1em;
+  padding: 0;
+}
