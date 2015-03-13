@@ -36,17 +36,17 @@ $post_type = $wp_query->get_queried_object();
                 <?php
                 endif;
                 ?>
-            </div>
-            <!-- /Main Content -->
-            <?php
-            if ( $wp_query -> max_num_pages > 1 ) : ?>
-            <div class="navigation">
-                <div class="alignleft"><?php next_posts_link('&laquo; PREV'); ?></div>
-                <div class="alignright"><?php previous_posts_link('NEXT &raquo;'); ?></div>
-            </div>
+                <?php
+                if ( $wp_query -> max_num_pages > 1 ) : ?>
+                <div class="navigation">
+                    <div class="alignleft"><?php next_posts_link('&laquo; PREV'); ?></div>
+                    <div class="alignright"><?php previous_posts_link('NEXT &raquo;'); ?></div>
+                </div>
             <?php 
             endif;
             ?>
+            </div>
+            <!-- /Main Content -->
             <div class="main__sidebar">
                 <?php get_sidebar(); ?>
             </div>

@@ -11,7 +11,7 @@ $post_type = $wp_query->get_queried_object();
             <!-- Main Content -->
             <ul class="profile_list">
                 <?php
-                query_posts( $query_string . "&posts_per_page=5&paged=".$paged );
+                query_posts( $query_string . "&posts_per_page=-1");
                 if (have_posts()) : // WordPress ループ
                     while (have_posts()) : the_post(); // 繰り返し処理開始 ?>
                 <li id="post-<?php the_ID(); ?>">
@@ -33,13 +33,4 @@ $post_type = $wp_query->get_queried_object();
                 ?>
             </div>
             <!-- /Main Content -->
-            <?php
-            if ( $wp_query -> max_num_pages > 1 ) : ?>
-            <div class="navigation">
-                <div class="alignleft"><?php next_posts_link('&laquo; PREV'); ?></div>
-                <div class="alignright"><?php previous_posts_link('NEXT &raquo;'); ?></div>
-            </div>
-            <?php 
-            endif;
-            ?>
 <?php get_footer(); ?>
