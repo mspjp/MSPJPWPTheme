@@ -16,7 +16,7 @@
             if ($myQuery->have_posts()) :
                 while ($myQuery->have_posts()) : $myQuery->the_post(); ?>
                 <div class="slide">
-                    <a href="<?php the_permalink(); ?>" title="<?php echo mb_substr(get_the_title(), 0, 30); ?>">
+                    <a href="<?php the_field('link'); ?>" title="<?php echo mb_substr(get_the_title(), 0, 30); ?>">
                         <?php
                             $image_id = get_post_thumbnail_id();
                             $image_url = wp_get_attachment_image_src($image_id, "full"); ?>

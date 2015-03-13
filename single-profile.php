@@ -54,13 +54,13 @@
                     <article class="post">
                         <a href="<?php echo get_permalink($article->ID); ?>">
                             <div class="post__thumb">
-                                <?php 
-								if(has_post_thumbnail($article->ID)) {
-									echo get_the_post_thumbnail($article->ID, 'thumbnail');
-								} else {
-									echo '<img src="'. get_template_directory_url() .'/img/shinchoku.jpg" />';
-								}
-								?>
+                            <?php 
+                                if(has_post_thumbnail($article->ID)) {
+                                    echo get_the_post_thumbnail($article->ID, 'thumbnail');
+                                } else {
+                                    echo '<img src="'. get_template_directory_url() .'/img/noimage.png" />';
+                                }
+                            ?>
                             </div>
                             <div class="post__content">
                                 <h3 class="post__title"><?php echo mb_substr(get_the_title($article->ID), 0, 100); ?></h3>
