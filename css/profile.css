@@ -19,18 +19,8 @@
   margin-bottom: 20px;
 }
 
-/* 1024px 以上の処理（5カラム） */
+/* 1024px 以上の処理（4カラム） */
 @media screen and (min-width: 1024px){
-  .profile_list > li{
-    width: 18.5%;
-    margin-right: 2%;
-  }
-  .profile_list > li:nth-child(5n){
-    margin-right: 0;
-  }
-}
-/* 1024px 以下の処理（4カラム） */
-@media screen and (max-width: 1024px){
   .profile_list > li{
     width: 23.5%;
     margin-right: 2%;
@@ -39,8 +29,8 @@
     margin-right: 0;
   }
 }
-/* 768px 以下の処理（3カラム） */
-@media screen and (max-width: 768px){
+/* 1024px 以下の処理（3カラム） */
+@media screen and (max-width: 1024px){
   .profile_list > li{
     width: 32%;
     margin-right: 2%;
@@ -49,14 +39,20 @@
     margin-right: 0;
   }
 }
-/* 480px 以下の処理（2カラム） */
-@media screen and (max-width: 480px){
+/* 768px 以下の処理（2カラム） */
+@media screen and (max-width: 768px){
   .profile_list > li{
     width: 49%;
     margin-right: 2%;
   }
   .profile_list > li:nth-child(2n){
     margin-right: 0;
+  }
+}
+/* 480px 以下の処理（1カラム） */
+@media screen and (max-width: 480px){
+  .profile_list > li{
+    width: 100%;
   }
 }
 
