@@ -65,7 +65,7 @@
             <!-- /Main Content -->
             <div class="main__sidebar">
             	<div class="project__list">
-            		<h3>プロジェクト</h3>
+            		<!-- <h3>プロジェクト</h3> -->
             		<div class="project__listbody">
 		                <ul>
 						  <?php $args = array(
