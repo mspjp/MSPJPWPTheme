@@ -36,8 +36,10 @@
   margin: 20px 0;
 }
 .profilepage__image{
-  display:block;
-  margin: 0 auto;
-  width:150px;
-  height:150px;
+  text-align: center;
+}
+.profilepage__image image{
+  width: 150px;
+  height: 150px;
+  display: block;
 }
