@@ -82,6 +82,5 @@
 					  wp_reset_postdata(); //クエリのリセット ?>
 					</ul>
 				</div>
-                <?php get_sidebar(); ?>
             </div>
 <?php get_footer(); ?>
