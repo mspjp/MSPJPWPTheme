@@ -38,8 +38,9 @@
 .profilepage__image{
   text-align: center;
 }
-.profilepage__image image{
+.profilepage__icon{
+  display: block;
+  margin: 0 auto;
   width: 150px;
   height: 150px;
-  display: block;
 }
