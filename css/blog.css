@@ -20,6 +20,12 @@
   display: table-cell;
   vertical-align: top;
 }
+
+.post__thumb img {
+  max-height: 150px;
+  max-width: 150px;
+}
+
 .post__content{
   width: 100%;
   display: table-cell;
