@@ -119,5 +119,6 @@
 }
 
 .project__list h2{
-  border-bottom:1px solid #696969;
+  border-style: solid;
+  border-color: #f08300;
 }
