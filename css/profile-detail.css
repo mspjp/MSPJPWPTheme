@@ -37,6 +37,8 @@
 }
 .profilepage__image{
   text-align: center;
+}
+.profilepage__image image{
   width: 150px;
   height: 150px;
 }
