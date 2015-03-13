@@ -63,22 +63,25 @@
             </div>
             <!-- /Main Content -->
             <div class="main__sidebar">
+            	<div class="project__list">
+            		<h2>プロジェクト一覧</h2>
+	                <ul>
+					  <?php $args = array(
+					    'numberposts' => 15, //表示する記事の数
+					    'post_type' => 'project' //投稿タイプ名
+					    // 条件を追加する場合はここに追記
+					  );
+					  $customPosts = get_posts($args);
+					  if($customPosts) : foreach($customPosts as $post) : setup_postdata( $post );
+					  ?>
+					  <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+					  <?php endforeach; ?>
+					  <?php else : //記事が無い場合 ?>
+					  <p>Sorry, no posts matched your criteria.</p>
+					  <?php endif;
+					  wp_reset_postdata(); //クエリのリセット ?>
+					</ul>
+				</div>
                 <?php get_sidebar(); ?>
-                <ul>
-				  <?php $args = array(
-				    'numberposts' => 5, //表示する記事の数
-				    'post_type' => 'project' //投稿タイプ名
-				    // 条件を追加する場合はここに追記
-				  );
-				  $customPosts = get_posts($args);
-				  if($customPosts) : foreach($customPosts as $post) : setup_postdata( $post );
-				  ?>
-				  <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-				  <?php endforeach; ?>
-				  <?php else : //記事が無い場合 ?>
-				  <p>Sorry, no posts matched your criteria.</p>
-				  <?php endif;
-				  wp_reset_postdata(); //クエリのリセット ?>
-				</ul>
             </div>
 <?php get_footer(); ?>
