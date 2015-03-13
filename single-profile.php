@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <?php wp_link_pages(); ?>
-            <div class="align-left"><a href="<?php echo get_post_type_archive_link($post->profile); ?>">&laquo; メンバー一覧に戻る</a></div>
+            <div class="align-left"><a href="<?php echo get_post_type_archive_link(get_post_type()); ?>">&laquo; メンバー一覧に戻る</a></div>
             <div class="main__content">
                 <!-- Report -->
                 <div id="profile-<?php the_ID(); ?>" <?php post_class("profilepage"); ?>>
