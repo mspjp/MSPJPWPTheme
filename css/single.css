@@ -115,17 +115,21 @@
    ========================================================================== */
 .project__list{
   padding: 70px 10px 10px 10px;
-  background-color: rgba(255,255,255,0.7);
+  /*background-color: rgba(255,255,255,0.7);*/
 }
 
 .project__list ul{
   margin: 0 0 0 1em;
   padding: 0;
+  border-style: solid;
+  border-color: #f08300;
+  border-width: 1px;
+  background-color: rgba(255,255,255,0.7);
 }
 
 .project__list h2{
-  border-bottom: 1px solid #f08300;
-  /*border-style: solid;
+  /*border-bottom: 1px solid #f08300;
+  border-style: solid;
   border-color: #f08300;
   border-width: 1px;*/
 }
