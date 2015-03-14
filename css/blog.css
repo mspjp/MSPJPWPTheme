@@ -7,6 +7,7 @@
 
 .post{
   width: 100%;
+  height: 10em;
   box-sizing: border-box;
   display: table;
   border: 1px solid #666;
@@ -28,6 +29,7 @@
 
 .post__content{
   width: 100%;
+  height: 10em;
   display: table-cell;
   vertical-align: top;
   padding-left: 20px;
@@ -44,13 +46,13 @@
 .post__text{
   margin-top: 10px;
 }
+
 .post__info{
-  text-align: right;
-}
-.post__info p{
   position: absolute;
   bottom: 0;
+  right: 0;
 }
+
 /* 1024px 以下の処理 */
 @media screen and (max-width: 768px){
   .post__thumb,
