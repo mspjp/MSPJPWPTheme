@@ -49,6 +49,12 @@
 /* 以下，Wordpressで吐き出されるHTMLに合わせてCSSを書く */
 
 
+.entry_body a:link,
+.entry_body a:visited {
+  color: #19568e;
+  text-decoration: underline;
+}
+
 /* report body 内のh2 ~ h6, ul li , dl 等を追加 */
 .report__body h2 {
   font-size:1.5em;

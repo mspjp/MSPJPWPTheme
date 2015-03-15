@@ -7,12 +7,12 @@
 
 .post{
   width: 100%;
-  height: 10em;
   box-sizing: border-box;
   display: table;
   border: 1px solid #666;
   padding: 10px;
   margin-bottom: 20px;
+  position: relative;
 }
 .post > a{
   display: block;
@@ -29,11 +29,10 @@
 
 .post__content{
   width: 100%;
-  height: 10em;
   display: table-cell;
   vertical-align: top;
   padding-left: 20px;
-  position: relative;
+  
 }
 .post__title{
   background-image: url("../img/title-icon.png");
@@ -45,20 +44,25 @@
 }
 .post__text{
   margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .post__info{
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: 10px;
+  right: 10px;
 }
 
-/* 1024px 以下の処理 */
+/* 768px 以下の処理 */
 @media screen and (max-width: 768px){
   .post__thumb,
   .post__content{
     display: block;
     width: 100%;
     padding: 0;
+  }
+  .post__info{
+    position: static;
+    text-align: right;
   }
 }
