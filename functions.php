@@ -131,7 +131,7 @@ function blog_postype() {
         'publicly_queryable' => true, //フロントエンドで post_type クエリが実行可能かどうか
         'show_ui' => true, //この投稿タイプを管理するデフォルト UI を生成するかどうか
         'exclude_from_search' => false, //この投稿タイプを検索結果から除外するかどうか
-        'capability_type' => 'page', //投稿タイプの閲覧／編集／削除権限をチェックするのに使用。初期値： "post"
+        'capability_type' => 'post', //投稿タイプの閲覧／編集／削除権限をチェックするのに使用。初期値： "post"
         'rewrite' => array('slug' => 'blog'), //このフォーマットでパーマリンクをリライトする
         'hierarchical' => false, //この投稿タイプが階層(親の指定が許可されている)かどうか
         'menu_position' => 5,
