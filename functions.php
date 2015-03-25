@@ -222,7 +222,7 @@ function profile_postype() {
         'hierarchical' => false, //この投稿タイプが階層(親の指定が許可されている)かどうか
         'menu_position' => 5,
         'has_archive' => true, // 一覧画面から見れるようにする
-        'supports'=> array('title', 'thumbnail', 'editor') ,
+        'supports'=> array('title', 'thumbnail', 'editor','author') ,
     );
     register_post_type( 'profile', $args);
 }

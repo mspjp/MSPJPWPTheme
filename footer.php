@@ -32,5 +32,6 @@
             <p class="copyright">&copy; Copyrights 2013<?php if (date("Y")!=2013) echo date("-Y"); ?> <?php bloginfo('name'); ?> All Rights Reserved.</p>
         </div>
     </footer>
+    <?php wp_footer(); ?>
 </body>
 </html>
