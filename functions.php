@@ -75,6 +75,137 @@ function get_thumbnail_url() {
 // カスタムメニューの「場所」を設定
 register_nav_menu( 'header-nav', 'ヘッダーのナビゲーション' );
 
+if( !class_exists('Acf') )
+    include_once('external/acf/acf.php' );
+
+if( !class_exists('acf_repeater_plugin') )
+    include_once('external/acf-repeater/acf-repeater.php');
+
+if( !class_exists('acf_options_page_plugin') )
+    include_once('external/acf-options-page/acf-options-page.php');
+
+if(function_exists("register_field_group"))
+{
+    register_field_group(array (
+        'id' => 'acf_profile',
+        'title' => 'Profile',
+        'fields' => array (
+            array (
+                'key' => 'field_550662193b1c5',
+                'label' => '所属チーム',
+                'name' => 'team',
+                'type' => 'post_object',
+                'instructions' => '関連プロジェクトを指定します。',
+                'required' => 1,
+                'post_type' => array (
+                    0 => 'project',
+                ),
+                'taxonomy' => array (
+                    0 => 'all',
+                ),
+                'allow_null' => 1,
+                'multiple' => 1,
+            ),
+            array (
+                'key' => 'field_55066284a28c1',
+                'label' => 'WordPressユーザー名',
+                'name' => 'wordpress_username',
+                'type' => 'user',
+                'instructions' => 'WordPressでの投稿者を指定します。',
+                'role' => array (
+                    0 => 'all',
+                ),
+                'field_type' => 'select',
+                'allow_null' => 1,
+            ),
+            array (
+                'key' => 'field_550662a4a28c2',
+                'label' => '関連する投稿',
+                'name' => 'related_articles',
+                'type' => 'post_object',
+                'instructions' => '関わったイベントなどの開催レポートに関連付けてください。',
+                'post_type' => array (
+                    0 => 'blog',
+                ),
+                'taxonomy' => array (
+                    0 => 'all',
+                ),
+                'allow_null' => 0,
+                'multiple' => 1,
+            ),
+            array (
+                'key' => 'field_550662d4a28c3',
+                'label' => '所属年度',
+                'name' => 'year',
+                'type' => 'taxonomy',
+                'instructions' => '所属している(た)年度を選択してください。',
+                'required' => 1,
+                'taxonomy' => 'year',
+                'field_type' => 'checkbox',
+                'allow_null' => 0,
+                'load_save_terms' => 0,
+                'return_format' => 'object',
+                'multiple' => 0,
+            ),
+        ),
+        'location' => array (
+            array (
+                array (
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'profile',
+                    'order_no' => 0,
+                    'group_no' => 0,
+                ),
+            ),
+        ),
+        'options' => array (
+            'position' => 'acf_after_title',
+            'layout' => 'no_box',
+            'hide_on_screen' => array (
+            ),
+        ),
+        'menu_order' => 0,
+    ));
+    register_field_group(array (
+        'id' => 'acf_topslider',
+        'title' => 'TopSlider',
+        'fields' => array (
+            array (
+                'key' => 'field_5506630dd04af',
+                'label' => 'リンク先',
+                'name' => 'link',
+                'type' => 'page_link',
+                'instructions' => 'クリックした時のリンク先を入力してください。',
+                'required' => 1,
+                'post_type' => array (
+                    0 => 'all',
+                ),
+                'allow_null' => 0,
+                'multiple' => 0,
+            ),
+        ),
+        'location' => array (
+            array (
+                array (
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'topslide',
+                    'order_no' => 0,
+                    'group_no' => 0,
+                ),
+            ),
+        ),
+        'options' => array (
+            'position' => 'normal',
+            'layout' => 'no_box',
+            'hide_on_screen' => array (
+            ),
+        ),
+        'menu_order' => 0,
+    ));
+}
+
 // Info
 function info_postype() {
     $labels = array(
