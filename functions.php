@@ -31,7 +31,7 @@ function unregister_post_type( $post_type, $slug = '' ){
 function unregister_post_posttype()
 {
    unregister_post_type('post');
-   remove_menu_page( 'edit.php' ); 
+   # remove_menu_page( 'edit.php' ); 
 }
 
 function get_mtime($format) {
@@ -75,6 +75,7 @@ function get_thumbnail_url() {
 // カスタムメニューの「場所」を設定
 register_nav_menu( 'header-nav', 'ヘッダーのナビゲーション' );
 
+/*
 if( !class_exists('Acf') )
     include_once('external/acf/acf.php' );
 
@@ -205,6 +206,7 @@ if(function_exists("register_field_group"))
         'menu_order' => 0,
     ));
 }
+ */
 
 // Info
 function info_postype() {
