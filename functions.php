@@ -208,37 +208,12 @@ if(function_exists("register_field_group"))
 }
  */
 
-// Info
-function info_postype() {
-    $labels = array(
-        'name' => 'お知らせ',
-        'singular_name' => 'お知らせ',
-        'add_new' => '新規追加',
-        'add_new_item' => '新規お知らせを追加',
-        'edit_item' => 'お知らせを編集',
-        'new_item' => '新規お知らせ',
-        'view_item' => 'お知らせを表示',
-        'search_items' => 'お知らせを検索',
-        'not_found' =>  '投稿されたお知らせはありません',
-        'not_found_in_trash' => 'ゴミ箱にお知らせはありません。',
-        'parent_item_colon' => '',
-    );
-    $args = array(
-        'labels' => $labels,
-        'public' => true,
-        'publicly_queryable' => true, //フロントエンドで post_type クエリが実行可能かどうか
-        'show_ui' => true, //この投稿タイプを管理するデフォルト UI を生成するかどうか
-        'exclude_from_search' => false, //この投稿タイプを検索結果から除外するかどうか
-        'capability_type' => 'page', //投稿タイプの閲覧／編集／削除権限をチェックするのに使用。初期値： "post"
-        'rewrite' => array('slug' => 'info'), //このフォーマットでパーマリンクをリライトする
-        'hierarchical' => false, //この投稿タイプが階層(親の指定が許可されている)かどうか
-        'menu_position' => 5,
-        'has_archive' => true, // 一覧画面から見れるようにする
-        'supports'=> array('title', 'thumbnail', 'author', 'editor') ,
-    );
-    register_post_type( 'info', $args);
+//---------------------------------------------カスタム投稿タイプ追加
 
-    $taxonomy = array(
+//Info
+function info_postype() {
+	
+	$taxonomy = array(
         'label' => '年度',
         'labels' => array(
             'name' => '年度',
@@ -257,14 +232,79 @@ function info_postype() {
         'hierarchical' => true, //fales→通常投稿のタグのような扱いになります。
         'show_tagcloud' => true,
         'rewrite' => array( 'slug' => 'year' ),
+        'capabilities' => array( 'assign_terms' => 'edit_post_infos' )
     );
     register_taxonomy('year', 'info', $taxonomy );//('タクソノミー名', '所属する投稿タイプ', array);
+
+	/**
+	* カスタム投稿タイプ info
+	*/
+	$labels = array(
+        'name' => 'お知らせ',
+        'singular_name' => 'お知らせ',
+        'add_new' => '新規追加',
+        'add_new_item' => '新規お知らせを追加',
+        'edit_item' => 'お知らせを編集',
+        'new_item' => '新規お知らせ',
+        'view_item' => 'お知らせを表示',
+        'search_items' => 'お知らせを検索',
+        'not_found' =>  '投稿されたお知らせはありません',
+        'not_found_in_trash' => 'ゴミ箱にお知らせはありません。',
+        'parent_item_colon' => '',
+    );
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'publicly_queryable' => true, //フロントエンドで post_type クエリが実行可能かどうか
+        'show_ui' => true, //この投稿タイプを管理するデフォルト UI を生成するかどうか
+        'exclude_from_search' => false, //この投稿タイプを検索結果から除外するかどうか
+        'capability_type' => array( 'info', 'infos' ), //投稿タイプの閲覧／編集／削除権限をチェックするのに使用。初期値： "post"
+        'map_meta_cap'    => true, //ユーザー権限付与関連
+        'rewrite' => array('slug' => 'info'), //このフォーマットでパーマリンクをリライトする
+        'hierarchical' => false, //この投稿タイプが階層(親の指定が許可されている)かどうか
+        'menu_position' => 5,
+        'has_archive' => true, // 一覧画面から見れるようにする
+        'supports'=> array('title', 'thumbnail', 'author', 'editor') ,
+    );
+    register_post_type('info', $args);
+    
+    $capabilities = array(
+    // 自分の投稿を編集する権限
+    'edit_posts' => 'edit_infos',
+    // 他のユーザーの投稿を編集する権限
+    'edit_others_posts' => 'edit_others_infos',
+    // 投稿を公開する権限
+    'publish_posts' => 'publish_infos',
+    // プライベート投稿を閲覧する権限
+    'read_private_posts' => 'read_private_infos',
+    // 自分の投稿を削除する権限
+    'delete_posts' => 'delete_infos',
+    // プライベート投稿を削除する権限
+    'delete_private_posts' => 'delete_private_infos',
+    // 公開済み投稿を削除する権限
+    'delete_published_posts' => 'delete_published_infos',
+    // 他のユーザーの投稿を削除する権限
+    'delete_others_posts' => 'delete_others_infos',
+    // プライベート投稿を編集する権限
+    'edit_private_posts' => 'edit_private_infos',
+    // 公開済みの投稿を編集する権限
+    'edit_published_posts' => 'edit_published_infos',
+	);
+	 
+	// 管理者に独自権限を付与
+	$role = get_role( 'administrator' );
+	foreach ( $capabilities as $cap ) {
+	    $role->add_cap( $cap );
+	}
 }
-
-add_action( 'init', 'info_postype' );
-
-// Blog
+add_action( 'init', 'info_postype', 0 );
+ 
+ //Blog
 function blog_postype() {
+
+	/**
+	* カスタム投稿タイプ Blog
+	*/
     $labels = array(
         'name' => '記事',
         'singular_name' => '記事',
@@ -284,17 +324,293 @@ function blog_postype() {
         'publicly_queryable' => true, //フロントエンドで post_type クエリが実行可能かどうか
         'show_ui' => true, //この投稿タイプを管理するデフォルト UI を生成するかどうか
         'exclude_from_search' => false, //この投稿タイプを検索結果から除外するかどうか
-        'capability_type' => 'post', //投稿タイプの閲覧／編集／削除権限をチェックするのに使用。初期値： "post"
+        'capability_type' => array( 'blog', 'blogs' ), //投稿タイプの閲覧／編集／削除権限をチェックするのに使用。初期値： "post"
+        'map_meta_cap'    => true, //ユーザー権限付与関連
         'rewrite' => array('slug' => 'blog'), //このフォーマットでパーマリンクをリライトする
         'hierarchical' => false, //この投稿タイプが階層(親の指定が許可されている)かどうか
         'menu_position' => 5,
         'has_archive' => true, // 一覧画面から見れるようにする
         'supports'=> array('title', 'thumbnail', 'author', 'editor') ,
     );
-    register_post_type( 'blog', $args);
-}
+    register_post_type('blog', $args);
 
-add_action( 'init', 'blog_postype' );
+    $capabilities = array(
+    // 自分の投稿を編集する権限
+    'edit_posts' => 'edit_blogs',
+    // 他のユーザーの投稿を編集する権限
+    'edit_others_posts' => 'edit_others_blogs',
+    // 投稿を公開する権限
+    'publish_posts' => 'publish_blogs',
+    // プライベート投稿を閲覧する権限
+    'read_private_posts' => 'read_private_blogs',
+    // 自分の投稿を削除する権限
+    'delete_posts' => 'delete_blogs',
+    // プライベート投稿を削除する権限
+    'delete_private_posts' => 'delete_private_blogs',
+    // 公開済み投稿を削除する権限
+    'delete_published_posts' => 'delete_published_blogs',
+    // 他のユーザーの投稿を削除する権限
+    'delete_others_posts' => 'delete_others_blogs',
+    // プライベート投稿を編集する権限
+    'edit_private_posts' => 'edit_private_blogs',
+    // 公開済みの投稿を編集する権限
+    'edit_published_posts' => 'edit_published_blogs',
+	);
+	 
+	// 管理者に独自権限を付与
+	$role = get_role( 'administrator' );
+	foreach ( $capabilities as $cap ) {
+	    $role->add_cap( $cap );
+	}
+}
+add_action( 'init', 'blog_postype', 0 );
+
+ //Profile
+function profile_postype() {
+
+	/**
+	* カスタム投稿タイプ Profile
+	*/
+    $labels = array(
+        'name' => 'メンバー',
+        'singular_name' => 'メンバー',
+        'add_new' => '新規メンバーを追加',
+        'add_new_item' => '新規メンバーを追加',
+        'edit_item' => 'メンバーを編集',
+        'new_item' => '新規メンバー',
+        'view_item' => 'メンバーを表示',
+        'search_items' => 'メンバーを検索',
+        'not_found' =>  '投稿されたメンバーはいません。',
+        'not_found_in_trash' => 'ゴミ箱にメンバー情報はありません。',
+        'parent_item_colon' => '',
+    );
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'publicly_queryable' => true, //フロントエンドで post_type クエリが実行可能かどうか
+        'show_ui' => true, //この投稿タイプを管理するデフォルト UI を生成するかどうか
+        'exclude_from_search' => false, //この投稿タイプを検索結果から除外するかどうか
+        'capability_type' => array( 'profile', 'profiles' ), //投稿タイプの閲覧／編集／削除権限をチェックするのに使用。初期値： "post"
+        'map_meta_cap'    => true, //ユーザー権限付与関連
+        'rewrite' => array('slug' => 'profile'), //このフォーマットでパーマリンクをリライトする
+        'hierarchical' => false, //この投稿タイプが階層(親の指定が許可されている)かどうか
+        'menu_position' => 5,
+        'has_archive' => true, // 一覧画面から見れるようにする
+        'supports'=> array('title', 'thumbnail', 'editor','author') ,
+    );
+    register_post_type( 'profile', $args);
+
+    $capabilities = array(
+    // 自分の投稿を編集する権限
+    'edit_posts' => 'edit_profiles',
+    // 他のユーザーの投稿を編集する権限
+    'edit_others_posts' => 'edit_others_profiles',
+    // 投稿を公開する権限
+    'publish_posts' => 'publish_profiles',
+    // プライベート投稿を閲覧する権限
+    'read_private_posts' => 'read_private_profiles',
+    // 自分の投稿を削除する権限
+    'delete_posts' => 'delete_profiles',
+    // プライベート投稿を削除する権限
+    'delete_private_posts' => 'delete_private_profiles',
+    // 公開済み投稿を削除する権限
+    'delete_published_posts' => 'delete_published_profiles',
+    // 他のユーザーの投稿を削除する権限
+    'delete_others_posts' => 'delete_others_profiles',
+    // プライベート投稿を編集する権限
+    'edit_private_posts' => 'edit_private_profiles',
+    // 公開済みの投稿を編集する権限
+    'edit_published_posts' => 'edit_published_profiles',
+	);
+	 
+	// 管理者に独自権限を付与
+	$role = get_role( 'administrator' );
+	foreach ( $capabilities as $cap ) {
+	    $role->add_cap( $cap );
+	}
+}
+add_action( 'init', 'profile_postype', 0 );
+
+
+ //Project
+function project_postype() {
+
+	/**
+	* カスタム投稿タイプ Project
+	*/
+	$labels = array(
+        'name' => 'プロジェクト',
+        'singular_name' => 'プロジェクト',
+        'add_new' => '新規プロジェクトを追加',
+        'add_new_item' => '新規プロジェクトを追加',
+        'edit_item' => 'プロジェクト情報を編集',
+        'new_item' => '新規プロジェクト',
+        'view_item' => 'プロジェクトを表示',
+        'search_items' => 'プロジェクトを検索',
+        'not_found' =>  '投稿されたプロジェクトはまだありません。',
+        'not_found_in_trash' => 'ゴミ箱にプロジェクト情報はありません。',
+        'parent_item_colon' => '',
+    );
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'publicly_queryable' => true, //フロントエンドで post_type クエリが実行可能かどうか
+        'show_ui' => true, //この投稿タイプを管理するデフォルト UI を生成するかどうか
+        'exclude_from_search' => false, //この投稿タイプを検索結果から除外するかどうか
+        'capability_type' => array( 'project', 'projects' ), //投稿タイプの閲覧／編集／削除権限をチェックするのに使用。初期値： "post"
+        'map_meta_cap'    => true, //ユーザー権限付与関連
+        'rewrite' => array('slug' => 'project'), //このフォーマットでパーマリンクをリライトする
+        'hierarchical' => false, //この投稿タイプが階層(親の指定が許可されている)かどうか
+        'menu_position' => 5,
+        'has_archive' => true, // 一覧画面から見れるようにする
+        'supports'=> array('title', 'thumbnail', 'editor','author') ,
+    );
+    register_post_type( 'project', $args);
+
+    $capabilities = array(
+    // 自分の投稿を編集する権限
+    'edit_posts' => 'edit_projects',
+    // 他のユーザーの投稿を編集する権限
+    'edit_others_posts' => 'edit_others_projects',
+    // 投稿を公開する権限
+    'publish_posts' => 'publish_projects',
+    // プライベート投稿を閲覧する権限
+    'read_private_posts' => 'read_private_projects',
+    // 自分の投稿を削除する権限
+    'delete_posts' => 'delete_projects',
+    // プライベート投稿を削除する権限
+    'delete_private_posts' => 'delete_private_projects',
+    // 公開済み投稿を削除する権限
+    'delete_published_posts' => 'delete_published_projects',
+    // 他のユーザーの投稿を削除する権限
+    'delete_others_posts' => 'delete_others_projects',
+    // プライベート投稿を編集する権限
+    'edit_private_posts' => 'edit_private_projects',
+    // 公開済みの投稿を編集する権限
+    'edit_published_posts' => 'edit_published_projects',
+	);
+	 
+	// 管理者に独自権限を付与
+	$role = get_role( 'administrator' );
+	foreach ( $capabilities as $cap ) {
+	    $role->add_cap( $cap );
+	}
+}
+add_action( 'init', 'project_postype', 0 );
+
+
+/**
+* BlogInfoModeratorとProfProjModerator のログイン後のリダイレクト先を変更
+*/
+function my_login_redirect( $redirect_to, $request, $user ) {
+	// is there a user to check?
+	if( !empty( $user->roles ) ) {
+		// check for admins
+		if( in_array( "BlogInfoModerator", $user->roles ) ) {
+			// redirect them to the default place
+			return home_url("/wp-admin/index.php");
+		} elseif( in_array( "ProfProjModerator", $user->roles ) ) {
+			// redirect them to the default place
+			return home_url("/wp-admin/index.php");
+		} else {
+			return home_url("/wp-admin/");
+		}
+	}
+}
+add_filter("login_redirect", "my_login_redirect", 10, 3);
+
+
+
+/**
+* テーマ有効化時に特殊設定のユーザー権限をセット
+* ProfProjModeratorとBlogInfoModerator(Editor+a)の追加
+* 寄稿者にupload_filesとunfiltered_html、カスタム投稿の寄稿権限を追加
+*/
+
+function mytheme_setup_options () {
+
+	//寄稿者に権限追加
+	$role = get_role( 'contributor' );
+	$role->add_cap( 'upload_files' );	
+	$role->add_cap( 'unfiltered_html' );	
+	$role->add_cap( 'edit_infos' );
+	$role->add_cap( 'delete_infos' );	
+	$role->add_cap( 'edit_blogs' );
+	$role->add_cap( 'delete_blogs' );	
+	$role->add_cap( 'edit_profiles' );
+	$role->add_cap( 'delete_profiles' );
+	$role->add_cap( 'edit_projects' );
+	$role->add_cap( 'delete_projects' );
+		
+	$editor_role  = get_role( 'contributor' );
+	
+	//BlogInfoModerator作成
+	$new_cap_BI   = $editor_role->capabilities;
+	
+	//編集者権限に追加
+	$new_cap_BI['edit_others_infos'] = true;
+	$new_cap_BI['publish_infos'] = true;
+	$new_cap_BI['read_private_infos'] = true;
+	$new_cap_BI['delete_private_infos'] = true;
+	$new_cap_BI['delete_published_infos'] = true;
+	$new_cap_BI['delete_others_infos'] = true;
+	$new_cap_BI['edit_private_infos'] = true;
+	$new_cap_BI['edit_published_infos'] = true;
+
+	$new_cap_BI['edit_others_blogs'] = true;
+	$new_cap_BI['publish_blogs'] = true;
+	$new_cap_BI['read_private_blogs'] = true;
+	$new_cap_BI['delete_private_blogs'] = true;
+	$new_cap_BI['delete_published_blogs'] = true;
+	$new_cap_BI['delete_others_blogs'] = true;
+	$new_cap_BI['edit_private_blogs'] = true;
+	$new_cap_BI['edit_published_blogs'] = true;
+	
+	add_role( 'BlogInfoModerator', 'BlogInfoModerator', $new_cap_BI );
+	
+	
+	//ProfProjModerator作成
+	$new_cap_PP   = $editor_role->capabilities;
+	
+	//編集者権限に追加
+	$new_cap_PP['edit_others_profiles'] = true;
+	$new_cap_PP['publish_profiles'] = true;
+	$new_cap_PP['read_private_profiles'] = true;
+	$new_cap_PP['delete_private_profiles'] = true;
+	$new_cap_PP['delete_published_profiles'] = true;
+	$new_cap_PP['delete_others_profiles'] = true;
+	$new_cap_PP['edit_private_profiles'] = true;
+	$new_cap_PP['edit_published_profiles'] = true;
+
+	$new_cap_PP['edit_others_projects'] = true;
+	$new_cap_PP['publish_projects'] = true;
+	$new_cap_PP['read_private_projects'] = true;
+	$new_cap_PP['delete_private_projects'] = true;
+	$new_cap_PP['delete_published_projects'] = true;
+	$new_cap_PP['delete_others_projects'] = true;
+	$new_cap_PP['edit_private_projects'] = true;
+	$new_cap_PP['edit_published_projects'] = true;
+	
+	add_role( 'ProfProjModerator', 'ProfProjModerator', $new_cap_PP );
+
+}
+add_action('after_switch_theme', 'mytheme_setup_options');
+
+
+
+/**
+* テーマ無効化時に特殊設定のユーザー権限をリセット
+*/
+function mytheme_off_options () {
+  remove_role( 'ProfProjModerator' );
+  remove_role( 'BlogInfoModerator' );
+  
+  //寄稿者に追加した権限を削除
+  $role = get_role( 'contributor' ); 
+  $role->remove_cap( 'upload_files' );	
+  $role->remove_cap( 'unfiltered_html' );
+}
+add_action('switch_theme', 'mytheme_off_options');
 
 // トップスライド
 function topslide_postype() {
@@ -328,72 +644,6 @@ function topslide_postype() {
     register_post_type( 'topslide', $args);
 }
 add_action( 'init', 'topslide_postype' );
-
-// profile
-function profile_postype() {
-    $labels = array(
-        'name' => 'メンバー',
-        'singular_name' => 'メンバー',
-        'add_new' => '新規メンバーを追加',
-        'add_new_item' => '新規メンバーを追加',
-        'edit_item' => 'メンバーを編集',
-        'new_item' => '新規メンバー',
-        'view_item' => 'メンバーを表示',
-        'search_items' => 'メンバーを検索',
-        'not_found' =>  '投稿されたメンバーはいません。',
-        'not_found_in_trash' => 'ゴミ箱にメンバー情報はありません。',
-        'parent_item_colon' => '',
-    );
-    $args = array(
-        'labels' => $labels,
-        'public' => true,
-        'publicly_queryable' => true, //フロントエンドで post_type クエリが実行可能かどうか
-        'show_ui' => true, //この投稿タイプを管理するデフォルト UI を生成するかどうか
-        'exclude_from_search' => false, //この投稿タイプを検索結果から除外するかどうか
-        'capability_type' => 'post', //投稿タイプの閲覧／編集／削除権限をチェックするのに使用。初期値： "post"
-        'rewrite' => array('slug' => 'profile'), //このフォーマットでパーマリンクをリライトする
-        'hierarchical' => false, //この投稿タイプが階層(親の指定が許可されている)かどうか
-        'menu_position' => 5,
-        'has_archive' => true, // 一覧画面から見れるようにする
-        'supports'=> array('title', 'thumbnail', 'editor','author') ,
-    );
-    register_post_type( 'profile', $args);
-}
-
-add_action( 'init', 'profile_postype' );
-
-// project
-function project_postype() {
-    $labels = array(
-        'name' => 'プロジェクト',
-        'singular_name' => 'プロジェクト',
-        'add_new' => '新規プロジェクトを追加',
-        'add_new_item' => '新規プロジェクトを追加',
-        'edit_item' => 'プロジェクト情報を編集',
-        'new_item' => '新規プロジェクト',
-        'view_item' => 'プロジェクトを表示',
-        'search_items' => 'プロジェクトを検索',
-        'not_found' =>  '投稿されたプロジェクトはまだありません。',
-        'not_found_in_trash' => 'ゴミ箱にプロジェクト情報はありません。',
-        'parent_item_colon' => '',
-    );
-    $args = array(
-        'labels' => $labels,
-        'public' => true,
-        'publicly_queryable' => true, //フロントエンドで post_type クエリが実行可能かどうか
-        'show_ui' => true, //この投稿タイプを管理するデフォルト UI を生成するかどうか
-        'exclude_from_search' => false, //この投稿タイプを検索結果から除外するかどうか
-        'capability_type' => 'post', //投稿タイプの閲覧／編集／削除権限をチェックするのに使用。初期値： "post"
-        'rewrite' => array('slug' => 'project'), //このフォーマットでパーマリンクをリライトする
-        'hierarchical' => false, //この投稿タイプが階層(親の指定が許可されている)かどうか
-        'menu_position' => 5,
-        'has_archive' => true, // 一覧画面から見れるようにする
-        'supports'=> array('title', 'thumbnail', 'editor','author') ,
-    );
-    register_post_type( 'project', $args);
-}
-
-add_action( 'init', 'project_postype' );
 
 
 // サイドバーウィジットを有効化
