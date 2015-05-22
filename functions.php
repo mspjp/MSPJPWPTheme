@@ -547,7 +547,7 @@ function mytheme_setup_options () {
 	//BlogInfoModerator作成
 	$new_cap_BI   = $editor_role->capabilities;
 	
-	//編集者権限に追加
+	//寄稿者権限に追加
 	$new_cap_BI['edit_others_infos'] = true;
 	$new_cap_BI['publish_infos'] = true;
 	$new_cap_BI['read_private_infos'] = true;
@@ -566,13 +566,15 @@ function mytheme_setup_options () {
 	$new_cap_BI['edit_private_blogs'] = true;
 	$new_cap_BI['edit_published_blogs'] = true;
 	
+	$new_cap_BI['moderate_comments'] = true;
+	
 	add_role( 'BlogInfoModerator', 'BlogInfoModerator', $new_cap_BI );
 	
 	
 	//ProfProjModerator作成
 	$new_cap_PP   = $editor_role->capabilities;
 	
-	//編集者権限に追加
+	//寄稿者権限に追加
 	$new_cap_PP['edit_others_profiles'] = true;
 	$new_cap_PP['publish_profiles'] = true;
 	$new_cap_PP['read_private_profiles'] = true;
@@ -590,6 +592,8 @@ function mytheme_setup_options () {
 	$new_cap_PP['delete_others_projects'] = true;
 	$new_cap_PP['edit_private_projects'] = true;
 	$new_cap_PP['edit_published_projects'] = true;
+
+	$new_cap_PP['moderate_comments'] = true;
 	
 	add_role( 'ProfProjModerator', 'ProfProjModerator', $new_cap_PP );
 
