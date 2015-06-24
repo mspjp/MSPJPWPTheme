@@ -551,6 +551,8 @@ function mytheme_setup_options () {
 	$new_cap_M   = $editor_role->capabilities;
 	
 	//寄稿者権限に追加
+	$new_cap_M['edit_published_infos'] = false;
+	$new_cap_M['edit_published_blogs'] = false;
 	$new_cap_M['edit_published_profiles'] = true;
 	$new_cap_M['edit_published_projects'] = true;
 	
