@@ -541,6 +541,12 @@ function mytheme_setup_options () {
 	$role->add_cap( 'delete_profiles' );
 	$role->add_cap( 'edit_projects' );
 	$role->add_cap( 'delete_projects' );
+
+	$role->add_cap( 'edit_published_blogs' );
+	$role->add_cap( 'edit_published_infos' );
+	$role->add_cap( 'edit_published_posts' );
+	$role->add_cap( 'edit_published_profiles' );
+	$role->add_cap( 'edit_published_projects' );
 		
 	$editor_role  = get_role( 'contributor' );
 	
@@ -613,6 +619,8 @@ function mytheme_off_options () {
   $role = get_role( 'contributor' ); 
   $role->remove_cap( 'upload_files' );	
   $role->remove_cap( 'unfiltered_html' );
+  $role->add_cap( 'edit_published_posts' );	
+  $role->add_cap( 'unfiltered_html' );
 }
 add_action('switch_theme', 'mytheme_off_options');
 
