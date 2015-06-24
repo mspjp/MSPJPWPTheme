@@ -545,12 +545,6 @@ function mytheme_setup_options () {
 	$role->add_cap( 'edit_projects' );
 	$role->add_cap( 'delete_projects' );
 
-	// $role->add_cap( 'edit_published_blogs' );
-	// $role->add_cap( 'edit_published_infos' );
-	// $role->add_cap( 'edit_published_posts' );
-	$role->add_cap( 'edit_published_profiles' );
-	$role->add_cap( 'edit_published_projects' );
-		
 	$editor_role  = get_role( 'contributor' );
 
 	//Member作成
