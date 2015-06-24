@@ -512,6 +512,9 @@ function my_login_redirect( $redirect_to, $request, $user ) {
 		} elseif( in_array( "ProfProjModerator", $user->roles ) ) {
 			// redirect them to the default place
 			return home_url("/wp-admin/index.php");
+		} elseif( in_array( "Member", $user->roles ) ) {
+			// redirect them to the default place
+			return home_url("/wp-admin/index.php");
 		} else {
 			return home_url("/wp-admin/");
 		}
@@ -549,6 +552,17 @@ function mytheme_setup_options () {
 	$role->add_cap( 'edit_published_projects' );
 		
 	$editor_role  = get_role( 'contributor' );
+
+	//Member作成
+	$new_cap_M   = $editor_role->capabilities;
+	
+	//寄稿者権限に追加
+	$new_cap_M['edit_published_profiles'] = true;
+	$new_cap_M['edit_published_projects'] = true;
+	
+	$new_cap_M['moderate_comments'] = false;
+	
+	add_role( 'Member', 'Member', $new_cap_M );
 	
 	//BlogInfoModerator作成
 	$new_cap_BI   = $editor_role->capabilities;
@@ -614,6 +628,7 @@ add_action('after_switch_theme', 'mytheme_setup_options');
 function mytheme_off_options () {
   remove_role( 'ProfProjModerator' );
   remove_role( 'BlogInfoModerator' );
+  remove_role( 'Member' );
   
   //寄稿者に追加した権限を削除
   $role = get_role( 'contributor' ); 
