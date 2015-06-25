@@ -506,10 +506,10 @@ function my_login_redirect( $redirect_to, $request, $user ) {
 	// is there a user to check?
 	if( !empty( $user->roles ) ) {
 		// check for admins
-		if( in_array( "BlogInfoModerator", $user->roles ) ) {
+		if( in_array( "BlogModerator", $user->roles ) ) {
 			// redirect them to the default place
 			return home_url("/wp-admin/index.php");
-		} elseif( in_array( "ProfProjModerator", $user->roles ) ) {
+		} elseif( in_array( "InfoModerator", $user->roles ) ) {
 			// redirect them to the default place
 			return home_url("/wp-admin/index.php");
 		} elseif( in_array( "Member", $user->roles ) ) {
@@ -560,58 +560,45 @@ function mytheme_setup_options () {
 	
 	add_role( 'Member', 'Member', $new_cap_M );
 	
-	//BlogInfoModerator作成
-	$new_cap_BI   = $editor_role->capabilities;
+	//BlogModerator作成
+	$new_cap_B   = $editor_role->capabilities;
 	
 	//寄稿者権限に追加
-	$new_cap_BI['edit_others_infos'] = true;
-	$new_cap_BI['publish_infos'] = true;
-	$new_cap_BI['read_private_infos'] = true;
-	$new_cap_BI['delete_private_infos'] = true;
-	$new_cap_BI['delete_published_infos'] = true;
-	$new_cap_BI['delete_others_infos'] = true;
-	$new_cap_BI['edit_private_infos'] = true;
-	$new_cap_BI['edit_published_infos'] = true;
+	$new_cap_B['edit_others_blogs'] = true;
+	$new_cap_B['publish_blogs'] = true;
+	$new_cap_B['read_private_blogs'] = true;
+	$new_cap_B['delete_private_blogs'] = true;
+	$new_cap_B['delete_published_blogs'] = true;
+	$new_cap_B['delete_others_blogs'] = true;
+	$new_cap_B['edit_private_blogs'] = true;
+	$new_cap_B['edit_published_blogs'] = true;
 
-	$new_cap_BI['edit_others_blogs'] = true;
-	$new_cap_BI['publish_blogs'] = true;
-	$new_cap_BI['read_private_blogs'] = true;
-	$new_cap_BI['delete_private_blogs'] = true;
-	$new_cap_BI['delete_published_blogs'] = true;
-	$new_cap_BI['delete_others_blogs'] = true;
-	$new_cap_BI['edit_private_blogs'] = true;
-	$new_cap_BI['edit_published_blogs'] = true;
+	$new_cap_B['edit_published_profiles'] = true;
+	$new_cap_B['edit_published_projects'] = true;
 	
-	$new_cap_BI['moderate_comments'] = true;
+	$new_cap_B['moderate_comments'] = true;
 	
-	add_role( 'BlogInfoModerator', 'BlogInfoModerator', $new_cap_BI );
+	add_role( 'BlogModerator', 'BlogModerator', $new_cap_B );
 	
-	
-	//ProfProjModerator作成
-	$new_cap_PP   = $editor_role->capabilities;
+	//InfoModerator作成
+	$new_cap_I   = $editor_role->capabilities;
 	
 	//寄稿者権限に追加
-	$new_cap_PP['edit_others_profiles'] = true;
-	$new_cap_PP['publish_profiles'] = true;
-	$new_cap_PP['read_private_profiles'] = true;
-	$new_cap_PP['delete_private_profiles'] = true;
-	$new_cap_PP['delete_published_profiles'] = true;
-	$new_cap_PP['delete_others_profiles'] = true;
-	$new_cap_PP['edit_private_profiles'] = true;
-	$new_cap_PP['edit_published_profiles'] = true;
-
-	$new_cap_PP['edit_others_projects'] = true;
-	$new_cap_PP['publish_projects'] = true;
-	$new_cap_PP['read_private_projects'] = true;
-	$new_cap_PP['delete_private_projects'] = true;
-	$new_cap_PP['delete_published_projects'] = true;
-	$new_cap_PP['delete_others_projects'] = true;
-	$new_cap_PP['edit_private_projects'] = true;
-	$new_cap_PP['edit_published_projects'] = true;
-
-	$new_cap_PP['moderate_comments'] = true;
+	$new_cap_I['edit_others_infos'] = true;
+	$new_cap_I['publish_infos'] = true;
+	$new_cap_I['read_private_infos'] = true;
+	$new_cap_I['delete_private_infos'] = true;
+	$new_cap_I['delete_published_infos'] = true;
+	$new_cap_I['delete_others_infos'] = true;
+	$new_cap_I['edit_private_infos'] = true;
+	$new_cap_I['edit_published_infos'] = true;
+	$new_cap_I['edit_published_profiles'] = true;
+	$new_cap_I['edit_published_projects'] = true;
 	
-	add_role( 'ProfProjModerator', 'ProfProjModerator', $new_cap_PP );
+	$new_cap_I['moderate_comments'] = true;
+	
+	add_role( 'InfoModerator', 'InfoModerator', $new_cap_I );
+	
 
 }
 add_action('after_switch_theme', 'mytheme_setup_options');
@@ -622,8 +609,8 @@ add_action('after_switch_theme', 'mytheme_setup_options');
 * テーマ無効化時に特殊設定のユーザー権限をリセット
 */
 function mytheme_off_options () {
-  remove_role( 'ProfProjModerator' );
-  remove_role( 'BlogInfoModerator' );
+  remove_role( 'InfoModerator' );
+  remove_role( 'BlogModerator' );
   remove_role( 'Member' );
   
   //寄稿者に追加した権限を削除
