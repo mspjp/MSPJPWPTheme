@@ -59,14 +59,14 @@
 }
 .topinfo__left{
     float: left;
-    border: 2px solid #ffa500;
+    /* border: 2px solid #ffa500; */
 }
 .topinfo__left .topinfo__list li{
     border-bottom: 1px dashed #ffa500;
 }
 .topinfo__right{
     float: right;
-    border: 2px solid #2e8b57;
+    /* border: 2px solid #2e8b57; */
 }
 .topinfo__right .topinfo__list li{
     border-bottom: 1px dashed #2e8b57;
