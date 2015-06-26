@@ -65,7 +65,7 @@
                             <div class="post__content">
                                 <h3 class="post__title"><?php echo mb_substr(get_the_title($article->ID), 0, 100); ?></h3>
                                 <p class="post__text"><?php echo mb_substr(strip_tags($article->post_content), 0, 100)." &hellip;"; ?></p>
-                                <p class="post__info">by <?php the_author(); ?> | <?php the_time('Y年n月j日') ;?> | <?php comments_popup_link('Comment : 0', 'Comment : 1', 'Comments : %'); ?></p>
+                                <p class="post__info">by <?php the_author(); ?> | <?php the_time('Y年n月j日') ;?></p>
                             </div>
                     </a>
                   </article>
