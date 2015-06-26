@@ -110,6 +110,26 @@
                 ?>
             </div>
             <div class="main__sidebar">
-                <?php get_sidebar(); ?>
+                <div class="profile__list">
+                    <!-- <h3>プロジェクト</h3> -->
+                    <div class="profile__listbody">
+                        <ul>
+                        <?php $args = array(
+                            'numberposts' => 30, //表示する記事の数
+                            'post_type' => 'profile' //投稿タイプ名
+                            // 条件を追加する場合はここに追記
+                        );
+                        $customPosts = get_posts($args);
+                        if($customPosts) : foreach($customPosts as $post) : setup_postdata( $post );
+                        ?>
+                          <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+                          <?php endforeach; ?>
+                          <?php else : //記事が無い場合 ?>
+                          <p>Sorry, no posts matched your criteria.</p>
+                        <?php endif;
+                        wp_reset_postdata(); //クエリのリセット ?>
+                        </ul>
+                    </div>
+                </div>
             </div>
 <?php get_footer(); ?>
