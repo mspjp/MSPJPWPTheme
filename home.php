@@ -39,7 +39,7 @@
             <!-- Top Info -->
             <div class="topinfo">
                 <!-- Top Info Left -->
-                <div class="topinfo__left">
+                <div class="topinfo__left PencilTouchOrange">
                     <h2>Information</h2>
                     <ul class="topinfo__list">
                     <?php
@@ -67,7 +67,7 @@
                 </div>
                 <!-- /Top Info Left -->
                 <!-- Top Info Right -->
-                <div class="topinfo__right">
+                <div class="topinfo__right PencilTouchGreen">
                     <h2>Blog</h2>
                     <ul class="topinfo__list">
                     <?php

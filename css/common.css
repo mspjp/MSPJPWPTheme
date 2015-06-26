@@ -38,6 +38,63 @@ a:active {
     max-width: 1020px;
     width: 100%;
 }
+
+/* グレーの筆致。#666666 */
+.PencilTouchGray{
+    border-width: 1px;
+    border-style: solid;
+    border-color: #666666; /* デフォルト値 */
+    border-image: url("../img/border_gray.png") 10 / 10px repeat;
+    -webkit-border-image: url("../img/border_gray.png") 10 / 10px repeat;/* 旧Safari, GoogleChrome対策 */
+    -o-border-image: url("../img/border_gray.png") 10 / 10px repeat;/* 旧Opera対策 */
+    -moz-border-image: url("../img/border_gray.png") 10 / 10px repeat; /* 旧Firefox対策 */
+}
+
+/* ブルーの筆致。#28558c */
+.PencilTouchBlue{
+    border-width: 1px;
+    border-style: solid;
+    border-color: #28558c; /* デフォルト値 */
+    border-image: url("../img/border_blue.png") 10 / 10px repeat;
+    -webkit-border-image: url("../img/border_blue.png") 10 / 10px repeat;/* 旧Safari, GoogleChrome対策 */
+    -o-border-image: url("../img/border_blue.png") 10 / 10px repeat;/* 旧Opera対策 */
+    -moz-border-image: url("../img/border_blue.png") 10 / 10px repeat; /* 旧Firefox対策 */
+}
+
+/* オレンジの筆致。#ffa500 */
+.PencilTouchOrange{
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ffa500; /* デフォルト値 */
+    border-image: url("../img/border_orange.png") 10 / 10px repeat;
+    -webkit-border-image: url("../img/border_orange.png") 10 / 10px repeat;/* 旧Safari, GoogleChrome対策 */
+    -o-border-image: url("../img/border_orange.png") 10 / 10px repeat;/* 旧Opera対策 */
+    -moz-border-image: url("../img/border_orange.png") 10 / 10px repeat; /* 旧Firefox対策 */
+}
+
+/* グリーンの筆致。#2e8b57 */
+.PencilTouchGreen{
+    border-width: 1px;
+    border-style: solid;
+    border-color: #2e8b57; /* デフォルト値 */
+    border-image: url("../img/border_green.png") 10 / 10px repeat;
+    -webkit-border-image: url("../img/border_green.png") 10 / 10px repeat;/* 旧Safari, GoogleChrome対策 */
+    -o-border-image: url("../img/border_green.png") 10 / 10px repeat;/* 旧Opera対策 */
+    -moz-border-image: url("../img/border_green.png") 10 / 10px repeat; /* 旧Firefox対策 */
+}
+
+/* パープルの筆致。#a2418d */
+.PencilTouchPurple{
+    border-width: 1px;
+    border-style: solid;
+    border-color: #a2418d; /* デフォルト値 */
+    border-image: url("../img/border_purple.png") 10 / 10px repeat;
+    -webkit-border-image: url("../img/border_purple.png") 10 / 10px repeat;/* 旧Safari, GoogleChrome対策 */
+    -o-border-image: url("../img/border_purple.png") 10 / 10px repeat;/* 旧Opera対策 */
+    -moz-border-image: url("../img/border_purple.png") 10 / 10px repeat; /* 旧Firefox対策 */
+}
+
+
 /* 文字寄せ用 */
 .align-left  { text-align: left; }
 .align-center{ text-align: center; }
