@@ -24,7 +24,7 @@
                         <div class="slide__description">
                             <h3 class="slide__title"><?php echo mb_substr(get_the_title(), 0, 30); ?></h3>
                             <p class="slide__date"><?php echo get_the_date(); ?></p>
-                            <p class="slide__text"><?php echo mb_substr(strip_tags($post-> post_content), 0, 60)."..."; ?></p>
+                            <p class="slide__text"><?php echo mb_substr(strip_tags($post-> post_excerpt), 0, 60)."..."; ?></p>
                         </div>
                     </a>
                 </div>
