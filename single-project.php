@@ -11,9 +11,6 @@
                         <div class="post_title">
                             <h3 class="report__title"><a href="<?php the_permalink(); ?>"><?php echo get_the_title(); ?></a></h3>
                         </div>
-                        <ul class="report__category">
-                           <!-- <?php wp_list_categories(); ?> -->
-                        </ul>
                         <?php if ( comments_open() ) : ?>
                             <p><?php comments_popup_link('Comment : 0', 'Comment : 1', 'Comments : %'); ?></p>
                         <?php endif; // comments_open() ?>
