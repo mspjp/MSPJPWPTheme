@@ -171,6 +171,11 @@ header .navbar_box:last-child{
     float: right;
     width: 25%;
   }
+    .main__sidebar h2 {
+      border-bottom: 2px solid gray;
+      font-size: 18px
+    }
+
   /* タブレット用 */
   @media screen and (max-width: 1020px){
     .main__content,
