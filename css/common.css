@@ -5,7 +5,8 @@ html, body, div, h1, h2, h3, h4, h5, h6, p, ul, li{
     margin: 0;
 }
 body{
-    font-family: "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "メイリオ", Meiryo, serif;
+    font-family: YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "メイリオ", Meiryo, serif;
+    /* font-family: "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "メイリオ", Meiryo, serif; */
     background-image:
         url("../img/flower.png"),
         url("../img/washi.jpg");
