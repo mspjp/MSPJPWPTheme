@@ -94,6 +94,8 @@ header{
     background-repeat:
         repeat-x,
         repeat;
+    border-image: 5 url("../img/underline.png");
+    border-bottom: 5px;
 }
 header .title{
     font-family: 'Segoe UI Semibold';
