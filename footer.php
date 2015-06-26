@@ -14,7 +14,7 @@
                     <div class="box__right">
                         <div class="footer-desc">
                             <h3>このサイトについて</h3>
-                            <p>このサイトはMSPメンバーが作り運営している<br>なんか凄いサイトです。</p>
+                            <p>このサイトはMicrosoft Student Partners Japanが運営・管理している<br>MSPの活動を告知するための情報発信サイトです。</p>
                         </div>
                     </div>
                     <!-- end. box in box -->
@@ -28,8 +28,7 @@
                     </div>
                 </div>
             </div>
-            <p class="copyright">Copyright &copy; Microsoft Student Partners JAPAN All Right Reserved.</p>
-            <p class="copyright">&copy; Copyrights 2013<?php if (date("Y")!=2013) echo date("-Y"); ?> <?php bloginfo('name'); ?> All Rights Reserved.</p>
+            <p class="copyright">&copy; Copyrights 2015<?php if (date("Y")!=2015) echo date("-Y"); ?> <?php bloginfo('name'); ?> All Rights Reserved.</p>
         </div>
     </footer>
     <?php wp_footer(); ?>
