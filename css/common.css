@@ -23,7 +23,7 @@ body{
 a:link,
 a:visited,
 a:hover,
-a:active{
+a:active {
   /* aタグのスタイルをリセット */
   color: black;
   text-decoration: none;
@@ -44,7 +44,7 @@ a:active{
 .align-right { text-align: right; }
 
 /* box: 要素の左右への振り分け */
-.box:after{
+.box:after {
     content: "";
     display: block;
     clear: both;
@@ -57,14 +57,14 @@ a:active{
 }
 
 /* clearfix: クリアフィックス */
-.clearfix:after{
+.clearfix:after {
     content: "";
     display: block;
     clear: both;
 }
 
 /* ただの箱、レイアウト確認用 */
-.tmpbox{
+.tmpbox {
   width: 100%;
   height: 200px;
   border: 1px solid #666;
@@ -72,9 +72,9 @@ a:active{
 }
 
 /* タブレット用 */
-@media screen and (max-width: 1020px){
+@media screen and (max-width: 1020px) {
   .box__left,
-  .box__right{
+  .box__right {
     text-align: center;
     float: none;
   }
@@ -175,6 +175,10 @@ header .navbar_box:last-child{
       border-bottom: 2px solid gray;
       font-size: 18px
     }
+
+  .sidebar__textbox {
+    width: 100%;
+  }
 
   /* タブレット用 */
   @media screen and (max-width: 1020px){
