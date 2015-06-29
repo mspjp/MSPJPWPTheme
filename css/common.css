@@ -232,10 +232,26 @@ header .navbar_box:last-child{
       border-bottom: 2px solid gray;
       font-size: 18px
     }
-
+    
+   /* 検索フォーム ここから */
+	.widget_search label { display: none; }
+	.widget_search #s { padding: 7px 10px; margin: 0 5px 0 0; }
+	#searchsubmit {
+	     border: 1px solid #333;
+	     background: #333;
+	     color: #fff; 
+	     -webkit-border-radius: 4px;     /* Google Chrome・Safari用 */
+	     -moz-border-radius: 4px;    /* Firefox用 */
+	     border-radius: 4px;     /* 基本形 */
+	     padding: 5px 10px; 
+	     cursor: pointer; 
+	     display: inline-block;
+	}   
+   
   .sidebar__textbox {
-    width: 100%;
+    width: 70%;
   }
+   /* 検索フォーム ここまで */
 
   /* タブレット用 */
   @media screen and (max-width: 1020px){
