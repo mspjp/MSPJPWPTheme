@@ -504,42 +504,42 @@ add_action( 'init', 'project_postype', 0 );
 function article_postype() {
 	
 	$taxonomy = array(
-        'label' => '年度',
+        'label' => 'カテゴリー',
         'labels' => array(
-            'name' => '年度',
-            'singular_name' => '年度',
-            'search_items' => '年度を検索',
-            'popular_items' => '人気の年度',
-            'all_items' => 'すべての年度',
-            'parent_item' => '親',
-            'edit_item' => '年度の編集',
+            'name' => 'カテゴリー',
+            'singular_name' => 'カテゴリー',
+            'search_items' => 'カテゴリーを検索',
+            'popular_items' => '人気のカテゴリー',
+            'all_items' => 'すべてのカテゴリー',
+            'parent_item' => '親カテゴリー',
+            'edit_item' => 'カテゴリーの編集',
             'update_item' => '更新',
-            'add_new_item' => '新規年度を追加',
-            'new_item_name' => '新しい年度',
+            'add_new_item' => '新規カテゴリーを追加',
+            'new_item_name' => '新しいカテゴリー',
         ),
         'public' => true,
         'show_ui' => true,
         'hierarchical' => true, //fales→通常投稿のタグのような扱いになります。
         'show_tagcloud' => true,
-        'rewrite' => array( 'slug' => 'year' ),
-        'capabilities' => array( 'assign_terms' => 'edit_post_infos' )
+        'rewrite' => array( 'slug' => 'category' ),
+        'capabilities' => array( 'assign_terms' => 'edit_post_articles' )
     );
     register_taxonomy('category', 'article', $taxonomy );//('タクソノミー名', '所属する投稿タイプ', array);
 
 	/**
-	* カスタム投稿タイプ info
+	* カスタム投稿タイプ 記事
 	*/
 	$labels = array(
-        'name' => 'お知らせ',
-        'singular_name' => 'お知らせ',
+        'name' => '記事',
+        'singular_name' => '記事',
         'add_new' => '新規追加',
-        'add_new_item' => '新規お知らせを追加',
-        'edit_item' => 'お知らせを編集',
-        'new_item' => '新規お知らせ',
-        'view_item' => 'お知らせを表示',
-        'search_items' => 'お知らせを検索',
-        'not_found' =>  '投稿されたお知らせはありません',
-        'not_found_in_trash' => 'ゴミ箱にお知らせはありません。',
+        'add_new_item' => '新規記事を追加',
+        'edit_item' => '記事を編集',
+        'new_item' => '新規記事',
+        'view_item' => '記事を表示',
+        'search_items' => '記事を検索',
+        'not_found' =>  '投稿された記事はありません',
+        'not_found_in_trash' => 'ゴミ箱に記事はありません。',
         'parent_item_colon' => '',
     );
     $args = array(
@@ -548,9 +548,9 @@ function article_postype() {
         'publicly_queryable' => true, //フロントエンドで post_type クエリが実行可能かどうか
         'show_ui' => true, //この投稿タイプを管理するデフォルト UI を生成するかどうか
         'exclude_from_search' => false, //この投稿タイプを検索結果から除外するかどうか
-        'capability_type' => array( 'info', 'infos' ), //投稿タイプの閲覧／編集／削除権限をチェックするのに使用。初期値： "post"
+        'capability_type' => array( 'article', 'articles' ), //投稿タイプの閲覧／編集／削除権限をチェックするのに使用。初期値： "post"
         'map_meta_cap'    => true, //ユーザー権限付与関連
-        'rewrite' => array('slug' => 'info'), //このフォーマットでパーマリンクをリライトする
+        'rewrite' => array('slug' => 'article'), //このフォーマットでパーマリンクをリライトする
         'hierarchical' => true, //この投稿タイプが階層(親の指定が許可されている)かどうか
         'menu_position' => 5,
         'has_archive' => true, // 一覧画面から見れるようにする
@@ -560,25 +560,25 @@ function article_postype() {
     
     $capabilities = array(
     // 自分の投稿を編集する権限
-    'edit_posts' => 'edit_infos',
+    'edit_posts' => 'edit_articles',
     // 他のユーザーの投稿を編集する権限
-    'edit_others_posts' => 'edit_others_infos',
+    'edit_others_posts' => 'edit_others_articles',
     // 投稿を公開する権限
-    'publish_posts' => 'publish_infos',
+    'publish_posts' => 'publish_articles',
     // プライベート投稿を閲覧する権限
-    'read_private_posts' => 'read_private_infos',
+    'read_private_posts' => 'read_private_articles',
     // 自分の投稿を削除する権限
-    'delete_posts' => 'delete_infos',
+    'delete_posts' => 'delete_articles',
     // プライベート投稿を削除する権限
-    'delete_private_posts' => 'delete_private_infos',
+    'delete_private_posts' => 'delete_private_articles',
     // 公開済み投稿を削除する権限
-    'delete_published_posts' => 'delete_published_infos',
+    'delete_published_posts' => 'delete_published_articles',
     // 他のユーザーの投稿を削除する権限
-    'delete_others_posts' => 'delete_others_infos',
+    'delete_others_posts' => 'delete_others_articles',
     // プライベート投稿を編集する権限
-    'edit_private_posts' => 'edit_private_infos',
+    'edit_private_posts' => 'edit_private_articles',
     // 公開済みの投稿を編集する権限
-    'edit_published_posts' => 'edit_published_infos',
+    'edit_published_posts' => 'edit_published_articles',
 	);
 	 
 	// 管理者に独自権限を付与
