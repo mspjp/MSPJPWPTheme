@@ -15,16 +15,17 @@ function custom_login_logo() {
 add_action('login_head', 'custom_login_logo');
 add_action('init', 'unregister_post_posttype');
 
+/* 管理画面の「記事」項目を消すための処理。これを入れるとpost.phpとブッキングしてエラーが起きる
 function unregister_post_type( $post_type, $slug = '' ){
     global $wp_post_types;
 
     if ( isset( $wp_post_types[ $post_type ] ) ) {
         unset( $wp_post_types[ $post_type ] );
 
-        /*
-        $slug = ( !$slug ) ? 'edit.php?post_type=' . $post_type : $slug;
-        remove_menu_page( $slug );
-         */
+        
+        //$slug = ( !$slug ) ? 'edit.php?post_type=' . $post_type : $slug;
+        //remove_menu_page( $slug );
+         
     }
 }
 
@@ -33,6 +34,7 @@ function unregister_post_posttype()
    unregister_post_type('post');
    # remove_menu_page( 'edit.php' ); 
 }
+*/
 
 function get_mtime($format) {
     $mtime = get_the_modified_time('Ymd');
