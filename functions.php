@@ -500,6 +500,95 @@ function project_postype() {
 }
 add_action( 'init', 'project_postype', 0 );
 
+//Article
+function article_postype() {
+	
+	$taxonomy = array(
+        'label' => '年度',
+        'labels' => array(
+            'name' => '年度',
+            'singular_name' => '年度',
+            'search_items' => '年度を検索',
+            'popular_items' => '人気の年度',
+            'all_items' => 'すべての年度',
+            'parent_item' => '親',
+            'edit_item' => '年度の編集',
+            'update_item' => '更新',
+            'add_new_item' => '新規年度を追加',
+            'new_item_name' => '新しい年度',
+        ),
+        'public' => true,
+        'show_ui' => true,
+        'hierarchical' => true, //fales→通常投稿のタグのような扱いになります。
+        'show_tagcloud' => true,
+        'rewrite' => array( 'slug' => 'year' ),
+        'capabilities' => array( 'assign_terms' => 'edit_post_infos' )
+    );
+    register_taxonomy('category', 'article', $taxonomy );//('タクソノミー名', '所属する投稿タイプ', array);
+
+	/**
+	* カスタム投稿タイプ info
+	*/
+	$labels = array(
+        'name' => 'お知らせ',
+        'singular_name' => 'お知らせ',
+        'add_new' => '新規追加',
+        'add_new_item' => '新規お知らせを追加',
+        'edit_item' => 'お知らせを編集',
+        'new_item' => '新規お知らせ',
+        'view_item' => 'お知らせを表示',
+        'search_items' => 'お知らせを検索',
+        'not_found' =>  '投稿されたお知らせはありません',
+        'not_found_in_trash' => 'ゴミ箱にお知らせはありません。',
+        'parent_item_colon' => '',
+    );
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'publicly_queryable' => true, //フロントエンドで post_type クエリが実行可能かどうか
+        'show_ui' => true, //この投稿タイプを管理するデフォルト UI を生成するかどうか
+        'exclude_from_search' => false, //この投稿タイプを検索結果から除外するかどうか
+        'capability_type' => array( 'info', 'infos' ), //投稿タイプの閲覧／編集／削除権限をチェックするのに使用。初期値： "post"
+        'map_meta_cap'    => true, //ユーザー権限付与関連
+        'rewrite' => array('slug' => 'info'), //このフォーマットでパーマリンクをリライトする
+        'hierarchical' => true, //この投稿タイプが階層(親の指定が許可されている)かどうか
+        'menu_position' => 5,
+        'has_archive' => true, // 一覧画面から見れるようにする
+        'supports'=> array('title', 'thumbnail', 'author', 'editor') ,
+    );
+    register_post_type('article', $args);
+    
+    $capabilities = array(
+    // 自分の投稿を編集する権限
+    'edit_posts' => 'edit_infos',
+    // 他のユーザーの投稿を編集する権限
+    'edit_others_posts' => 'edit_others_infos',
+    // 投稿を公開する権限
+    'publish_posts' => 'publish_infos',
+    // プライベート投稿を閲覧する権限
+    'read_private_posts' => 'read_private_infos',
+    // 自分の投稿を削除する権限
+    'delete_posts' => 'delete_infos',
+    // プライベート投稿を削除する権限
+    'delete_private_posts' => 'delete_private_infos',
+    // 公開済み投稿を削除する権限
+    'delete_published_posts' => 'delete_published_infos',
+    // 他のユーザーの投稿を削除する権限
+    'delete_others_posts' => 'delete_others_infos',
+    // プライベート投稿を編集する権限
+    'edit_private_posts' => 'edit_private_infos',
+    // 公開済みの投稿を編集する権限
+    'edit_published_posts' => 'edit_published_infos',
+	);
+	 
+	// 管理者に独自権限を付与
+	$role = get_role( 'administrator' );
+	foreach ( $capabilities as $cap ) {
+	    $role->add_cap( $cap );
+	}
+}
+add_action( 'init', 'article_postype', 0 );
+
 
 /**
 * BlogInfoModeratorとProfProjModerator のログイン後のリダイレクト先を変更
