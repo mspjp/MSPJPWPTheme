@@ -15,21 +15,33 @@
 ### 共通設定
 
 #### カスタム構造
-```http://mspjp.net/%post_id%```
+```
+http://mspjp.net/%post_id%
+```
 
 ### Permalink Settings for Custom Post Types
 
 #### info
-```http://mspjp.net/%post_id%```
+```
+http://mspjp.net/%post_id%
+```
 
 #### blog
-```http://mspjp.net/%post_id%```
+```
+http://mspjp.net/%post_id%
+```
 
 #### profile
-```http://mspjp.net/%postname%```
+```
+http://mspjp.net/%postname%
+```
 
 #### project
-```http://mspjp.net/%postname%```
+```
+http://mspjp.net/%postname%
+```
 
 #### article
-```http://mspjp.net/%tech%/%post_id%```
+```
+http://mspjp.net/%tech%/%post_id%
+```
