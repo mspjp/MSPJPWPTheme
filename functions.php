@@ -12,8 +12,6 @@ function custom_login_logo() {
     echo '<style type="text/css">h1 a { background: url('.get_bloginfo('template_directory').'/img/noimage.jpg) contain no-repeat !important; }</style>';
 }
 
-echo '<style type="text/css"></style>';
-
 add_action('login_head', 'custom_login_logo');
 add_action('init', 'unregister_post_posttype');
 
