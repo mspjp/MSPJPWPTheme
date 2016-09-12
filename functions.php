@@ -12,6 +12,8 @@ function custom_login_logo() {
     echo '<style type="text/css">h1 a { background: url('.get_bloginfo('template_directory').'/img/noimage.jpg) contain no-repeat !important; }</style>';
 }
 
+echo '<style type="text/css"></style>';
+
 add_action('login_head', 'custom_login_logo');
 add_action('init', 'unregister_post_posttype');
 
@@ -211,6 +213,7 @@ if(function_exists("register_field_group"))
  */
 
 //---------------------------------------------カスタム投稿タイプ追加
+//capabilityについて参考 http://gatespace.jp/2012/05/24/custom-post-type-and-user-role-fix/
 
 //Info
 function info_postype() {
@@ -234,7 +237,7 @@ function info_postype() {
         'hierarchical' => true, //fales→通常投稿のタグのような扱いになります。
         'show_tagcloud' => true,
         'rewrite' => array( 'slug' => 'year' ),
-        'capabilities' => array( 'assign_terms' => 'edit_post_infos' )
+        'capabilities' => array( 'assign_terms' => 'edit_infos' )
     );
     register_taxonomy('year', 'info', $taxonomy );//('タクソノミー名', '所属する投稿タイプ', array);
 
@@ -308,16 +311,16 @@ function blog_postype() {
 	* カスタム投稿タイプ Blog
 	*/
     $labels = array(
-        'name' => '記事',
-        'singular_name' => '記事',
+        'name' => 'ブログ',
+        'singular_name' => 'ブログ',
         'add_new' => '新規追加',
-        'add_new_item' => '新規記事を追加',
-        'edit_item' => '記事を編集',
-        'new_item' => '新規記事',
-        'view_item' => '記事を表示',
-        'search_items' => '記事を検索',
-        'not_found' =>  '投稿された記事はありません',
-        'not_found_in_trash' => 'ゴミ箱に記事はありません。',
+        'add_new_item' => '新規ブログを追加',
+        'edit_item' => 'ブログを編集',
+        'new_item' => '新規ブログ',
+        'view_item' => 'ブログを表示',
+        'search_items' => 'ブログを検索',
+        'not_found' =>  '投稿されたブログはありません',
+        'not_found_in_trash' => 'ゴミ箱にブログはありません。',
         'parent_item_colon' => '',
     );
     $args = array(
@@ -366,6 +369,7 @@ function blog_postype() {
 	}
 }
 add_action( 'init', 'blog_postype', 0 );
+
 
  //Profile
 function profile_postype() {
@@ -522,7 +526,7 @@ function article_postype() {
         'hierarchical' => true, //fales→通常投稿のタグのような扱いになります。
         'show_tagcloud' => true,
         'rewrite' => array( 'slug' => 'category' ),
-        'capabilities' => array( 'assign_terms' => 'edit_post_articles' )
+        'capabilities' => array( 'assign_terms' => 'edit_articles' )
     );
     register_taxonomy('category', 'article', $taxonomy );//('タクソノミー名', '所属する投稿タイプ', array);
 
@@ -558,6 +562,7 @@ function article_postype() {
     );
     register_post_type('article', $args);
     
+    
     $capabilities = array(
     // 自分の投稿を編集する権限
     'edit_posts' => 'edit_articles',
@@ -586,6 +591,7 @@ function article_postype() {
 	foreach ( $capabilities as $cap ) {
 	    $role->add_cap( $cap );
 	}
+    
 }
 add_action( 'init', 'article_postype', 0 );
 
