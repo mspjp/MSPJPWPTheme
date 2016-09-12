@@ -1,2 +1,0 @@
-Custom Post Type Permalinks
-WP Social Bookmarking Light
