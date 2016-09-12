@@ -25,3 +25,85 @@
 @import url('css/single.css');
 @import url('css/slick/slick.css');
 @import url('css/slick/slick-theme.css');
+
+
+body{
+font-family: "Meiryo UI","Meiryo","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","ＭＳ Ｐゴシック","Osaka",sans-serif;
+}
+h1{
+font-family: "Meiryo UI","Meiryo","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","ＭＳ Ｐゴシック","Osaka",sans-serif;
+}
+body{
+    background-image:
+        url("../img/washi.jpg");
+
+}
+/*無料のプラグインでは制限があるので上書き*/
+.wmle_post_meta{
+  display:none;
+}
+.wmle_post_title a{
+  font-size:20px;
+  color:black;
+
+}
+
+.report__title_{
+	padding-bottom: .5em;
+	border-bottom: 3px double #ccc;
+	font-size:24px;
+}
+
+h2{
+        margin-top:2em;
+	padding-bottom: .6em;
+	margin-bottom: 1em;
+	border-bottom: 3px double #ccc;
+}
+ h3{
+        margin-top:2em;
+	padding-bottom: .6em;
+	margin-bottom: 1em;
+	border-bottom: 3px double #ccc;
+}
+ 
+header{
+z-index: 100;
+width: 100%;
+position: relative;
+margin-bottom:0px;
+padding: 10px 0 0px 0;
+background-image: url("http://mspjp.net/wp-content/uploads/2016/01/Screen-Shot-2016-01-21-at-18.59.46.png"), url("http://mspjp.net/wp-content/uploads/2016/01/Screen-Shot-2016-01-21-at-19.04.50.png");
+background-repeat: repeat-x, repeat;
+border-image: 1 url("http://mspjp.net/wp-content/uploads/2016/01/Screen-Shot-2016-01-21-at-18.50.33.png");
+border-bottom: 0px solid;
+border-top:0px solid;
+border-right:0px solid;
+border-left:0px solid;
+}
+div.main{
+margin-top:0px;
+padding-top:0px;
+}
+
+
+@media screen and (min-width: 760px) {
+  .twitteer{
+     position: absolute;
+     padding: 0 15px 0 15px;
+}
+}
+
+.container{
+ max-width:1150px;
+}
+.entry_body p{
+line-height:2em;
+}
+
+footer{
+width: 100%;
+padding: 15px 0;
+background-image:url("http://mspjp.net/wp-content/uploads/2016/01/Screen-Shot-2016-01-21-at-19.04.50.png");
+background-repeat: repeat;
+}

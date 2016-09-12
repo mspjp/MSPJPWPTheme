@@ -8,22 +8,22 @@
                         while (have_posts()) : the_post(); // 繰り返し処理開始 ?>
                     <div class="report__meta">
                         <div class="post_title">
-                            <h3 class="report__title"><a href="<?php the_permalink(); ?>"><?php echo get_the_title(); ?></a></h3>
+                            <h3 class="report__title_"><a href="<?php the_permalink(); ?>"><?php echo get_the_title(); ?></a></h3>
                         </div>
-                        <ul class="report__category">
+                        <!--ul class="report__category">
                             <?php wp_list_categories(); ?>
-                        </ul>
+                        </ul-->
                         <?php if ( comments_open() ) : ?>
                             <p><?php comments_popup_link('Comment : 0', 'Comment : 1', 'Comments : %'); ?></p>
                         <?php endif; // comments_open() ?>
 
-                        <p class="report__info">by <?php the_author(); ?> | <?php echo get_the_date(); ?></p>
+
                     </div>
 
                     <div class="entry_body">
                     <?php the_content(); ?>
                     </div>
-
+                        <p class="report__info">筆者: <?php the_author(); ?> | <?php echo get_the_date(); ?></p>
                 </div>
                 <?php if(function_exists("wp_social_bookmarking_light_output_e")){wp_social_bookmarking_light_output_e(null, get_permalink(), the_title("", "", false));}?>
                 <?php
