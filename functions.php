@@ -512,27 +512,27 @@ add_action( 'init', 'project_postype', 0 );
 function article_postype() {
 	
 	$taxonomy = array(
-        'label' => 'カテゴリー',
+        'label' => 'テクノロジー',
         'labels' => array(
-            'name' => 'カテゴリー',
-            'singular_name' => 'カテゴリー',
-            'search_items' => 'カテゴリーを検索',
-            'popular_items' => '人気のカテゴリー',
-            'all_items' => 'すべてのカテゴリー',
-            'parent_item' => '親カテゴリー',
-            'edit_item' => 'カテゴリーの編集',
+            'name' => 'テクノロジー',
+            'singular_name' => 'テクノロジー',
+            'search_items' => 'テクノロジーを検索',
+            'popular_items' => '人気のテクノロジー',
+            'all_items' => 'すべてのテクノロジー',
+            'parent_item' => '親テクノロジー',
+            'edit_item' => 'テクノロジーの編集',
             'update_item' => '更新',
-            'add_new_item' => '新規カテゴリーを追加',
-            'new_item_name' => '新しいカテゴリー',
+            'add_new_item' => '新規テクノロジーを追加',
+            'new_item_name' => '新しいテクノロジー',
         ),
         'public' => true,
         'show_ui' => true,
         'hierarchical' => true, //fales→通常投稿のタグのような扱いになります。
         'show_tagcloud' => true,
-        'rewrite' => array( 'slug' => 'category' ),
+        'rewrite' => array( 'slug' => 'tech' ),
         'capabilities' => array( 'assign_terms' => 'edit_articles' )
     );
-    register_taxonomy('category', 'article', $taxonomy );//('タクソノミー名', '所属する投稿タイプ', array);
+    register_taxonomy('tech', 'article', $taxonomy );//('タクソノミー名', '所属する投稿タイプ', array);
 
 	/**
 	* カスタム投稿タイプ 記事

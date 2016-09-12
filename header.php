@@ -43,6 +43,7 @@
                         <div class="navbar_box" style="width:80px;"><a href="/メンバー">メンバー</a></div>
                         <div class="navbar_box"><a href="/チーム">チーム</a></div>
                         <div class="navbar_box" style="border-right:0px;"><a href="/blog/">ブログ</a></div>
+                        <div class="navbar_box" style="border-right:0px;"><a href="/article/">記事</a></div>
                         <!--div class="navbar_box"><a href="/contact">Contact</a></div-->
                     </nav>
                 </div>
