@@ -1,16 +1,35 @@
-# まとば
-##  2/21 ＠深夜
-- プロフィール一覧のphp(archive-profile.php)書きました。
-    - これをcssで整形すればなんとかなる…はず…。
-    - (サイドバー部分消しちゃったけどいらない…よね？)
+# requirements
 
-- Aboutページを綺麗にしようとpage.phpいじりました。
-    - ソーシャルボタンが謎に表示されるので誰か消してくれるとうれしい。
-        - 消しました by 五十嵐
+## plugins
 
-- できれば各ページの「アーカイブ」ってとこを各ページの名前にしたい。
-    - もしそれぞれにarchive-xxx.phpって作らなくてもいいなら効率的だと思うけれどまだ調べられてない。
-        - WP的には各ページのアーカイブを作ったほうが良いと思います。一応修正しました by 五十嵐
+- Advanced Custom Fields
+- Crayon Syntax Highlighter
+- Custom Post Type Permalinks
+- PS Disable Auto Formatting
+- WP Masonry Layout
+- WP Post Branches
+- WP Social Bookmarking Light
 
-##　2/23深夜
-- To五十嵐さん 上記あれこれありがとうございました！
+## permalink settings
+
+### 共通設定
+
+#### カスタム構造
+```http://mspjp.net/%post_id%```
+
+### Permalink Settings for Custom Post Types
+
+#### info
+```http://mspjp.net/%post_id%```
+
+#### blog
+```http://mspjp.net/%post_id%```
+
+#### profile
+```http://mspjp.net/%postname%```
+
+#### project
+```http://mspjp.net/%postname%```
+
+#### article
+```http://mspjp.net/%tech%/%post_id%```
