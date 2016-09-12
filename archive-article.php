@@ -58,5 +58,11 @@ $post_type = $wp_query->get_queried_object();
                 endif;
                 ?>
             </ul>
+            <h3>カテゴリーから探す</h3>
+            <ul class="search_category">
+                <?php 
+                    wp_list_categories('title_li=&taxonomy=tech');
+                ?>
+            </ul>
             <!-- /Main Content -->
 <?php get_footer(); ?>
