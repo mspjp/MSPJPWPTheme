@@ -1,3 +1,8 @@
+# install
+1. compress this repository used zip Format
+1. upoload zip file to wordpress and install it
+1. enable MSPTheme and reload browser
+
 # requirements
 
 ## plugins
