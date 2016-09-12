@@ -6,12 +6,19 @@
     border-radius: 5px;
     width: initial;
     min-width: 100px;
-    padding:2px;
+    padding:6px;
+    font-size: 24px;
     
 }
 
 .search_category li{
-    margin-top:15px;
-    margin-bottom: 15px;
+    margin-top:20px;
     margin-left: 5px;
+    float:left;
 }
+
+/*
+.search_category ul{
+    float:left;
+}
+*/
