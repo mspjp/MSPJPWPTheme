@@ -15,16 +15,17 @@ function custom_login_logo() {
 add_action('login_head', 'custom_login_logo');
 add_action('init', 'unregister_post_posttype');
 
+/* 管理画面の「記事」項目を消すための処理。これを入れるとpost.phpとブッキングしてエラーが起きる
 function unregister_post_type( $post_type, $slug = '' ){
     global $wp_post_types;
 
     if ( isset( $wp_post_types[ $post_type ] ) ) {
         unset( $wp_post_types[ $post_type ] );
 
-        /*
-        $slug = ( !$slug ) ? 'edit.php?post_type=' . $post_type : $slug;
-        remove_menu_page( $slug );
-         */
+        
+        //$slug = ( !$slug ) ? 'edit.php?post_type=' . $post_type : $slug;
+        //remove_menu_page( $slug );
+         
     }
 }
 
@@ -33,6 +34,7 @@ function unregister_post_posttype()
    unregister_post_type('post');
    # remove_menu_page( 'edit.php' ); 
 }
+*/
 
 function get_mtime($format) {
     $mtime = get_the_modified_time('Ymd');
@@ -72,6 +74,12 @@ function get_thumbnail_url() {
     echo $image_url[0]; 
 }
 
+// Get the featured image URL
+function get_thumbnail_full_url() { 
+    $image_id = get_post_thumbnail_id();
+    $image_url = wp_get_attachment_image_src($image_id,'full', true); 
+    echo $image_url[0]; 
+}
 // カスタムメニューの「場所」を設定
 register_nav_menu( 'header-nav', 'ヘッダーのナビゲーション' );
 
@@ -209,6 +217,7 @@ if(function_exists("register_field_group"))
  */
 
 //---------------------------------------------カスタム投稿タイプ追加
+//capabilityについて参考 http://gatespace.jp/2012/05/24/custom-post-type-and-user-role-fix/
 
 //Info
 function info_postype() {
@@ -232,7 +241,7 @@ function info_postype() {
         'hierarchical' => true, //fales→通常投稿のタグのような扱いになります。
         'show_tagcloud' => true,
         'rewrite' => array( 'slug' => 'year' ),
-        'capabilities' => array( 'assign_terms' => 'edit_post_infos' )
+        'capabilities' => array( 'assign_terms' => 'edit_infos' )
     );
     register_taxonomy('year', 'info', $taxonomy );//('タクソノミー名', '所属する投稿タイプ', array);
 
@@ -306,16 +315,16 @@ function blog_postype() {
 	* カスタム投稿タイプ Blog
 	*/
     $labels = array(
-        'name' => '記事',
-        'singular_name' => '記事',
+        'name' => 'ブログ',
+        'singular_name' => 'ブログ',
         'add_new' => '新規追加',
-        'add_new_item' => '新規記事を追加',
-        'edit_item' => '記事を編集',
-        'new_item' => '新規記事',
-        'view_item' => '記事を表示',
-        'search_items' => '記事を検索',
-        'not_found' =>  '投稿された記事はありません',
-        'not_found_in_trash' => 'ゴミ箱に記事はありません。',
+        'add_new_item' => '新規ブログを追加',
+        'edit_item' => 'ブログを編集',
+        'new_item' => '新規ブログ',
+        'view_item' => 'ブログを表示',
+        'search_items' => 'ブログを検索',
+        'not_found' =>  '投稿されたブログはありません',
+        'not_found_in_trash' => 'ゴミ箱にブログはありません。',
         'parent_item_colon' => '',
     );
     $args = array(
@@ -364,6 +373,7 @@ function blog_postype() {
 	}
 }
 add_action( 'init', 'blog_postype', 0 );
+
 
  //Profile
 function profile_postype() {
@@ -497,6 +507,97 @@ function project_postype() {
 	}
 }
 add_action( 'init', 'project_postype', 0 );
+
+//Article
+function article_postype() {
+	
+	$taxonomy = array(
+        'label' => 'テクノロジー',
+        'labels' => array(
+            'name' => 'テクノロジー',
+            'singular_name' => 'テクノロジー',
+            'search_items' => 'テクノロジーを検索',
+            'popular_items' => '人気のテクノロジー',
+            'all_items' => 'すべてのテクノロジー',
+            'parent_item' => '親テクノロジー',
+            'edit_item' => 'テクノロジーの編集',
+            'update_item' => '更新',
+            'add_new_item' => '新規テクノロジーを追加',
+            'new_item_name' => '新しいテクノロジー',
+        ),
+        'public' => true,
+        'show_ui' => true,
+        'hierarchical' => true, //fales→通常投稿のタグのような扱いになります。
+        'show_tagcloud' => true,
+        'rewrite' => array( 'slug' => 'tech' ),
+        'capabilities' => array( 'assign_terms' => 'edit_articles' )
+    );
+    register_taxonomy('tech', 'article', $taxonomy );//('タクソノミー名', '所属する投稿タイプ', array);
+
+	/**
+	* カスタム投稿タイプ 技術記事
+	*/
+	$labels = array(
+        'name' => '技術記事',
+        'singular_name' => '技術記事',
+        'add_new' => '新規追加',
+        'add_new_item' => '新規技術記事を追加',
+        'edit_item' => '技術記事を編集',
+        'new_item' => '新規技術記事',
+        'view_item' => '技術記事を表示',
+        'search_items' => '技術記事を検索',
+        'not_found' =>  '投稿された技術記事はありません',
+        'not_found_in_trash' => 'ゴミ箱に技術記事はありません。',
+        'parent_item_colon' => '',
+    );
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'publicly_queryable' => true, //フロントエンドで post_type クエリが実行可能かどうか
+        'show_ui' => true, //この投稿タイプを管理するデフォルト UI を生成するかどうか
+        'exclude_from_search' => false, //この投稿タイプを検索結果から除外するかどうか
+        'capability_type' => array( 'article', 'articles' ), //投稿タイプの閲覧／編集／削除権限をチェックするのに使用。初期値： "post"
+        'map_meta_cap'    => true, //ユーザー権限付与関連
+        'rewrite' => array('slug' => 'article'), //このフォーマットでパーマリンクをリライトする
+        'hierarchical' => true, //この投稿タイプが階層(親の指定が許可されている)かどうか
+        'menu_position' => 5,
+        'has_archive' => true, // 一覧画面から見れるようにする
+        'supports'=> array('title', 'thumbnail', 'author', 'editor') ,
+    );
+    register_post_type('article', $args);
+    
+    
+    $capabilities = array(
+    // 自分の投稿を編集する権限
+    'edit_posts' => 'edit_articles',
+    // 他のユーザーの投稿を編集する権限
+    'edit_others_posts' => 'edit_others_articles',
+    // 投稿を公開する権限
+    'publish_posts' => 'publish_articles',
+    // プライベート投稿を閲覧する権限
+    'read_private_posts' => 'read_private_articles',
+    // 自分の投稿を削除する権限
+    'delete_posts' => 'delete_articles',
+    // プライベート投稿を削除する権限
+    'delete_private_posts' => 'delete_private_articles',
+    // 公開済み投稿を削除する権限
+    'delete_published_posts' => 'delete_published_articles',
+    // 他のユーザーの投稿を削除する権限
+    'delete_others_posts' => 'delete_others_articles',
+    // プライベート投稿を編集する権限
+    'edit_private_posts' => 'edit_private_articles',
+    // 公開済みの投稿を編集する権限
+    'edit_published_posts' => 'edit_published_articles',
+	);
+	 
+	// 管理者に独自権限を付与
+	$role = get_role( 'administrator' );
+	foreach ( $capabilities as $cap ) {
+	    $role->add_cap( $cap );
+	}
+    
+}
+add_action( 'init', 'article_postype', 0 );
 
 
 /**

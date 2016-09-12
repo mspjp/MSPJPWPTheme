@@ -1,0 +1,17 @@
+.search_category a{
+    margin:5px;
+    border-color: rgb(10,10,10);
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 5px;
+    width: initial;
+    min-width: 100px;
+    padding:2px;
+    
+}
+
+.search_category li{
+    margin-top:15px;
+    margin-bottom: 15px;
+    margin-left: 5px;
+}
