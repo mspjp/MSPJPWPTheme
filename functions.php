@@ -535,19 +535,19 @@ function article_postype() {
     register_taxonomy('tech', 'article', $taxonomy );//('タクソノミー名', '所属する投稿タイプ', array);
 
 	/**
-	* カスタム投稿タイプ 執筆記事
+	* カスタム投稿タイプ 技術記事
 	*/
 	$labels = array(
-        'name' => '執筆記事',
-        'singular_name' => '執筆記事',
+        'name' => '技術記事',
+        'singular_name' => '技術記事',
         'add_new' => '新規追加',
-        'add_new_item' => '新規執筆記事を追加',
-        'edit_item' => '執筆記事を編集',
-        'new_item' => '新規執筆記事',
-        'view_item' => '執筆記事を表示',
-        'search_items' => '執筆記事を検索',
-        'not_found' =>  '投稿された執筆記事はありません',
-        'not_found_in_trash' => 'ゴミ箱に執筆記事はありません。',
+        'add_new_item' => '新規技術記事を追加',
+        'edit_item' => '技術記事を編集',
+        'new_item' => '新規技術記事',
+        'view_item' => '技術記事を表示',
+        'search_items' => '技術記事を検索',
+        'not_found' =>  '投稿された技術記事はありません',
+        'not_found_in_trash' => 'ゴミ箱に技術記事はありません。',
         'parent_item_colon' => '',
     );
     $args = array(
