@@ -4,7 +4,7 @@
 1. change console type to CMD (default Powershell)
 1. move current directory to "D:\home\site\wwwroot\wp-content"
 1. upload mspthemedeploy.bat in this repository to that directory
-1. run mspthemedeploy.bat (starting git clone and theme deploy!)
+1. run mspthemedeploy.bat (starting git clone and deploy theme!)
 
 # update
 use same method as above "install" (it runs git pull)
