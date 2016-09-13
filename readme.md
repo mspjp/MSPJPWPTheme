@@ -1,5 +1,5 @@
 # install
-1. access Web Apps directory used Kudo tool
+1. access Web Apps used Kudo tool
 1. access debug console in Kudo
 1. change console type to CMD (default Powershell)
 1. move current directory to "D:\home\site\wwwroot\wp-content"
