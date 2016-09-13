@@ -626,7 +626,7 @@ add_filter("login_redirect", "my_login_redirect", 10, 3);
 
 
 /**
-* テーマ有効化時に特殊設定のユーザー権限をセット
+* テーマ有効化時に特殊設定のユーザー権限をセット(※ テーマを有効化しないと権限が反映されないので注意)
 * ProfProjModeratorとBlogInfoModerator(Editor+a)の追加
 * 寄稿者にupload_filesとunfiltered_html、カスタム投稿の寄稿権限を追加
 */
@@ -645,6 +645,8 @@ function mytheme_setup_options () {
 	$role->add_cap( 'delete_profiles' );
 	$role->add_cap( 'edit_projects' );
 	$role->add_cap( 'delete_projects' );
+    $role->add_cap( 'edit_articles' );
+	$role->add_cap( 'delete_articles' );
 
 	$editor_role  = get_role( 'contributor' );
 
@@ -656,6 +658,7 @@ function mytheme_setup_options () {
 	$new_cap_M['edit_published_blogs'] = false;
 	$new_cap_M['edit_published_profiles'] = true;
 	$new_cap_M['edit_published_projects'] = true;
+    $new_cap_M['edit_published_articles'] = true;
 	
 	$new_cap_M['moderate_comments'] = false;
 	
@@ -676,6 +679,16 @@ function mytheme_setup_options () {
 
 	$new_cap_B['edit_published_profiles'] = true;
 	$new_cap_B['edit_published_projects'] = true;
+
+    $new_cap_B['edit_others_articles'] = true;
+	$new_cap_B['publish_articles'] = true;
+	$new_cap_B['read_private_articles'] = true;
+	$new_cap_B['delete_private_articles'] = true;
+	$new_cap_B['delete_published_articles'] = true;
+	$new_cap_B['delete_others_articles'] = true;
+	$new_cap_B['edit_private_articles'] = true;
+	$new_cap_B['edit_published_articles'] = true;
+
 	
 	$new_cap_B['moderate_comments'] = true;
 	
