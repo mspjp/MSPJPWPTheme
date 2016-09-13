@@ -2,8 +2,6 @@
 // メインコンテンツの幅を指定
 if ( ! isset( $content_width ) ) $content_width = 600;
 
-// RSS2 の feed リンクを出力
-add_theme_support( 'automatic-feed-links' );
 
 // 自動挿入のpタグを消去
 remove_filter('the_content', 'wpautop');
@@ -818,5 +816,18 @@ function codeshortCode( $atts, $content = null ) {
 add_shortcode('links', 'linkshortCode');
 add_shortcode('column', 'columnshortCode');
 add_shortcode('codes', 'codeshortCode');
+
+function mysite_feed_request($vars) {
+	if ( isset($vars['feed']) && !isset($vars['post_type']) ){
+		$vars['post_type'] = array(
+			'post',
+            'info',
+			'blog',
+			'article'
+		);
+	}
+	return $vars;
+}
+add_filter( 'request', 'mysite_feed_request' );
 
 ?>
