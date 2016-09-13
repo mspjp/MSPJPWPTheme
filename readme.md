@@ -1,7 +1,13 @@
 # install
-1. compress this repository used zip Format
-1. upoload zip file to wordpress and install it
-1. enable MSPTheme and reload browser
+1. access Web Apps directory used Kudo tool
+1. access debug console in Kudo
+1. change console type to CMD (default Powershell)
+1. move current directory to "D:\home\site\wwwroot\wp-content"
+1. upload mspthemedeploy.bat in this repository to that directory
+1. run mspthemedeploy.bat (starting git clone and theme deploy!)
+
+# update
+use same method as above "install" (it runs git pull)
 
 # requirements
 
@@ -14,6 +20,8 @@
 - WP Masonry Layout
 - WP Post Branches
 - WP Social Bookmarking Light
+- Pz-LinkCard
+- TinyMCE Advanced
 
 ## permalink settings
 
