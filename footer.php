@@ -22,7 +22,7 @@
                 </div>
                 <div class="box__right">
                     <div class="social-icons">
-                        <a href="https://twitter.com/MSJPforStudent" target="_blank"><i class="fa fa-twitter fa-3x"></i></a>
+                        <a href="https://twitter.com/_mspjp" target="_blank"><i class="fa fa-twitter fa-3x"></i></a>
                         <a href="https://www.facebook.com/mspjp?fref=ts" target="_blank"><i class="fa fa-facebook fa-3x"></i></a>
                         <a href="mailto:mspjp@microsoft.com"><i class="fa fa-envelope fa-3x"></i></a>
                     </div>
