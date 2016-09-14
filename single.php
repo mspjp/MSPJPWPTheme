@@ -25,7 +25,7 @@
                     </div>
                         <p class="report__info">筆者: <?php the_author(); ?> | <?php echo get_the_date(); ?></p>
                 </div>
-                <?php if(function_exists("wp_social_bookmarking_light_output_e")){wp_social_bookmarking_light_output_e(null, get_permalink(), the_title("", "", false));}?>
+                
                 <?php
                 $args = array(
                     'before' => '<div class="page-link">',

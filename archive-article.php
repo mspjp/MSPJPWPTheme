@@ -4,7 +4,7 @@ $post_type = $wp_query->get_queried_object();
             <div class="headline">
                 <h2 class="headline__title"><?php post_type_archive_title(); ?></h2>
                 <div class="headline__snsbtns">
-                    <?php if(function_exists("wp_social_bookmarking_light_output_e")){wp_social_bookmarking_light_output_e(null, get_post_type_archive_link(), $post_type->labels->name );}?>
+                    
                 </div>
             </div>
 

@@ -17,7 +17,7 @@
 								<span class="post-date"><?php echo get_the_date(); ?></span>
 							</p>
 
-							<?php if(function_exists("wp_social_bookmarking_light_output_e")){wp_social_bookmarking_light_output_e(null, get_permalink(), the_title("", "", false));}?>
+							
 
 							<div class="entrybody">
 								<p class="attachment-image-container"><a href="<?php echo $attachment[0];?>"><img class="attachment-image" src="<?php echo $attachment[0];?>" width="<?php echo $attachment[1];?>" height="<?php echo $attachment[2];?>"/></a></p>
@@ -34,7 +34,7 @@
 							wp_link_pages($args); ?>
 
 
-							<?php if(function_exists("wp_social_bookmarking_light_output_e")){wp_social_bookmarking_light_output_e(null, get_permalink(), the_title("", "", false));}?>
+							
 
 							<p class="footer-post-meta">
 								<?php the_tags('Tag : ',', '); ?>

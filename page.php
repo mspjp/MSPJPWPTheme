@@ -21,7 +21,12 @@
                     </div>
 
                 </div>
-                <?php if(function_exists("wp_social_bookmarking_light_output_e")){wp_social_bookmarking_light_output_e(null, get_permalink(), the_title("", "", false));}?>
+                
+                <?php 
+                    if(function_exists("wp_social_bookmarking_light_output_e")){wp_social_bookmarking_light_output_e(null, get_permalink(), the_title("", "", false));}
+                
+                ?>
+                
                 <?php
                 $args = array(
                     'before' => '<div class="page-link">',
