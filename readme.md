@@ -1,4 +1,5 @@
 # install
+1. if you do not create Web Apps used WordPress Template and My SQL In App,you need to create it
 1. access Web Apps used Kudo tool
 1. access debug console in Kudo
 1. change console type to CMD (default Powershell)
