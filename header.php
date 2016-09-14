@@ -14,6 +14,7 @@
     <?php if ( is_singular() ) wp_enqueue_script( "comment-reply" );
         wp_head(); ?>
 
+<!-- google analytics -->
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -24,6 +25,9 @@
   ga('send', 'pageview');
 
 </script>
+
+<!-- application insights -->
+<script type="text/javascript">  var appInsights=window.appInsights||function(config){    function r(config){t[config]=function(){var i=arguments;t.queue.push(function(){t[config].apply(t,i)})}}var t={config:config},u=document,e=window,o="script",s=u.createElement(o),i,f;s.src=config.url||"https://az416426.vo.msecnd.net/scripts/a/ai.0.js";u.getElementsByTagName(o)[0].parentNode.appendChild(s);try{t.cookie=u.cookie}catch(h){}for(t.queue=[],i=["Event","Exception","Metric","PageView","Trace","Dependency"];i.length;)r("track"+i.pop());return r("setAuthenticatedUserContext"),r("clearAuthenticatedUserContext"),config.disableExceptionTracking||(i="onerror",r("_"+i),f=e[i],e[i]=function(config,r,u,e,o){var s=f&&f(config,r,u,e,o);return s!==!0&&t["_"+i](config,r,u,e,o),s}),t    }({        instrumentationKey:"ad36a47f-5368-4180-b6c3-4ac7b296f368"    });           window.appInsights=appInsights;    appInsights.trackPageView();</script>
 
 </head>
 <body <?php body_class(); ?>  style="overflow-x : hidden;">
