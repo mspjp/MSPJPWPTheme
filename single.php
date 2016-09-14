@@ -8,7 +8,7 @@
                         while (have_posts()) : the_post(); // 繰り返し処理開始 ?>
                     <div class="report__meta">
                         <div class="post_title">
-                            <?php the_post_thumbnail('thumbnail'); ?>
+                            <?php the_post_thumbnail('large'); ?>
                             <br />
                             <h3 class="report__title_"><a href="<?php the_permalink(); ?>"><?php echo get_the_title(); ?></a></h3>
                         </div>
