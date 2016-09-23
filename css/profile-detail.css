@@ -10,7 +10,7 @@
 /* Meta - 記事ページのメタ情報
    ========================================================================== */
 .profilepage__name {
-  background-image: url("../img/title-icon.png");
+  background-image: url("./img/title-icon.png");
   background-repeat: no-repeat;
   background-position: left center;
   border-bottom: 2px solid #f08300;

@@ -7,8 +7,8 @@ html, body, div, h1, h2, h3, h4, h5, h6, p, ul, li{
 body{
     font-family: "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "メイリオ", Meiryo, serif;
     background-image:
-    url("../img/flower.png"),
-    url("../img/washi.jpg");
+    url("./img/flower.png"),
+    url("./img/washi.jpg");
     background-repeat:
     no-repeat,
     repeat;
@@ -58,8 +58,8 @@ body{
        position: fixed;
        padding: 50px 0 0 0;
        background-image:
-           url("../img/header.png"),
-           url("../img/washi.jpg");
+           url("./img/header.png"),
+           url("./img/washi.jpg");
        background-repeat:
            repeat-x,
            repeat;
@@ -233,7 +233,7 @@ div.content__left > div.contentInfo{
 footer{
     width: 100%;
     padding: 15px 0;
-    background-image: url("../img/underline.png");
+    background-image: url("./img/underline.png");
     background-repeat: repeat-x;
 }
 footer .copyright{

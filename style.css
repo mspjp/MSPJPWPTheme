@@ -36,7 +36,7 @@ font-family: "Meiryo UI","Meiryo","ヒラギノ角ゴ Pro W3","Hiragino Kaku Got
 }
 body{
     background-image:
-        url("../img/washi.jpg");
+        url("./img/washi.jpg");
 
 }
 /*無料のプラグインでは制限があるので上書き*/

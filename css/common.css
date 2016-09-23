@@ -8,8 +8,8 @@ body{
     font-family: YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "メイリオ", Meiryo, serif;
     /* font-family: "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "メイリオ", Meiryo, serif; */
     background-image:
-        url("../img/flower.png"),
-        url("../img/washi.jpg");
+        url("./img/flower.png"),
+        url("./img/washi.jpg");
     background-repeat:
         no-repeat,
         repeat;
@@ -48,10 +48,10 @@ ul{
     border-width: 1px;
     border-style: solid;
     border-color: #666666; /* デフォルト値 */
-    border-image: url("../img/border_gray.png") 10 / 10px repeat;
-    -webkit-border-image: url("../img/border_gray.png") 10 / 10px repeat;/* 旧Safari, GoogleChrome対策 */
-    -o-border-image: url("../img/border_gray.png") 10 / 10px repeat;/* 旧Opera対策 */
-    -moz-border-image: url("../img/border_gray.png") 10 / 10px repeat; /* 旧Firefox対策 */
+    border-image: url("./img/border_gray.png") 10 / 10px repeat;
+    -webkit-border-image: url("./img/border_gray.png") 10 / 10px repeat;/* 旧Safari, GoogleChrome対策 */
+    -o-border-image: url("./img/border_gray.png") 10 / 10px repeat;/* 旧Opera対策 */
+    -moz-border-image: url("./img/border_gray.png") 10 / 10px repeat; /* 旧Firefox対策 */
 }
 
 /* ブルーの筆致。#28558c */
@@ -59,10 +59,10 @@ ul{
     border-width: 1px;
     border-style: solid;
     border-color: #28558c; /* デフォルト値 */
-    border-image: url("../img/border_blue.png") 10 / 10px repeat;
-    -webkit-border-image: url("../img/border_blue.png") 10 / 10px repeat;/* 旧Safari, GoogleChrome対策 */
-    -o-border-image: url("../img/border_blue.png") 10 / 10px repeat;/* 旧Opera対策 */
-    -moz-border-image: url("../img/border_blue.png") 10 / 10px repeat; /* 旧Firefox対策 */
+    border-image: url("./img/border_blue.png") 10 / 10px repeat;
+    -webkit-border-image: url("./img/border_blue.png") 10 / 10px repeat;/* 旧Safari, GoogleChrome対策 */
+    -o-border-image: url("./img/border_blue.png") 10 / 10px repeat;/* 旧Opera対策 */
+    -moz-border-image: url("./img/border_blue.png") 10 / 10px repeat; /* 旧Firefox対策 */
 }
 
 /* オレンジの筆致。#ffa500 */
@@ -70,10 +70,10 @@ ul{
     border-width: 1px;
     border-style: solid;
     border-color: #ffa500; /* デフォルト値 */
-    border-image: url("../img/border_orange.png") 10 / 10px repeat;
-    -webkit-border-image: url("../img/border_orange.png") 10 / 10px repeat;/* 旧Safari, GoogleChrome対策 */
-    -o-border-image: url("../img/border_orange.png") 10 / 10px repeat;/* 旧Opera対策 */
-    -moz-border-image: url("../img/border_orange.png") 10 / 10px repeat; /* 旧Firefox対策 */
+    border-image: url("./img/border_orange.png") 10 / 10px repeat;
+    -webkit-border-image: url("./img/border_orange.png") 10 / 10px repeat;/* 旧Safari, GoogleChrome対策 */
+    -o-border-image: url("./img/border_orange.png") 10 / 10px repeat;/* 旧Opera対策 */
+    -moz-border-image: url("./img/border_orange.png") 10 / 10px repeat; /* 旧Firefox対策 */
 }
 
 /* グリーンの筆致。#2e8b57 */
@@ -81,10 +81,10 @@ ul{
     border-width: 1px;
     border-style: solid;
     border-color: #2e8b57; /* デフォルト値 */
-    border-image: url("../img/border_green.png") 10 / 10px repeat;
-    -webkit-border-image: url("../img/border_green.png") 10 / 10px repeat;/* 旧Safari, GoogleChrome対策 */
-    -o-border-image: url("../img/border_green.png") 10 / 10px repeat;/* 旧Opera対策 */
-    -moz-border-image: url("../img/border_green.png") 10 / 10px repeat; /* 旧Firefox対策 */
+    border-image: url("./img/border_green.png") 10 / 10px repeat;
+    -webkit-border-image: url("./img/border_green.png") 10 / 10px repeat;/* 旧Safari, GoogleChrome対策 */
+    -o-border-image: url("./img/border_green.png") 10 / 10px repeat;/* 旧Opera対策 */
+    -moz-border-image: url("./img/border_green.png") 10 / 10px repeat; /* 旧Firefox対策 */
 }
 
 /* パープルの筆致。#a2418d */
@@ -92,10 +92,10 @@ ul{
     border-width: 1px;
     border-style: solid;
     border-color: #a2418d; /* デフォルト値 */
-    border-image: url("../img/border_purple.png") 10 / 10px repeat;
-    -webkit-border-image: url("../img/border_purple.png") 10 / 10px repeat;/* 旧Safari, GoogleChrome対策 */
-    -o-border-image: url("../img/border_purple.png") 10 / 10px repeat;/* 旧Opera対策 */
-    -moz-border-image: url("../img/border_purple.png") 10 / 10px repeat; /* 旧Firefox対策 */
+    border-image: url("./img/border_purple.png") 10 / 10px repeat;
+    -webkit-border-image: url("./img/border_purple.png") 10 / 10px repeat;/* 旧Safari, GoogleChrome対策 */
+    -o-border-image: url("./img/border_purple.png") 10 / 10px repeat;/* 旧Opera対策 */
+    -moz-border-image: url("./img/border_purple.png") 10 / 10px repeat; /* 旧Firefox対策 */
 }
 
 
@@ -150,12 +150,12 @@ header{
     position: fixed;
     padding: 50px 0 0 0;
     background-image:
-        url("../img/header.png"),
-        url("../img/washi.jpg");
+        url("./img/header.png"),
+        url("./img/washi.jpg");
     background-repeat:
         repeat-x,
         repeat;
-    border-image: 5 url("../img/underline.png");
+    border-image: 5 url("./img/underline.png");
     border-bottom: 5px solid;
 }
 header .title{
@@ -304,7 +304,7 @@ header .navbar_box:last-child{
 footer{
     width: 100%;
     padding: 15px 0;
-    background-image: url("../img/underline.png");
+    background-image: url("./img/underline.png");
     background-repeat: repeat-x;
 }
 footer .footer-desc{
