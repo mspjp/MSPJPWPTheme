@@ -107,8 +107,9 @@
                 ?>
             </div>
             <div class="main__sidebar">
+                <!--
                 <div class="profile__list">
-                    <!-- <h3>プロジェクト</h3> -->
+                    
                     <div class="profile__listbody">
                         <ul>
                         <?php $args = array(
@@ -128,5 +129,6 @@
                         </ul>
                     </div>
                 </div>
+                -->
             </div>
 <?php get_footer(); ?>
