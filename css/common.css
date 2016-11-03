@@ -140,6 +140,7 @@ ul{
   .box__right {
     text-align: center;
     float: none;
+    width:100%;
   }
 }
 
@@ -260,13 +261,7 @@ header .navbar_box:last-child{
   }
    /* 検索フォーム ここまで */
 
-  /* タブレット用 */
-  @media screen and (max-width: 1020px){
-    .main__content,
-    .main__sidebar{
-      width: 100%;
-    }
-  }
+  
 
   .topinfos__list{
   }
@@ -279,6 +274,14 @@ header .navbar_box:last-child{
     float: left;
     width:20%
 }
+
+/* タブレット用 */
+  @media screen and (max-width: 1020px){
+    .top__content,
+    .top__sidebar{
+      width: 100%;
+    }
+  }
 
 /* 見出し
    ========================================================================== */
