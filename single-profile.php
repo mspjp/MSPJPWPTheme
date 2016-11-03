@@ -18,7 +18,9 @@
                         <p class="profilepage__yeara"><span style="border-radius:5px;background-color:#7cbb00;padding:5px;margin-top:6px;margin-bottom:6px;">職種</span>
                             <?php 
                                 $fields = get_field("department");
-                                foreach($fields as $field): ?>
+                                var_dump($fields)
+                                foreach($fields as $field): 
+                            ?>
                                     <a href="<?php echo get_term_link($field); ?>"><?php echo $field ?></a>
                             <?php endforeach; ?>
                         </p>
