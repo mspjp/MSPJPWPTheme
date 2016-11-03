@@ -111,7 +111,7 @@ ul{
     clear: both;
 }
 .box__left{
-    float: none;
+    float: float;
 }
 .box__right{
     float: none;
