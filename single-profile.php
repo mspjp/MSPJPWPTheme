@@ -8,7 +8,28 @@
                 <!-- Report -->
                 <div id="profile-<?php the_ID(); ?>" class="profilepage">
                     
-                    
+                    <?php
+                    if (have_posts()) : // WordPress ループ
+                        while (have_posts()) : the_post(); // 繰り返し処理開始 
+                    ?>
+                    <h3 class="profilepage__namea">
+                        <a href="<?php the_permalink(); ?>">
+                            <?php echo get_the_title(); ?>
+                        </a>
+                    </h3>
+                    <div class="profilepage__image">
+                        <img src="<?php if( has_post_thumbnail() ){echo get_thumbnail_full_url() ;}else{echo get_template_directory_uri()."/img/noimage.png";} ?>" class="2profilepage__icon" width="100%">
+                    </div>
+                    <?php
+                        $fields = get_field("department");
+                        if($fields){
+                            foreach($fields as $field)
+	                        {
+		                        echo '<p>hoge ->' . $field . '</p>';
+	                        }
+                        }
+                        
+                    ?>
 
                     <br />
                     <span style="border-radius:5px;background-color:#ffbb00;padding:5px;margin-top:6px;margin-bottom:6px;">自己紹介</span>
