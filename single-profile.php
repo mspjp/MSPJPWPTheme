@@ -13,69 +13,25 @@
                         <img src="<?php if( has_post_thumbnail() ){echo get_thumbnail_full_url() ;}else{echo get_template_directory_uri()."/img/noimage.png";} ?>" class="2profilepage__icon" width="100%">
                     </div>
 
-                    <?php if(get_field( "year" )): ?>
+                    <?php if(get_field( "department" )): ?>
 
                         <p class="profilepage__yeara"><span style="border-radius:5px;background-color:#7cbb00;padding:5px;margin-top:6px;margin-bottom:6px;">所属年度</span>
                             <?php 
-                                $years = get_field("year");
-                                foreach($years as $year): ?>
-                                    <a href="<?php echo get_term_link($year); ?>"><?php echo $year->name ?></a>
+                                $fields = get_field("department");
+                                foreach($fields as $field): ?>
+                                    <a href="<?php echo get_term_link($field); ?>"><?php echo $field->name ?></a>
                             <?php endforeach; ?>
                         </p>
                     <?php endif; ?>
 
-<!--
-                    <?php if(get_field( "wordpress_username" )): ?>
-                        <p class="profilepage__username"><a href="#">ユーザ名：<?php echo get_field( "wordpress_username" )["display_name"]; ?></a></p>
-                   
-                    <?php endif; ?>-->
-<br>
 
-                    <?php if(get_field( "team" )): ?>
-                    <p><span style="border-radius:5px;background-color:#F65314;padding:5px;margin-top:6px;margin-bottom:6px;">所属プロジェクト</span>
-
-                    <?php 
-                        $teams = get_field("team");
-                        foreach($teams as $team): ?>
-                       
-                            <a href="<?php echo get_permalink($team->ID); ?>"><?php echo get_the_title($team->ID); ?></a>&nbsp;&nbsp;
-                        <?php endforeach; ?>
-
-</p>
-                    <?php endif; ?>
-<br><span style="border-radius:5px;background-color:#ffbb00;padding:5px;margin-top:6px;margin-bottom:6px;">自己紹介</span><br>
+                    <br />
+                    <span style="border-radius:5px;background-color:#ffbb00;padding:5px;margin-top:6px;margin-bottom:6px;">自己紹介</span>
+                    <br />
                     <div class="profilepage__introduce">
                         <?php the_content(); ?>
                     </div>
                 </div>
-                <?php if(get_field( "related_articles" )): ?>
-                <h3>関連投稿</h3>
-                <?php 
-                    $articles = get_field("related_articles");
-                    foreach($articles as $article): ?>
-                    <?php setup_postdata($article); ?>
-                    <article class="posts" style="border:0px;background-color:GhostWhite">
-                        <a href="<?php echo get_permalink($article->ID); ?>">
-                            <div class="post__thumb">
-                            <?php 
-                                if(has_post_thumbnail($article->ID)) {
-                                    echo get_the_post_thumbnail($article->ID, 'thumbnail');
-                                } else {
-                                    echo '<img src="'. get_template_directory_url() .'/img/noimage.png" />';
-                                }
-                            ?>
-                            </div>
-                            <div class="post__content">
-                                <h3 class="post__tditle"><?php echo mb_substr(get_the_title($article->ID), 0, 100); ?></h3>
-                                <p class="post__text"><?php echo mb_substr(strip_tags($article->post_content), 0, 100)." &hellip;"; ?></p>
-
-                            </div>
-                    </a>
-                  </article>
-                <?php endforeach; ?>
-                <?php wp_reset_postdata(); ?>
-                <?php endif; ?>
-
                 
                 <?php
                 $args = array(
