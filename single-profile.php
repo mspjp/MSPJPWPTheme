@@ -33,12 +33,19 @@
                     <br />
                     <span class="profile-field-name">大学</span>
                     <?php
+                        $value = get_field('university');
+                        echo '<span class="profile-field-value">'.$value.'</span>';
+                    ?>
+
+                    <br />
+                    <span class="profile-field-name">大学</span>
+                    <?php
                         $value = get_field('department');
                         echo '<span class="profile-field-value">'.$value.'</span>';
                     ?>
 
                     <br />
-                    <span style="border-radius:5px;background-color:#ffbb00;padding:5px;margin-top:6px;margin-bottom:6px;">自己紹介</span>
+                    <span style="profile-field-name">自己紹介</span>
                     <br />
                     <div class="profilepage__introduce">
                         <?php the_content(); ?>
