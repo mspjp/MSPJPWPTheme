@@ -12,13 +12,20 @@
                     <div class="profilepage__image">
                         <img src="<?php if( has_post_thumbnail() ){echo get_thumbnail_full_url() ;}else{echo get_template_directory_uri()."/img/noimage.png";} ?>" class="2profilepage__icon" width="100%">
                     </div>
-
+                    <?php
+                        $fields = get_field("department");
+                        if($fields){
+                            echo 'hoge';
+                            var_dump($fields);
+                        }
+                        
+                    ?>
                     <?php if(get_field( "department" )): ?>
 
                         <p class="profilepage__yeara"><span style="border-radius:5px;background-color:#7cbb00;padding:5px;margin-top:6px;margin-bottom:6px;">職種</span>
                             <?php 
                                 $fields = get_field("department");
-                                var_dump($fields)
+                                var_dump($fields);
                                 foreach($fields as $field): 
                             ?>
                                     <a href="<?php echo get_term_link($field); ?>"><?php echo $field ?></a>
