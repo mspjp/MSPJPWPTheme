@@ -271,8 +271,16 @@ header .navbar_box:last-child{
   }
 
   .topinfos__list{
-      width:30%;
   }
+
+.top__left{
+    float: left;
+    width:80%
+}
+.top__right{
+    float: left;
+    width:20%
+}
 
 /* 見出し
    ========================================================================== */

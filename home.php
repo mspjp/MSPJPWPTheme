@@ -54,7 +54,7 @@
 
 
 <!--test start-->
-<div class="box__left">
+<div class="top__left">
             <!-- Main Content -->
             <div class="main__content">
                                    <?php
@@ -110,7 +110,7 @@
 </div>
 
 
-<div class="box__right">
+<div class="top__right">
 <!--記事スタート-->
                   <div class="topinfos__list">
 <p><b><span style="border-radius:5px;background-color:#7cbb00;padding:5px;margin-top:6px;margin-bottom:6px;">おすすめ記事</span></b></p><br>
