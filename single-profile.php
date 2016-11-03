@@ -22,60 +22,73 @@
                     </div>
                     
                     <br />
-                    <span class="profile-field-name">職種</span>
-                    <?php
-                        $field = get_field_object('department');
-                        $value = get_field('department');
-                        $label = $field['choices'][ $value ];
-                        echo '<span class="profile-field-value">'.$label.'</span>';
-                    ?>
+                    <div class="profile-field-wrap">
+                        <span class="profile-field-name">職種</span>
+                        <?php
+                            $field = get_field_object('department');
+                            $value = get_field('department');
+                            $label = $field['choices'][ $value ];
+                            echo '<span class="profile-field-value">'.$label.'</span>';
+                        ?>
+                    </div>
 
                     <br />
-                    <span class="profile-field-name">大学</span>
-                    <?php
-                        $value = get_field('university');
-                        echo '<span class="profile-field-value">'.$value.'</span>';
-                    ?>
+                    <div class="profile-field-wrap">
+                        <span class="profile-field-name">大学</span>
+                        <?php
+                            $value = get_field('university');
+                            echo '<span class="profile-field-value">'.$value.'</span>';
+                        ?>
+                    </div>
 
                     <br />
-                    <span class="profile-field-name">学部・学科・専門</span>
-                    <?php
-                        $value = get_field('major');
-                        echo '<span class="profile-field-value">'.$value.'</span>';
-                    ?>
+                    <div class="profile-field-wrap">
+                        <span class="profile-field-name">学部・学科・専門</span>
+                        <?php
+                            $value = get_field('major');
+                            echo '<span class="profile-field-value">'.$value.'</span>';
+                        ?>
+                    </div>
 
                     <br />
-                    <span class="profile-field-name">学年</span>
-                    <?php
-                        $value = get_field('grade');
-                        echo '<span class="profile-field-value">'.$value.'</span>';
-                    ?>
+                    <div class="profile-field-wrap">
+                        <span class="profile-field-name">学年</span>
+                        <?php
+                            $value = get_field('grade');
+                            echo '<span class="profile-field-value">'.$value.'</span>';
+                        ?>
+                    </div>
 
                     <br />
-                    <span class="profile-field-name">キャッチコピー</span>
-                    <?php
-                        $value = get_field('catchcopy');
-                        echo '<span class="profile-field-value">'.$value.'</span>';
-                    ?>
-
+                    <div class="profile-field-wrap">
+                        <span class="profile-field-name">キャッチコピー</span>
+                        <?php
+                            $value = get_field('catchcopy');
+                            echo '<span class="profile-field-value">'.$value.'</span>';
+                        ?>
+                    </div>
                     <br />
-                    <span class="profile-field-name">ニックネーム</span>
-                    <?php
-                        $value = get_field('nickname');
-                        echo '<span class="profile-field-value">'.$value.'</span>';
-                    ?>
-
+                    <div class="profile-field-wrap">
+                        <span class="profile-field-name">ニックネーム</span>
+                        <?php
+                            $value = get_field('nickname');
+                            echo '<span class="profile-field-value">'.$value.'</span>';
+                        ?>
+                    <div>
                     <br />
-                    <span class="profile-field-name">興味のあるテクノロジー</span>
-                    <?php
-                        $value = get_field('interest');
-                        echo '<span class="profile-field-value">'.$value.'</span>';
-                    ?>
-
+                    <div class="profile-field-wrap">
+                        <span class="profile-field-name">興味のあるテクノロジー</span>
+                        <?php
+                            $value = get_field('interest');
+                            echo '<span class="profile-field-value">'.$value.'</span>';
+                        ?>
+                    </div>
                     <br />
                     <br />
                     <br />
-                    <span style="profile-field-name">自己紹介</span>
+                    <div class="profile-field-wrap">
+                        <span style="profile-field-name">自己紹介</span>
+                    </div>
                     <br />
                     <div class="profilepage__introduce">
                         <?php the_content(); ?>
