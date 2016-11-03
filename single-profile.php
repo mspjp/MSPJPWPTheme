@@ -95,6 +95,7 @@
                     </div>
                 </div>
                 
+                <!--
                 <?php
                 $args = array(
                     'before' => '<div class="page-link">',
@@ -102,9 +103,10 @@
                     'link_before' => '<span>',
                     'link_after' => '</span>',
                 );
-                wp_link_pages($args); ?>
+                wp_link_pages($args); 
+                
+                ?>
 
-                <!-- post navigation -->
                 <div class="navigation">
                     <?php
                     if( get_previous_post() ): ?>
@@ -117,6 +119,7 @@
                         endif;
                     ?>
                 </div>
+                -->
                 <!-- /post navigation -->
                 <?php comments_template(); // コメント欄の表示 ?>
                 <?php
