@@ -112,11 +112,11 @@ ul{
 }
 .box__left{
     float: left;
-    width:70%
+    width:60%
 }
 .box__right{
-    float: none;
-    width:30%
+    float: left;
+    width:40%
 }
 
 /* clearfix: クリアフィックス */
@@ -258,6 +258,7 @@ header .navbar_box:last-child{
    
   .sidebar__textbox {
     width: 70%;
+    float:left;
   }
    /* 検索フォーム ここまで */
 
