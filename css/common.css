@@ -111,10 +111,10 @@ ul{
     clear: both;
 }
 .box__left{
-    float: left;
+    float: none;
 }
 .box__right{
-    float: right;
+    float: none;
 }
 
 /* clearfix: クリアフィックス */
@@ -147,7 +147,7 @@ ul{
 header{
     z-index:100;
     width: 100%;
-    position: fixed;
+    position: static;
     padding: 50px 0 0 0;
     background-image:
         url("./img/header.png"),
@@ -227,11 +227,11 @@ header .navbar_box:last-child{
     padding: 20px;
   }
   .main__content{
-    float: left;
+    float: none;
     width: 75%;
   }
   .main__sidebar{
-    float: right;
+    float: none;
     width: 25%;
   }
     .main__sidebar h2 {
