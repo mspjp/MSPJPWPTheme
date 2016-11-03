@@ -32,7 +32,7 @@
 /* 1024px 以下の処理（3カラム） */
 @media screen and (max-width: 1024px){
   .profile_list > li{
-    width: 32%;
+    width: 150px;
     margin-right: 2%;
   }
   .profile_list > li:nth-child(3n){
