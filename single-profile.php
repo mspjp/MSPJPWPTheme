@@ -25,8 +25,10 @@
                     <span style="border-radius:5px;background-color:#ffbb00;padding:5px;margin-top:6px;margin-bottom:6px;">職種</span>
                     <br />
                     <?php
-                        $field = get_field("department");
-                        echo '<p>'.$field.'</p>';
+                        $field = get_field_object('department');
+                        $value = get_field('department');
+                        $label = $field['choices'][ $value ];
+                        echo '<p>'.$label.'</p>';
                     ?>
 
                     <br />
