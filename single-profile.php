@@ -38,9 +38,37 @@
                     ?>
 
                     <br />
-                    <span class="profile-field-name">大学</span>
+                    <span class="profile-field-name">学部・学科・専門</span>
                     <?php
-                        $value = get_field('department');
+                        $value = get_field('major');
+                        echo '<span class="profile-field-value">'.$value.'</span>';
+                    ?>
+
+                    <br />
+                    <span class="profile-field-name">学年</span>
+                    <?php
+                        $value = get_field('grade');
+                        echo '<span class="profile-field-value">'.$value.'</span>';
+                    ?>
+
+                    <br />
+                    <span class="profile-field-name">キャッチコピー</span>
+                    <?php
+                        $value = get_field('catchcopy');
+                        echo '<span class="profile-field-value">'.$value.'</span>';
+                    ?>
+
+                    <br />
+                    <span class="profile-field-name">ニックネーム</span>
+                    <?php
+                        $value = get_field('nickname');
+                        echo '<span class="profile-field-value">'.$value.'</span>';
+                    ?>
+
+                    <br />
+                    <span class="profile-field-name">興味のあるテクノロジー</span>
+                    <?php
+                        $value = get_field('interest');
                         echo '<span class="profile-field-value">'.$value.'</span>';
                     ?>
 
