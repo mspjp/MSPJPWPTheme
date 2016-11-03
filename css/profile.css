@@ -69,8 +69,8 @@
 .profile__icon{
   display:block;
   margin: 0 auto;
-  width:160px;
-  height:160px;
+  width:95%;
+  
 }
 .profile__name{
   font-weight: bold;
