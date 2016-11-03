@@ -54,9 +54,9 @@
 
 
 <!--test start-->
-
+<div class="box__left">
             <!-- Main Content -->
-            <div class="main__content" style="margin-right:30px;margin-top:0px;>
+            <div class="main__content">
                                    <?php
                     // query_posts( $query_string . "&posts_per_page=10&paged=0");
                     $myQuery = new WP_Query();
@@ -107,12 +107,12 @@
             <!-- /Main Content -->
 
 
+</div>
 
 
-
-
+<div class="box__right">
 <!--記事スタート-->
-                  <div class="topinfos__list" style="margin-top:120px;padding-left:30px;padding-right:30px" >
+                  <div class="topinfos__list">
 <p><b><span style="border-radius:5px;background-color:#7cbb00;padding:5px;margin-top:6px;margin-bottom:6px;">おすすめ記事</span></b></p><br>
 
 
@@ -162,7 +162,7 @@ echo get_the_title();
 <!-- お知らせスタート -->
   
 
-                  <div class="topinfos__list" style="margin-top:50px;padding-left:30px;padding-right:30px" >
+                  <div class="topinfos__list">
 <p><b><span style="border-radius:5px;background-color:#ffbb00;padding:5px;margin-top:6px;margin-bottom:6px;">お知らせ</span></b></p>
 <br>
 
@@ -212,7 +212,7 @@ echo get_the_title();
 
                     </div>
 
-
+</div>
 
 
 <!-- お知らせエンド -->
