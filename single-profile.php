@@ -20,16 +20,13 @@
                     <div class="profilepage__image">
                         <img src="<?php if( has_post_thumbnail() ){echo get_thumbnail_full_url() ;}else{echo get_template_directory_uri()."/img/noimage.png";} ?>" class="2profilepage__icon" width="100%">
                     </div>
+                    
+                    <br />
+                    <span style="border-radius:5px;background-color:#ffbb00;padding:5px;margin-top:6px;margin-bottom:6px;">職種</span>
+                    <br />
                     <?php
-                        $fields = get_field("department");
-                        var_dump($fields);
-                        if($fields){
-                            foreach($fields as $field)
-	                        {
-		                        echo '<p>hoge ->' . $field . '</p>';
-	                        }
-                        }
-                        
+                        $field = get_field("department");
+                        echo '<p>'.$field.'</p>';
                     ?>
 
                     <br />
