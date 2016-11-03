@@ -19,8 +19,10 @@ $post_type = $wp_query->get_queried_object();
                         <img class="profile__icon" src="<?php if( has_post_thumbnail() ){echo get_thumbnail_url();}else{echo get_template_directory_uri()."/img/noimage.png";} ?>" alt="">
                         <span class="profile__name"><?php echo mb_substr(get_the_title(), 0, 30); ?></span>
                         <?php
-                        $univ = get_field('department');
-                        echo '<span class="profile-field-value">'.$univ.'</span>';
+                        $field_depart = get_field_object('department');
+                        $value_depart = get_field('department');
+                        $label = $field_depart['choices'][ $value_depart ];
+                        echo '<span class="profile-field-value">'.$label.'</span>';
                         $catch = get_field('catchcopy');
                         echo '<span class="profile-field-value">'.$catch.'</span>';
                         

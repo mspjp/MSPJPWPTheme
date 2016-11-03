@@ -46,7 +46,7 @@
                         <div class="navbar_box" style="border-left:0px;"><a href="/">トップ</a></div>
                         <div class="navbar_box"><a href="/about">MSPとは</a></div>
                         <!--div class="navbar_box"><a href="/info/">Info</a></div-->
-                        <div class="navbar_box"><a href="/メンバー">メンバー</a></div>
+                        <div class="navbar_box"><a href="/profile">メンバー</a></div>
                         <div class="navbar_box"><a href="/チーム">プロジェクト</a></div>
                         <div class="navbar_box"><a href="/blog/">ブログ</a></div>
                         <div class="navbar_box" style="border-right:0px;"><a href="/article/">技術記事</a></div>
