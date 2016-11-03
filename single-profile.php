@@ -15,8 +15,10 @@
                     <?php
                         $fields = get_field("department");
                         if($fields){
-                            echo 'hoge';
-                            var_dump($fields);
+                            foreach($fields as $field)
+	                        {
+		                        echo '<p>' . $field . '</p>';
+	                        }
                         }
                         
                     ?>
