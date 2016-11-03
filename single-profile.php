@@ -18,7 +18,7 @@
                         </a>
                     </h3>
                     <div class="profilepage__image">
-                        <img src="<?php if( has_post_thumbnail() ){echo get_thumbnail_full_url() ;}else{echo get_template_directory_uri()."/img/noimage.png";} ?>" class="2profilepage__icon" width="40%">
+                        <img src="<?php if( has_post_thumbnail() ){echo get_thumbnail_full_url() ;}else{echo get_template_directory_uri()."/img/noimage.png";} ?>" class="2profilepage__icon" width="60%">
                     </div>
                     
                     <br />
@@ -87,7 +87,7 @@
                     <br />
                     <br />
                     <div class="profile-field-wrap">
-                        <span style="profile-field-name">自己紹介</span>
+                        <span class="profile-field-name">自己紹介</span>
                     </div>
                     <br />
                     <div class="profilepage__introduce">

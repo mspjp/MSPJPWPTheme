@@ -82,9 +82,10 @@
 .profile-field-name{
   margin-right: 10px;
   background-color: #ffa500;
-  padding: 2px;
+  padding: 4px;
   border-radius: 4px;
-  color: #fff
+  color: #eee;
+  font-style: bold
 }
 
 .profile-field-wrap{
