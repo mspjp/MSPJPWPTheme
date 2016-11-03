@@ -227,7 +227,7 @@ header .navbar_box:last-child{
     padding: 20px;
   }
   .main__content{
-    float: float;
+    float: left;
     width: 75%;
   }
   .main__sidebar{
