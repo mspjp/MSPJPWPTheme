@@ -74,7 +74,7 @@
                             $value = get_field('nickname');
                             echo '<span class="profile-field-value">'.$value.'</span>';
                         ?>
-                    <div>
+                    </div>
                     <br />
                     <div class="profile-field-wrap">
                         <span class="profile-field-name">興味のあるテクノロジー</span>
