@@ -17,7 +17,7 @@
                         if($fields){
                             foreach($fields as $field)
 	                        {
-		                        echo '<p>' . $field . '</p>';
+		                        echo '<p>hoge ->' . $field . '</p>';
 	                        }
                         }
                         
