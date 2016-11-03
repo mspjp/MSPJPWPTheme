@@ -76,6 +76,7 @@
   font-size: 24px;
   text-align: center;
   width: 100%;
+  display: block;
 }
 .profile_text{
   font-size:12px;
@@ -97,9 +98,11 @@
 .profile__department{
   font-size: 14px;
   display: block;
+  text-align: center;
 }
 
 .profile__catchcopy{
   display: block;
   font-size: 20px;
+  text-align: center;
 }
