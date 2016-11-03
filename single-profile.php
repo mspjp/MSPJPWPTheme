@@ -6,7 +6,17 @@
         </div>
             <div class="main__content">
                 <!-- Report -->
-                
+                <div id="profile-<?php the_ID(); ?>" class="profilepage">
+                    
+                    
+
+                    <br />
+                    <span style="border-radius:5px;background-color:#ffbb00;padding:5px;margin-top:6px;margin-bottom:6px;">自己紹介</span>
+                    <br />
+                    <div class="profilepage__introduce">
+                        <?php the_content(); ?>
+                    </div>
+                </div>
                 
                 <?php
                 $args = array(
