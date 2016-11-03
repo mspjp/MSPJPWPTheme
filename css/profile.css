@@ -80,8 +80,9 @@
 }
 
 .profile-field-name{
-  margin-right: 30px;
+  margin-right: 10px;
   background-color: #ffa500;
+  padding: 2px;
   border-radius: 4px;
   color: #fff
 }
