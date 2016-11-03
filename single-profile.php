@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <?php wp_link_pages(); ?>
 <br>
-            &bsp;&nbsp;<div class="align-left"><a href="http://mspjp.net/メンバー">&laquo; メンバー一覧に戻る</a></div>
+        <div class="align-left"><a href="http://mspjp.net/メンバー">&laquo; メンバー一覧に戻る</a></div>
             <div class="main__content">
                 <!-- Report -->
                 <div id="profile-<?php the_ID(); ?>" class="profilepage">
