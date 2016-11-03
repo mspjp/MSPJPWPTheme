@@ -79,3 +79,9 @@
   font-size:12px;
 }
 
+.profile-field-name{
+  margin-right: 30px;
+  background-color: #ffa500;
+  border-radius: 4px;
+  color: #fff
+}

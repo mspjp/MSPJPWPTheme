@@ -18,7 +18,7 @@
                         </a>
                     </h3>
                     <div class="profilepage__image">
-                        <img src="<?php if( has_post_thumbnail() ){echo get_thumbnail_full_url() ;}else{echo get_template_directory_uri()."/img/noimage.png";} ?>" class="2profilepage__icon" width="100%">
+                        <img src="<?php if( has_post_thumbnail() ){echo get_thumbnail_full_url() ;}else{echo get_template_directory_uri()."/img/noimage.png";} ?>" class="2profilepage__icon" width="40%">
                     </div>
                     
                     <br />
@@ -72,6 +72,8 @@
                         echo '<span class="profile-field-value">'.$value.'</span>';
                     ?>
 
+                    <br />
+                    <br />
                     <br />
                     <span style="profile-field-name">自己紹介</span>
                     <br />
