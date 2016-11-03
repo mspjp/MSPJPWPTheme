@@ -229,8 +229,6 @@ header .navbar_box:last-child{
     padding: 20px;
   }
   .main__content{
-    float: left;
-    width: 70%;
   }
   .main__sidebar{
     float: none;
