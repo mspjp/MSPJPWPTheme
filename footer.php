@@ -6,19 +6,10 @@
         <div class="container">
             <div class="box" style="border:0px;">
                 <div class="box__left" style="border:0px;">
-                  <div class="box" style="border:0px;">
-                    <!-- box in box -->
-                    <div class="box__left" style="border:0px;">
-                        <img class="msplogo" src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="" style="display:none">
-                    </div>
-                    <div class="box__right">
-                        <div class="footer-desc">
+                  <div class="footer-desc">
                             <p><b>このサイトについて</b></p>
                             <p>Microsoft Student Partners Japanの学生が運営している、<br>MSPの活動をお伝えする情報発信サイトです。</p>
-                        </div>
                     </div>
-                    <!-- end. box in box -->
-                  </div>
                 </div>
                 <div class="box__right">
                     <div class="social-icons">

@@ -323,6 +323,9 @@ footer .copyright{
 }
 footer .social-icons{
     margin-top: 20px;
+    margin-right: 0;
+    margin-left: auto;
+    width:200px;
 }
 footer .social-icons i{
     margin-right: 20px;
