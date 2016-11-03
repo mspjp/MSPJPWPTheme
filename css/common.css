@@ -112,9 +112,11 @@ ul{
 }
 .box__left{
     float: left;
+    width:70%
 }
 .box__right{
     float: none;
+    width:30%
 }
 
 /* clearfix: クリアフィックス */
@@ -228,7 +230,7 @@ header .navbar_box:last-child{
   }
   .main__content{
     float: left;
-    width: 75%;
+    width: 70%;
   }
   .main__sidebar{
     float: none;
@@ -268,7 +270,7 @@ header .navbar_box:last-child{
   }
 
   .topinfos__list{
-      width:300px;
+      width:30%;
   }
 
 /* 見出し
