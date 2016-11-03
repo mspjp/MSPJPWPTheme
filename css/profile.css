@@ -74,6 +74,7 @@
 .profile__name{
   font-weight: bold;
   font-size: 24px;
+  text-align: center;
 }
 .profile_text{
   font-size:12px;
@@ -93,10 +94,11 @@
 }
 
 .profile__department{
-
+  font-size: 14px;
+  display: block;
 }
 
 .profile__catchcopy{
   display: block;
-  font-size: 18px;
+  font-size: 20px;
 }
