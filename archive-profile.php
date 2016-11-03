@@ -17,12 +17,14 @@ $post_type = $wp_query->get_queried_object();
                 <li id="post-<?php the_ID(); ?>">
                     <a class="profile" href="<?php the_permalink(); ?>">
                         <img class="profile__icon" src="<?php if( has_post_thumbnail() ){echo get_thumbnail_url();}else{echo get_template_directory_uri()."/img/noimage.png";} ?>" alt="">
-                        <h3 class="profile__name"><?php echo mb_substr(get_the_title(), 0, 30); ?></h3>
-                        <p class="profile__text"><?php echo mb_substr(strip_tags($post-> post_content), 0, 24)."..."; ?></p>
+                        <span class="profile__name"><?php echo mb_substr(get_the_title(), 0, 30); ?></span>
                         <?php
-                        $value = get_field('university');
-                            echo '<span class="profile-field-value">'.$value.'</span>';
-                            ?>
+                        $univ = get_field('department');
+                        echo '<span class="profile-field-value">'.$univ.'</span>';
+                        $catch = get_field('catchcopy');
+                        echo '<span class="profile-field-value">'.$catch.'</span>';
+                        
+                        ?>
                     </a>
                 </li>
                 <?php
