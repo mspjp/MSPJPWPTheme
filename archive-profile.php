@@ -22,9 +22,9 @@ $post_type = $wp_query->get_queried_object();
                         $field_depart = get_field_object('department');
                         $value_depart = get_field('department');
                         $label = $field_depart['choices'][ $value_depart ];
-                        echo '<span class="profile-field-value">'.$label.'</span>';
+                        echo '<span class="profile__department">'.$label.'</span>';
                         $catch = get_field('catchcopy');
-                        echo '<span class="profile-field-value">'.$catch.'</span>';
+                        echo '<span class="profile__catchcopy">'.$catch.'</span>';
                         
                         ?>
                     </a>
