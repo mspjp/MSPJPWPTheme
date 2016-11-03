@@ -22,7 +22,7 @@
 /* 1024px 以上の処理（4カラム） */
 @media screen and (min-width: 1024px){
   .profile_list > li{
-    width: 23.5%;
+    width: 150px;
     margin-right: 2%;
   }
   .profile_list > li:nth-child(4n){
@@ -42,7 +42,7 @@
 /* 768px 以下の処理（2カラム） */
 @media screen and (max-width: 768px){
   .profile_list > li{
-    width: 49%;
+    width: 150px;
     margin-right: 2%;
   }
   .profile_list > li:nth-child(2n){
@@ -62,7 +62,7 @@
 .profile {
   display: block;
   width:100%;
-  height:150px;
+  height:100%;
   padding: 3px;
 }
 .profile__icon{
