@@ -22,13 +22,19 @@
                     </div>
                     
                     <br />
-                    <span style="border-radius:5px;background-color:#ffbb00;padding:5px;margin-top:6px;margin-bottom:6px;">職種</span>
-                    <br />
+                    <span class="profile-field-name">職種</span>
                     <?php
                         $field = get_field_object('department');
                         $value = get_field('department');
                         $label = $field['choices'][ $value ];
-                        echo '<p>'.$label.'</p>';
+                        echo '<span class="profile-field-value">'.$label.'</span>';
+                    ?>
+
+                    <br />
+                    <span class="profile-field-name">大学</span>
+                    <?php
+                        $value = get_field('department');
+                        echo '<span class="profile-field-value">'.$value.'</span>';
                     ?>
 
                     <br />
