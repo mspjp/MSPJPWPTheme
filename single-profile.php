@@ -22,7 +22,7 @@
                     </div>
                     <?php
                         $fields = get_field("department");
-                        var_dump($fields)
+                        var_dump($fields);
                         if($fields){
                             foreach($fields as $field)
 	                        {
