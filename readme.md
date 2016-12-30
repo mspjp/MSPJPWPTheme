@@ -1,18 +1,7 @@
-# install
-1. if you do not create Web Apps used WordPress Template and My SQL In App,you need to create it
-1. access Web Apps used Kudo tool
-1. access debug console in Kudo
-1. change console type to CMD (default Powershell)
-1. move current directory to "D:\home\site\wwwroot\wp-content"
-1. upload mspthemedeploy.bat in this repository to that directory
-1. run mspthemedeploy.bat (starting git clone and deploying theme!)
+# MSPJPWPTHEME
+Wordpress custom theme created by Microsoft Student Partners
 
-# update
-use same method as above "install" (it runs git pull)
-
-# requirements
-
-## plugins
+## REQUIRE PLUGINS
 
 - Advanced Custom Fields
 - Crayon Syntax Highlighter
@@ -24,11 +13,9 @@ use same method as above "install" (it runs git pull)
 - Pz-LinkCard
 - TinyMCE Advanced
 
-## permalink settings
+## PERMALINK SETTINGS
 
-### 共通設定
-
-#### カスタム構造
+### カスタム構造
 ```
 http://mspjp.net/%post_id%
 ```
@@ -59,3 +46,5 @@ http://mspjp.net/%postname%
 ```
 http://mspjp.net/%tech%/%post_id%
 ```
+
+# FILE DESCRIPTION

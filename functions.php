@@ -2,19 +2,12 @@
 // メインコンテンツの幅を指定
 if (!isset($content_width)) $content_width = 600;
 
-
 // 自動挿入のpタグを消去
 remove_filter('the_content', 'wpautop');
 
-function custom_login_logo()
-{
-    echo '<style type="text/css">h1 a { background: url(' . get_bloginfo('template_directory') . '/img/noimage.jpg) contain no-repeat !important; }</style>';
-}
-
-add_action('login_head', 'custom_login_logo');
+/*
+ * 管理画面の「記事」項目を消すための処理。これを入れるとpost.phpとブッキングしてエラーが起きる
 add_action('init', 'unregister_post_posttype');
-
-/* 管理画面の「記事」項目を消すための処理。これを入れるとpost.phpとブッキングしてエラーが起きる
 function unregister_post_type( $post_type, $slug = '' ){
     global $wp_post_types;
 
@@ -25,6 +18,7 @@ function unregister_post_type( $post_type, $slug = '' ){
         //$slug = ( !$slug ) ? 'edit.php?post_type=' . $post_type : $slug;
         //remove_menu_page( $slug );
          
+
     }
 }
 
@@ -87,183 +81,27 @@ function get_thumbnail_full_url()
 // カスタムメニューの「場所」を設定
 register_nav_menu('header-nav', 'ヘッダーのナビゲーション');
 
-/*
-if( !class_exists('Acf') )
-    include_once('external/acf/acf.php' );
-
-if( !class_exists('acf_repeater_plugin') )
-    include_once('external/acf-repeater/acf-repeater.php');
-
-if( !class_exists('acf_options_page_plugin') )
-    include_once('external/acf-options-page/acf-options-page.php');
-
-if(function_exists("register_field_group"))
-{
-    register_field_group(array (
-        'id' => 'acf_profile',
-        'title' => 'Profile',
-        'fields' => array (
-            array (
-                'key' => 'field_550662193b1c5',
-                'label' => '所属チーム',
-                'name' => 'team',
-                'type' => 'post_object',
-                'instructions' => '関連プロジェクトを指定します。',
-                'required' => 1,
-                'post_type' => array (
-                    0 => 'project',
-                ),
-                'taxonomy' => array (
-                    0 => 'all',
-                ),
-                'allow_null' => 1,
-                'multiple' => 1,
-            ),
-            array (
-                'key' => 'field_55066284a28c1',
-                'label' => 'WordPressユーザー名',
-                'name' => 'wordpress_username',
-                'type' => 'user',
-                'instructions' => 'WordPressでの投稿者を指定します。',
-                'role' => array (
-                    0 => 'all',
-                ),
-                'field_type' => 'select',
-                'allow_null' => 1,
-            ),
-            array (
-                'key' => 'field_550662a4a28c2',
-                'label' => '関連する投稿',
-                'name' => 'related_articles',
-                'type' => 'post_object',
-                'instructions' => '関わったイベントなどの開催レポートに関連付けてください。',
-                'post_type' => array (
-                    0 => 'blog',
-                ),
-                'taxonomy' => array (
-                    0 => 'all',
-                ),
-                'allow_null' => 0,
-                'multiple' => 1,
-            ),
-            array (
-                'key' => 'field_550662d4a28c3',
-                'label' => '所属年度',
-                'name' => 'year',
-                'type' => 'taxonomy',
-                'instructions' => '所属している(た)年度を選択してください。',
-                'required' => 1,
-                'taxonomy' => 'year',
-                'field_type' => 'checkbox',
-                'allow_null' => 0,
-                'load_save_terms' => 0,
-                'return_format' => 'object',
-                'multiple' => 0,
-            ),
-        ),
-        'location' => array (
-            array (
-                array (
-                    'param' => 'post_type',
-                    'operator' => '==',
-                    'value' => 'profile',
-                    'order_no' => 0,
-                    'group_no' => 0,
-                ),
-            ),
-        ),
-        'options' => array (
-            'position' => 'acf_after_title',
-            'layout' => 'no_box',
-            'hide_on_screen' => array (
-            ),
-        ),
-        'menu_order' => 0,
-    ));
-    register_field_group(array (
-        'id' => 'acf_topslider',
-        'title' => 'TopSlider',
-        'fields' => array (
-            array (
-                'key' => 'field_5506630dd04af',
-                'label' => 'リンク先',
-                'name' => 'link',
-                'type' => 'page_link',
-                'instructions' => 'クリックした時のリンク先を入力してください。',
-                'required' => 1,
-                'post_type' => array (
-                    0 => 'all',
-                ),
-                'allow_null' => 0,
-                'multiple' => 0,
-            ),
-        ),
-        'location' => array (
-            array (
-                array (
-                    'param' => 'post_type',
-                    'operator' => '==',
-                    'value' => 'topslide',
-                    'order_no' => 0,
-                    'group_no' => 0,
-                ),
-            ),
-        ),
-        'options' => array (
-            'position' => 'normal',
-            'layout' => 'no_box',
-            'hide_on_screen' => array (
-            ),
-        ),
-        'menu_order' => 0,
-    ));
-}
- */
 
 //---------------------------------------------カスタム投稿タイプ追加
 //capabilityについて参考 http://gatespace.jp/2012/05/24/custom-post-type-and-user-role-fix/
 
-//Info
-function info_postype()
+//specialPage
+function special_postype()
 {
-
-    $taxonomy = array(
-        'label' => '年度',
-        'labels' => array(
-            'name' => '年度',
-            'singular_name' => '年度',
-            'search_items' => '年度を検索',
-            'popular_items' => '人気の年度',
-            'all_items' => 'すべての年度',
-            'parent_item' => '親',
-            'edit_item' => '年度の編集',
-            'update_item' => '更新',
-            'add_new_item' => '新規年度を追加',
-            'new_item_name' => '新しい年度',
-        ),
-        'public' => true,
-        'show_ui' => true,
-        'hierarchical' => true, //fales→通常投稿のタグのような扱いになります。
-        'show_tagcloud' => true,
-        'rewrite' => array('slug' => 'year'),
-        'capabilities' => array('assign_terms' => 'edit_infos')
-    );
-    register_taxonomy('year', 'info', $taxonomy);//('タクソノミー名', '所属する投稿タイプ', array);
-
     /**
-     * カスタム投稿タイプ info
+     * カスタム投稿タイプ special
      */
     $labels = array(
-        'name' => 'お知らせ',
-        'singular_name' => 'お知らせ',
+        'name' => 'ランディングページ',
+        'singular_name' => 'ランディングページ',
         'add_new' => '新規追加',
-        'add_new_item' => '新規お知らせを追加',
-        'edit_item' => 'お知らせを編集',
-        'new_item' => '新規お知らせ',
-        'view_item' => 'お知らせを表示',
-        'search_items' => 'お知らせを検索',
-        'not_found' => '投稿されたお知らせはありません',
-        'not_found_in_trash' => 'ゴミ箱にお知らせはありません。',
+        'add_new_item' => '新規ランディングページを追加',
+        'edit_item' => 'ランディングページを編集',
+        'new_item' => '新規ランディングページ',
+        'view_item' => 'ランディングページを表示',
+        'search_items' => 'ランディングページを検索',
+        'not_found' => '投稿されたランディングページはありません',
+        'not_found_in_trash' => 'ゴミ箱にランディングページはありません。',
         'parent_item_colon' => '',
     );
     $args = array(
@@ -272,37 +110,37 @@ function info_postype()
         'publicly_queryable' => true, //フロントエンドで post_type クエリが実行可能かどうか
         'show_ui' => true, //この投稿タイプを管理するデフォルト UI を生成するかどうか
         'exclude_from_search' => false, //この投稿タイプを検索結果から除外するかどうか
-        'capability_type' => array('info', 'infos'), //投稿タイプの閲覧／編集／削除権限をチェックするのに使用。初期値： "post"
+        'capability_type' => array('special', 'specials'), //投稿タイプの閲覧／編集／削除権限をチェックするのに使用。初期値： "post"
         'map_meta_cap' => true, //ユーザー権限付与関連
-        'rewrite' => array('slug' => 'info'), //このフォーマットでパーマリンクをリライトする
+        'rewrite' => array('slug' => 'special'), //このフォーマットでパーマリンクをリライトする
         'hierarchical' => false, //この投稿タイプが階層(親の指定が許可されている)かどうか
         'menu_position' => 5,
         'has_archive' => true, // 一覧画面から見れるようにする
         'supports' => array('title', 'thumbnail', 'author', 'editor'),
     );
-    register_post_type('info', $args);
+    register_post_type('special', $args);
 
     $capabilities = array(
         // 自分の投稿を編集する権限
-        'edit_posts' => 'edit_infos',
+        'edit_posts' => 'edit_specials',
         // 他のユーザーの投稿を編集する権限
-        'edit_others_posts' => 'edit_others_infos',
+        'edit_others_posts' => 'edit_others_specials',
         // 投稿を公開する権限
-        'publish_posts' => 'publish_infos',
+        'publish_posts' => 'publish_specials',
         // プライベート投稿を閲覧する権限
-        'read_private_posts' => 'read_private_infos',
+        'read_private_posts' => 'read_private_specials',
         // 自分の投稿を削除する権限
-        'delete_posts' => 'delete_infos',
+        'delete_posts' => 'delete_specials',
         // プライベート投稿を削除する権限
-        'delete_private_posts' => 'delete_private_infos',
+        'delete_private_posts' => 'delete_private_specials',
         // 公開済み投稿を削除する権限
-        'delete_published_posts' => 'delete_published_infos',
+        'delete_published_posts' => 'delete_published_specials',
         // 他のユーザーの投稿を削除する権限
-        'delete_others_posts' => 'delete_others_infos',
+        'delete_others_posts' => 'delete_others_specials',
         // プライベート投稿を編集する権限
-        'edit_private_posts' => 'edit_private_infos',
+        'edit_private_posts' => 'edit_private_specials',
         // 公開済みの投稿を編集する権限
-        'edit_published_posts' => 'edit_published_infos',
+        'edit_published_posts' => 'edit_published_specials',
     );
 
     // 管理者に独自権限を付与
@@ -312,7 +150,7 @@ function info_postype()
     }
 }
 
-add_action('init', 'info_postype', 0);
+add_action('init', 'special_postype', 0);
 
 //Blog
 function blog_postype()
@@ -615,32 +453,6 @@ add_action('init', 'article_postype', 0);
 
 
 /**
- * BlogInfoModeratorとProfProjModerator のログイン後のリダイレクト先を変更
- */
-function my_login_redirect($redirect_to, $request, $user)
-{
-    // is there a user to check?
-    if (!empty($user->roles)) {
-        // check for admins
-        if (in_array("BlogModerator", $user->roles)) {
-            // redirect them to the default place
-            return home_url("/wp-admin/index.php");
-        } elseif (in_array("InfoModerator", $user->roles)) {
-            // redirect them to the default place
-            return home_url("/wp-admin/index.php");
-        } elseif (in_array("Member", $user->roles)) {
-            // redirect them to the default place
-            return home_url("/wp-admin/index.php");
-        } else {
-            return home_url("/wp-admin/");
-        }
-    }
-}
-
-add_filter("login_redirect", "my_login_redirect", 10, 3);
-
-
-/**
  * テーマ有効化時に特殊設定のユーザー権限をセット(※ テーマを有効化しないと権限が反映されないので注意)
  * ProfProjModeratorとBlogInfoModerator(Editor+a)の追加
  * 寄稿者にupload_filesとunfiltered_html、カスタム投稿の寄稿権限を追加
@@ -670,7 +482,7 @@ function mytheme_setup_options()
     $new_cap_M = $editor_role->capabilities;
 
     //寄稿者権限に追加
-    $new_cap_M['edit_published_infos'] = false;
+    $new_cap_M['edit_published_specials'] = false;
     $new_cap_M['edit_published_blogs'] = false;
     $new_cap_M['edit_published_profiles'] = true;
     $new_cap_M['edit_published_projects'] = true;
@@ -678,7 +490,7 @@ function mytheme_setup_options()
 
     $new_cap_M['moderate_comments'] = false;
 
-    add_role('Member', 'Member', $new_cap_M);
+    add_role('Writer', 'Writer', $new_cap_M);
 
     //BlogModerator作成
     $new_cap_B = $editor_role->capabilities;
@@ -705,31 +517,20 @@ function mytheme_setup_options()
     $new_cap_B['edit_private_articles'] = true;
     $new_cap_B['edit_published_articles'] = true;
 
+    $new_cap_B['edit_others_specials'] = true;
+    $new_cap_B['publish_specials'] = true;
+    $new_cap_B['read_private_specials'] = true;
+    $new_cap_B['delete_private_specials'] = true;
+    $new_cap_B['delete_published_specials'] = true;
+    $new_cap_B['delete_others_specials'] = true;
+    $new_cap_B['edit_private_specials'] = true;
+    $new_cap_B['edit_published_specials'] = true;
+    $new_cap_B['edit_published_specials'] = true;
+    $new_cap_B['edit_published_specials'] = true;
 
     $new_cap_B['moderate_comments'] = true;
 
-    add_role('BlogModerator', 'BlogModerator', $new_cap_B);
-
-    //InfoModerator作成
-    $new_cap_I = $editor_role->capabilities;
-
-    //寄稿者権限に追加
-    $new_cap_I['edit_others_infos'] = true;
-    $new_cap_I['publish_infos'] = true;
-    $new_cap_I['read_private_infos'] = true;
-    $new_cap_I['delete_private_infos'] = true;
-    $new_cap_I['delete_published_infos'] = true;
-    $new_cap_I['delete_others_infos'] = true;
-    $new_cap_I['edit_private_infos'] = true;
-    $new_cap_I['edit_published_infos'] = true;
-    $new_cap_I['edit_published_profiles'] = true;
-    $new_cap_I['edit_published_projects'] = true;
-
-    $new_cap_I['moderate_comments'] = true;
-
-    add_role('InfoModerator', 'InfoModerator', $new_cap_I);
-
-
+    add_role('Reviewer', 'Reviewer', $new_cap_B);
 }
 
 add_action('after_switch_theme', 'mytheme_setup_options');
@@ -740,9 +541,8 @@ add_action('after_switch_theme', 'mytheme_setup_options');
  */
 function mytheme_off_options()
 {
-    remove_role('InfoModerator');
-    remove_role('BlogModerator');
-    remove_role('Member');
+    remove_role('Reviewer');
+    remove_role('Writer');
 
     //寄稿者に追加した権限を削除
     $role = get_role('contributor');
@@ -751,41 +551,6 @@ function mytheme_off_options()
 }
 
 add_action('switch_theme', 'mytheme_off_options');
-
-// トップスライド
-function topslide_postype()
-{
-    $labels = array(
-        'name' => 'トップスライド',
-        'singular_name' => 'トップスライド',
-        'add_new' => '新規追加',
-        'add_new_item' => '新規スライドを追加',
-        'edit_item' => 'トップスライドを編集',
-        'new_item' => '新規トップスライド',
-        'view_item' => 'トップスライドを表示',
-        'search_items' => 'トップスライドを検索',
-        'not_found' => '投稿されたトップスライドはありません',
-        'not_found_in_trash' => 'ゴミ箱にトップスライドはありません。',
-        'parent_item_colon' => '',
-        'query_var' => 'false', // 専用のURLを用意しない
-    );
-    $args = array(
-        'labels' => $labels,
-        'public' => false,
-        'publicly_queryable' => false, //フロントエンドで post_type クエリが実行可能かどうか
-        'show_ui' => true, //この投稿タイプを管理するデフォルト UI を生成するかどうか
-        'exclude_from_search' => true, //この投稿タイプを検索結果から除外するかどうか
-        'capability_type' => 'page', //投稿タイプの閲覧／編集／削除権限をチェックするのに使用。初期値： "post"
-        'rewrite' => array('slug' => 'topslide'), //このフォーマットでパーマリンクをリライトする
-        'hierarchical' => false, //この投稿タイプが階層(親の指定が許可されている)かどうか
-        'menu_position' => 5,
-        'has_archive' => false, // 一覧画面から見れるようにする
-        'supports' => array('title', 'thumbnail', 'author', 'excerpt'),
-    );
-    register_post_type('topslide', $args);
-}
-
-add_action('init', 'topslide_postype');
 
 
 // サイドバーウィジットを有効化
@@ -810,44 +575,11 @@ register_sidebar(array(
     'after_title' => '</h2>',
 ));
 
-// Short Codes
-function linkshortCode($atts, $content = null)
-{
-    extract(shortcode_atts(array(
-        'title' => "参考リンク",
-    ), $atts));
-
-    return '<div class="link-container"><h4>' . $title . '</h4>' . $content . '</div>';
-}
-
-function columnshortCode($atts, $content = null)
-{
-    extract(shortcode_atts(array(
-        'title' => "",
-    ), $atts));
-
-    return '<div class="column"><h4>' . $title . '</h4>' . $content . '</div>';
-}
-
-function codeshortCode($atts, $content = null)
-{
-    extract(shortcode_atts(array(
-        'description' => "",
-    ), $atts));
-
-    return '<div class="code-container"><div class="code-body">' . $content . '</div><div class="code-description">' . $description . '</div></div>';
-}
-
-add_shortcode('links', 'linkshortCode');
-add_shortcode('column', 'columnshortCode');
-add_shortcode('codes', 'codeshortCode');
-
 function mysite_feed_request($vars)
 {
     if (isset($vars['feed']) && !isset($vars['post_type'])) {
         $vars['post_type'] = array(
             'post',
-            'info',
             'blog',
             'article'
         );

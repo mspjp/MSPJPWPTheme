@@ -59,10 +59,11 @@
                 }), t
             }({instrumentationKey: "ad36a47f-5368-4180-b6c3-4ac7b296f368"});
         window.appInsights = appInsights;
-        appInsights.trackPageView();</script>
+        appInsights.trackPageView();
+    </script>
 
 </head>
-<body <?php body_class(); ?> style="overflow-x : hidden;">
+<body <?php body_class(); ?> >
 <!-- Header -->
 <header>
     <div class="container">
@@ -71,20 +72,17 @@
             <div class="box__left">
 
                 <h1 class="title"
-                    style='font-family: "Meiryo UI","Meiryo","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","ＭＳ Ｐゴシック","Osaka",sans-serif;'>
-                    <a href="/">Microsoft Student Partners JAPAN</a></h1>
+                    <a href="/">Microsoft Student Partners JAPAN</a>
+                </h1>
             </div>
             <div class="box__right" style="padding-bottom:10px;">
-                <!-- <img class="menu" src="img/menu.png" alt=""> -->
                 <nav>
-                    <div class="navbar_box" style="border-left:0px;"><a href="/">トップ</a></div>
+                    <div class="navbar_box"><a href="/">トップ</a></div>
                     <div class="navbar_box"><a href="/about">MSPとは</a></div>
-                    <!--div class="navbar_box"><a href="/info/">Info</a></div-->
                     <div class="navbar_box"><a href="/profile">メンバー</a></div>
                     <div class="navbar_box"><a href="/チーム">プロジェクト</a></div>
                     <div class="navbar_box"><a href="/blog/">ブログ</a></div>
-                    <div class="navbar_box" style="border-right:0px;"><a href="/article/">技術記事</a></div>
-                    <!--div class="navbar_box"><a href="/contact">Contact</a></div-->
+                    <div class="navbar_box"><a href="/article/">技術記事</a></div>
                 </nav>
             </div>
         </div>
