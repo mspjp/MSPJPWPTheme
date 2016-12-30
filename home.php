@@ -1,64 +1,7 @@
 <?php get_header(); ?>
 
-
-<div class="topslider" style="margin-bottom:0px;">
-
-
-    <div class="slide">
-        <a href="http://mspjp.net/about" title="MSP">
-
-            <img src="http://mspjp.net/wp-content/uploads/2015/12/Screen-Shot-2015-12-19-at-16.35.29.png" alt="MSP"
-                 style="width:100%">
-            <div class="slide__description" style="min-width:300px;width:50%;height:122px;margin:0px;">
-                <h4 class="slide__title" style="border:0px;font-size:24px;">MSPのページへようこそ！</h4>
-                <p class="slide__text">MSPは、マイクロソフトが全世界で展開する学生向けのパートナープログラムです。</p>
-            </div>
-        </a>
-    </div>
-
-    <?php
-    // query_posts( $query_string . "&posts_per_page=3&paged=0");
-    $myQuery = new WP_Query();
-    $param = array(
-        'paged' => 0,
-        'posts_per_page' => '3',
-        'post_type' => array('topslide'),
-        'post_status' => 'publish',
-        'orderby' => 'rand',
-        'order' => 'DESC'
-    );
-    $myQuery->query($param);
-    if ($myQuery->have_posts()) :
-        while ($myQuery->have_posts()) : $myQuery->the_post(); ?>
-            <div class="slide">
-                <a href="<?php the_field('link'); ?>" title="<?php echo mb_substr(get_the_title(), 0, 30); ?>">
-                    <?php
-                    $image_id = get_post_thumbnail_id();
-                    $image_url = wp_get_attachment_image_src($image_id, "full"); ?>
-                    <img src="<?php if (has_post_thumbnail()) {
-                        echo $image_url[0];
-                    } else {
-                        echo "http://dummyimage.com/1020x300/ccc/fff";
-                    } ?>" alt="<?php echo mb_substr(get_the_title(), 0, 30); ?>" style="width:100%">
-                    <div class="slide__description" style="min-width:300px;width:50%;height:122px;margin:0px;">
-                        <h4 class="slide__title"
-                            style="border:0px;font-size:24px;"><?php echo mb_substr(get_the_title(), 0, 30); ?></h4>
-                        <!--p class="slide__date"><?php echo get_the_date(); ?></p-->
-                        <p class="slide__text"><?php echo mb_substr(strip_tags($post->post_excerpt), 0, 60); ?></p>
-                    </div>
-                </a>
-            </div>
-            <?php
-        endwhile;
-    else :?>
-        <?php
-    endif;
-    ?>
-</div>
-
-
 <!--test start-->
-<div class="top__left">
+<div class="col-md-8">
     <!-- Main Content -->
     <div class="main__content">
         <?php
@@ -122,7 +65,7 @@
 </div>
 
 
-<div class="top__right">
+<div class="col-md-4">
     <!--記事スタート-->
     <div class="topinfos__list">
         <p><b><span style="border-radius:5px;background-color:#7cbb00;padding:5px;margin-top:6px;margin-bottom:6px;">おすすめ記事</span></b>
@@ -228,24 +171,6 @@ echo get_the_title();
 
 
 </div>
-<!--test end-->
-
-
-<script src="http://code.jquery.com/jquery-1.9.0.js"></script>
-<script src="http://code.jquery.com/jquery-migrate-1.1.0.js"></script>
-<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/css/slick/slick.min.js"></script>
-<script>
-    $(document).ready(function () {
-        $('.topslider').slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 2000,
-            dots: true,
-            arrows: true,
-        });
-    });
-</script>
 <?php get_footer(); ?>
 
 

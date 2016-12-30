@@ -1,6 +1,4 @@
 </div>
-<!-- /Main Container -->
-</div>
 <!-- /Main -->
 <footer>
     <div class="container">

@@ -13,13 +13,8 @@ include('htmlhead.php');
                 </h1>
             </div>
             <div class="box__right" style="padding-bottom:10px;">
-                <nav>
-                    <div class="navbar_box"><a href="/">トップ</a></div>
-                    <div class="navbar_box"><a href="/about">MSPとは</a></div>
-                    <div class="navbar_box"><a href="/profile">メンバー</a></div>
-                    <div class="navbar_box"><a href="/チーム">プロジェクト</a></div>
-                    <div class="navbar_box"><a href="/blog/">ブログ</a></div>
-                    <div class="navbar_box"><a href="/article/">技術記事</a></div>
+                <nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
+                    <?php wp_nav_menu( array( 'theme_location' => 'main_menu', 'menu_class' => 'nav-menu', 'menu_id' => 'main-menu' ) ); ?>
                 </nav>
             </div>
         </div>
@@ -27,6 +22,4 @@ include('htmlhead.php');
 </header>
 <!-- /Header -->
 <!-- Main -->
-<div class="main">
-    <!-- Main Container -->
-    <div class="container">
+<div class="container">
