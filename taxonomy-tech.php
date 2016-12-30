@@ -18,7 +18,9 @@ $taxonomy = $wp_query->get_queried_object();
                                      echo get_thumbnail_url();
                                  } else {
                                      echo get_template_directory_uri() . "/images/noimage.jpg";
-                                 } ?>')"></div>
+                                 } ?>')">
+                                
+                            </div>
                             <h3><?php echo mb_substr(get_the_title(), 0, 30); ?></h3>
                             <div class="recentpost-meta">
                                 <p class="recentpost-date">公開日: <?php echo get_the_date(); ?></p>
