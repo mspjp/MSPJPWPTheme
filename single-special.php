@@ -1,21 +1,13 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <title>
-        <?php
-        wp_title('|', true, 'right');
-        bloginfo('name');
-        ?>
-    </title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <style>
-        <?php
-        echo get_field('custom_css');
-        ?>
-    </style>
-</head>
-<body>
+<?php
+include('htmlhead.php');
+?>
+
+<style>
+    <?php
+    echo get_field('custom_css');
+    ?>
+</style>
+
 <?php
 if (have_posts()) : // WordPress ループ
     while (have_posts()) :
@@ -33,5 +25,6 @@ else : // ここから記事が見つからなかった場合の処理
     <?php
 endif;
 ?>
+
 </body>
 </html>
