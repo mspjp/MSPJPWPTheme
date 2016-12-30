@@ -533,20 +533,9 @@ add_action('switch_theme', 'mytheme_off_options');
 
 // サイドバーウィジットを有効化
 register_sidebar(array(
-    'name' => 'サイドバーウィジット下',
-    'id' => 'sidebar-bottom',
-    'description' => 'サイドバーのウィジットエリア(下)です。',
-    'before_widget' => '<div id="%1$s" class="widget %2$s">',
-    'after_widget' => '</div>',
-    'before_title' => '<h2>',
-    'after_title' => '</h2>',
-));
-
-// サイドバーウィジットを有効化
-register_sidebar(array(
-    'name' => 'トップサイドバーウィジット上',
-    'id' => 'sidebar-top',
-    'description' => 'サイドバーのウィジットエリア(上)です。',
+    'name' => 'メインウィジェット',
+    'id' => 'main-widget',
+    'description' => 'メインウィジェットです',
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget' => '</div>',
     'before_title' => '<h2>',

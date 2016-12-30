@@ -35,12 +35,7 @@ $taxonomy = $wp_query->get_queried_object();
                 <?php
             endwhile; // 繰り返し処理終了
         else : // ここから記事が見つからなかった場合の処理
-            ?>
-            <div class="post">
-                <h2>記事はありません</h2>
-                <p>お探しの記事は見つかりませんでした。</p>
-            </div>
-            <?php
+            include('no-article.php');
         endif;
         ?>
     </div>

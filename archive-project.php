@@ -28,12 +28,7 @@ $post_type = $wp_query->get_queried_object();
             <?php
         endwhile; // 繰り返し処理終了
     else : // ここから記事が見つからなかった場合の処理
-        ?>
-        <div class="post">
-            <h2>アーカイブはありません</h2>
-            <p>お探しのアーカイブは見つかりませんでした。</p>
-        </div>
-        <?php
+        include('no-article.php');
     endif;
     ?>
 </ul>

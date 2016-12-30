@@ -1,12 +1,13 @@
 <?php get_header(); ?>
 <?php wp_link_pages(); ?>
-    <div class="main__content">
+    <div class="col-md-8">
         <!-- Report -->
         <div id="post-<?php the_ID(); ?>" <?php post_class("report"); ?>>
             <?php
             if (have_posts()) : // WordPress ループ
             while (have_posts()) :
-            the_post(); // 繰り返し処理開始 ?>
+            the_post(); // 繰り返し処理開始
+            ?>
             <div class="report__meta">
                 <div class="post_title">
 
@@ -15,19 +16,15 @@
                     <br/>
                     <?php the_post_thumbnail('large'); ?>
                 </div>
-                <!--ul class="report__category">
-                            <?php wp_list_categories(); ?>
-                        </ul-->
                 <?php if (comments_open()) : ?>
                     <p><?php comments_popup_link('Comment : 0', 'Comment : 1', 'Comments : %'); ?></p>
-                <?php endif; // comments_open() ?>
+                <?php endif; // comments_open()
+                ?>
 
 
             </div>
 
-            <div class="entry_body">
-                <?php the_content(); ?>
-            </div>
+            <?php the_content(); ?>
             <p class="report__info">筆者: <?php the_author(); ?> | <?php echo get_the_date(); ?></p>
         </div>
 
@@ -38,7 +35,8 @@
             'link_before' => '<span>',
             'link_after' => '</span>',
         );
-        wp_link_pages($args); ?>
+        wp_link_pages($args);
+        ?>
 
         <!-- post navigation -->
         <div class="navigation">
@@ -54,21 +52,18 @@
             ?>
         </div>
         <!-- /post navigation -->
-        <?php comments_template(); // コメント欄の表示 ?>
+        <?php
+        comments_template(); // コメント欄の表示
+        ?>
         <?php
         endwhile; // 繰り返し処理終了
         else : // ここから記事が見つからなかった場合の処理
-            ?>
-            <div class="post">
-                <h2>記事はありません</h2>
-                <p>お探しの記事は見つかりませんでした。</p>
-            </div>
-            <?php
+            include('no-article.php');
         endif;
         ?>
     </div>
     <!-- /Main Content -->
-    <div class="main__sidebar">
+    <div class="col-md-4">
         <?php get_sidebar(); ?>
     </div>
 <?php get_footer(); ?>
