@@ -19,7 +19,7 @@ $taxonomy = $wp_query->get_queried_object();
                                  } else {
                                      echo get_template_directory_uri() . "/images/noimage.jpg";
                                  } ?>')">
-                                
+
                             </div>
                             <h3><?php echo mb_substr(get_the_title(), 0, 30); ?></h3>
                             <div class="recentpost-meta">

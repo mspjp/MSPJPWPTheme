@@ -3,17 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title><?php wp_title('|', true, 'right');
-        bloginfo('name'); ?></title>
+    <title>
+        <?php
+        wp_title('|', true, 'right');
+        bloginfo('name');
+        ?>
+    </title>
     <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/img/favicon.ico">
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Marcellus+SC' rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" media="screen">
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <?php if (is_singular()) wp_enqueue_script("comment-reply");
-    wp_head(); ?>
+    <?php
+    if (is_singular()) wp_enqueue_script("comment-reply");
+    wp_head();
+    ?>
 
     <!-- google analytics -->
     <script>
@@ -62,6 +69,11 @@
         appInsights.trackPageView();
     </script>
 
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+
 </head>
 <body <?php body_class(); ?> >
 <!-- Header -->
@@ -72,7 +84,7 @@
             <div class="box__left">
 
                 <h1 class="title"
-                    <a href="/">Microsoft Student Partners JAPAN</a>
+                <a href="/">Microsoft Student Partners JAPAN</a>
                 </h1>
             </div>
             <div class="box__right" style="padding-bottom:10px;">
