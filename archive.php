@@ -1,33 +1,28 @@
-<?php get_header();
-$post_type = $wp_query->get_queried_object();
-?>
+<?php get_header(); ?>
 
 <!-- Main Content -->
-<div class="main__content">
+<div class="cols-md-8">
     <?php
     query_posts($query_string . "&posts_per_page=5&paged=" . $paged);
     if (have_posts()) : // WordPress ループ
         while (have_posts()) : the_post(); // 繰り返し処理開始 ?>
-            <article class="posdt" id="post-<?php the_ID(); ?>" <?php post_class('blog'); ?>>
+            <article class="" id="post-<?php the_ID(); ?>" <?php post_class('blog'); ?>>
                 <a href="<?php the_permalink(); ?>">
 
-                    <div class="post__contaaeant">
+                    <div class="">
 
-                        <h3 class="post__titdle"
-                            style="border-bottom:0px solid;"><?php echo mb_substr(get_the_title(), 0, 100); ?></h3>
-                        <img width="100%" src="<?php if (has_post_thumbnail()) {
-                            echo get_thumbnail_full_url();
-                        } else {
-                            echo get_template_directory_uri() . "/img/noimage.png";
-                        } ?>" alt="">
-                        <!-- p class="post__text" style="line-height:2em;"><?php echo mb_substr(strip_tags($post->post_content), 0, 200) . "…"; ?></p-->
+                        <h3 class=""><?php echo mb_substr(get_the_title(), 0, 100); ?></h3>
 
-                        <p class="post__text"
-                           style="line-height:2em;"><?php echo mb_substr(strip_tags($post->post_content), 0, 200) . "…"; ?>
-                            <span style="color:green"><b>続きを読む</b></span></p>
-                        <!--p class="post__info">by <?php the_author(); ?> | <?php the_time('Y年n月j日'); ?></p-->
+                        <img class="" src="<?php echo get_thumbnail_url(has_post_thumbnail()) ?>" alt="">
+                        <?php echo mb_substr(strip_tags($post->post_content), 0, 200) . "…"; ?>
+
+                        <p class="">
+                            <?php echo mb_substr(strip_tags($post->post_content), 0, 200) . "…"; ?>
+                            <span>
+                                <b>続きを読む</b>
+                            </span>
+                        </p>
                     </div>
-                    <h3></h3>
                 </a>
             </article>
             <?php
@@ -48,7 +43,7 @@ $post_type = $wp_query->get_queried_object();
 </div>
 <!-- /Main Content -->
 
-<div class="main__sidebar" style="margin-top:95px;">
+<div class="cols-md-4">
     <?php get_sidebar(); ?>
 </div>
 <?php get_footer(); ?>

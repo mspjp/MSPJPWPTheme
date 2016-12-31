@@ -16,12 +16,8 @@ $post_type = $wp_query->get_queried_object();
         while (have_posts()) : the_post(); // 繰り返し処理開始 ?>
             <li id="post-<?php the_ID(); ?>">
                 <a class="profile" href="<?php the_permalink(); ?>">
-                    <img class="profile__icon" src="<?php if (has_post_thumbnail()) {
-                        echo get_thumbnail_url();
-                    } else {
-                        echo get_template_directory_uri() . "/img/noimage.png";
-                    } ?>" alt="">
-                    <span class="profile__name"><?php echo mb_substr(get_the_title(), 0, 30); ?></span>
+                    <img class="" src="<?php echo get_thumbnail_url(has_post_thumbnail()) ?>" alt="">
+                    <span class=""><?php echo mb_substr(get_the_title(), 0, 30); ?></span>
                     <?php
                     $field_depart = get_field_object('department');
                     $value_depart = get_field('department');

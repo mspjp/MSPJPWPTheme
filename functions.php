@@ -41,19 +41,27 @@ add_theme_support('post-thumbnails');
 set_post_thumbnail_size(200, 200, true);
 
 // Get the featured image URL
-function get_thumbnail_url()
+function get_thumbnail_url($has_post_thumbnail = false)
 {
-    $image_id = get_post_thumbnail_id();
-    $image_url = wp_get_attachment_image_src($image_id, 'thumbnail', true);
-    echo $image_url[0];
+    if (has_post_thumbnail()) {
+        $image_id = get_post_thumbnail_id();
+        $image_url = wp_get_attachment_image_src($image_id, 'thumbnail', true);
+        return $image_url[0];
+    } else {
+        return get_template_directory_uri() . "/img/noimage.png";
+    }
 }
 
 // Get the featured image URL
-function get_thumbnail_full_url()
+function get_thumbnail_full_url($has_post_thumbnail = false)
 {
-    $image_id = get_post_thumbnail_id();
-    $image_url = wp_get_attachment_image_src($image_id, 'full', true);
-    echo $image_url[0];
+    if (has_post_thumbnail()) {
+        $image_id = get_post_thumbnail_id();
+        $image_url = wp_get_attachment_image_src($image_id, 'full', true);
+        return $image_url[0];
+    } else {
+        return get_template_directory_uri() . "/img/noimage.png";
+    }
 }
 
 // カスタムメニューの「場所」を設定

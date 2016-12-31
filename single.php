@@ -11,7 +11,8 @@
             <div class="report__meta">
                 <div class="post_title">
 
-                    <h3 class="report__title_"><a href="<?php the_permalink(); ?>"><?php echo get_the_title(); ?></a>
+                    <h3 class="report__title_">
+                        <a href="<?php the_permalink(); ?>"><?php echo get_the_title(); ?></a>
                     </h3>
                     <br/>
                     <?php the_post_thumbnail('large'); ?>

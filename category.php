@@ -1,6 +1,4 @@
-<?php get_header();
-$taxonomy = $wp_query->get_queried_object();
-?>
+<?php get_header(); ?>
 <!-- main -->
 <div id="main">
     <h2><?php single_cat_title(); ?>に関連する新着記事</h2>

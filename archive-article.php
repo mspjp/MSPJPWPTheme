@@ -1,29 +1,18 @@
-<?php get_header();
-$post_type = $wp_query->get_queried_object();
-?>
-<div class="headline">
-    <h2 class="headline__title"><?php post_type_archive_title(); ?></h2>
-    <div class="headline__snsbtns">
-
-    </div>
-</div>
+<?php get_header(); ?>
+<h2 class=""><?php post_type_archive_title(); ?></h2>
 
 <h3>IT系の記事</h3>
-<!-- Main Content -->
-<ul class="profile_list">
+<ul class="">
     <?php
     query_posts("tech=it" . "&posts_per_page=-1");
     if (have_posts()) : // WordPress ループ
         while (have_posts()) : the_post(); // 繰り返し処理開始 ?>
             <li id="post-<?php the_ID(); ?>">
                 <a class="profile" href="<?php the_permalink(); ?>">
-                    <img class="profile__icon" src="<?php if (has_post_thumbnail()) {
-                        echo get_thumbnail_url();
-                    } else {
-                        echo get_template_directory_uri() . "/img/noimage.png";
-                    } ?>" alt="">
-                    <h3 class="profile__name"><?php echo mb_substr(get_the_title(), 0, 30); ?></h3>
-                    <p class="profile__text"><?php echo mb_substr(strip_tags($post->post_content), 0, 24) . "..."; ?></p>
+
+                    <img class="" src="<?php echo get_thumbnail_url(has_post_thumbnail()) ?>" alt="">
+                    <h3 class=""><?php echo mb_substr(get_the_title(), 0, 30); ?></h3>
+                    <p class=""><?php echo mb_substr(strip_tags($post->post_content), 0, 24) . "..."; ?></p>
                 </a>
             </li>
             <?php
@@ -34,19 +23,22 @@ $post_type = $wp_query->get_queried_object();
     ?>
 </ul>
 <h3>プログラミング系の記事</h3>
-<!-- Main Content -->
-<ul class="profile_list">
+<ul class="">
     <?php
     query_posts("tech=program" . "&posts_per_page=-1");
     if (have_posts()) : // WordPress ループ
         while (have_posts()) : the_post(); // 繰り返し処理開始 ?>
             <li id="post-<?php the_ID(); ?>">
                 <a class="profile" href="<?php the_permalink(); ?>">
-                    <img class="profile__icon" src="<?php if (has_post_thumbnail()) {
-                        echo get_thumbnail_url();
+                    <?php
+                    $image_url = '';
+                    if (has_post_thumbnail()) {
+                        $image_url = get_thumbnail_url();
                     } else {
-                        echo get_template_directory_uri() . "/img/noimage.png";
-                    } ?>" alt="">
+                        $image_url = get_template_directory_uri() . "/img/noimage.png";
+                    }
+                    ?>
+                    <img class="" src="<?php echo $image_url ?>" alt="">
                     <h3 class="profile__name"><?php echo mb_substr(get_the_title(), 0, 30); ?></h3>
                     <p class="profile__text"><?php echo mb_substr(strip_tags($post->post_content), 0, 24) . "..."; ?></p>
                 </a>
@@ -64,5 +56,5 @@ $post_type = $wp_query->get_queried_object();
     wp_list_categories('title_li=&taxonomy=tech');
     ?>
 </ul>
-<!-- /Main Content -->
+
 <?php get_footer(); ?>

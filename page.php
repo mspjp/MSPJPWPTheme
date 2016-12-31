@@ -18,10 +18,6 @@
 
             <div class="entry_body">
                 <?php the_content(); ?>
-
-                <!--div class="report__meta">
-                        <p class="report__info" style="font-size:10.5px;">Last update : <?php echo get_the_date(); ?></p>
-                    </div-->
             </div>
 
         </div>
@@ -35,10 +31,6 @@
         );
         wp_link_pages($args); ?>
 
-        <!-- post navigation -->
-        <div class="navigation">
-            <!-- remove navigation -->
-        </div>
         <!-- /post navigation -->
         <?php
         endwhile; // 繰り返し処理終了
