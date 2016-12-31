@@ -1,6 +1,4 @@
-<?php get_header();
-$taxonomy = $wp_query->get_queried_object();
-?>
+<?php get_header(); ?>
 <!-- main -->
 <div id="main">
     <h2><?php echo esc_html($taxonomy->name) ?>に関連する新着タイトル</h2>
@@ -13,13 +11,8 @@ $taxonomy = $wp_query->get_queried_object();
                 <article class="recentpost">
                     <div class="recentpost-link metrolink">
                         <div class="recentpost-body">
-                            <div class="recentpost-image"
-                                 style="background-image: url('<?php if (has_post_thumbnail()) {
-                                     echo get_thumbnail_url();
-                                 } else {
-                                     echo get_template_directory_uri() . "/images/noimage.jpg";
-                                 } ?>')">
-
+                            <div class="recentpost-image">
+                                <img class="" src="<?php echo get_thumbnail_url(has_post_thumbnail()) ?>" alt="">
                             </div>
                             <h3><?php echo mb_substr(get_the_title(), 0, 30); ?></h3>
                             <div class="recentpost-meta">
@@ -35,12 +28,12 @@ $taxonomy = $wp_query->get_queried_object();
                 <?php
             endwhile; // 繰り返し処理終了
         else : // ここから記事が見つからなかった場合の処理
+
             include('no-article.php');
         endif;
         ?>
     </div>
 
-    <!-- entry-list -->
 </div>
 <!-- /main -->
 </div>
