@@ -22,7 +22,7 @@ include('htmlhead.php');
     </div>
     <div class="row div-home-intro">
         <div class="col-sm-4 dic-home-topbutton-container">
-            <a>
+            <a class="btn">
                 <div class="div-home-topbutton div-home-topbutton-left">
                     <i class="fa fa-laptop i-home-topbutton-icon" aria-hidden="true"></i>
                     <p class="p-home-topbutton-title">勉強系に行く</p>
@@ -31,18 +31,37 @@ include('htmlhead.php');
             </a>
         </div>
         <div class="col-sm-4 dic-home-topbutton-container">
-            <div class="div-home-topbutton div-home-topbutton-center">
-                <i class="fa fa-trophy i-home-topbutton-icon" aria-hidden="true"></i>
-                <p class="p-home-topbutton-title">コンテストに出る</p>
-                <p class="p-home-topbutton-caption">ImagineCupはあなたのアイデアで世界と競うことができます</p>
-            </div>
+            <a class="btn">
+                <div class="div-home-topbutton div-home-topbutton-center">
+                    <i class="fa fa-trophy i-home-topbutton-icon" aria-hidden="true"></i>
+                    <p class="p-home-topbutton-title">コンテストに出る</p>
+                    <p class="p-home-topbutton-caption">ImagineCupはあなたのアイデアで世界と競うことができます</p>
+                </div>
+            </a>
         </div>
         <div class="col-sm-4 dic-home-topbutton-container">
-            <div class="div-home-topbutton div-home-topbutton-right">
-                <i class="fa fa-twitter i-home-topbutton-icon" aria-hidden="true"></i>
-                <p class="p-home-topbutton-title">フォローする</p>
-                <p class="p-home-topbutton-caption">学生に役に立つMSテクノロジー情報を発信しています</p>
+            <a class="btn">
+                <div class="div-home-topbutton div-home-topbutton-right">
+                    <i class="fa fa-twitter i-home-topbutton-icon" aria-hidden="true"></i>
+                    <p class="p-home-topbutton-title">フォローする</p>
+                    <p class="p-home-topbutton-caption">学生に役に立つMSテクノロジー情報を発信しています</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="row div-home-section">
+        <div class="div-home-section-title">
+            <div>
+                <p>Microsoft Studnet Partnersとは</p>
             </div>
+        </div>
+        <p class="p-home-section-about-description">Microsoftの製品技術(VisualStudioやOfficeなど)の楽しさを学生に伝えるために活動を行う有志の学生団体です。</p>
+        <p class="p-home-section-about-description">SNSで情報発信を行ったり、全国でハンズオンを開いたりしています。</p>
+        <div class="div-home-section-button">
+            <a class="a-home-section-button btn">
+                <p>もっと詳しく知る <i class="fa fa-angle-right" aria-hidden="true"></i></p>
+            </a>
         </div>
     </div>
 

@@ -69,7 +69,7 @@
 
 .div-home-topbutton{
     width:220px;
-    height:180px;
+    height:190px;
     margin:auto;
     text-align: center;
     color: #fff;
@@ -93,6 +93,7 @@
 
 .i-home-topbutton-icon{
     font-size:100px;
+    margin-top:10px;
 }
 
 .p-home-topbutton-title{
@@ -103,5 +104,49 @@
 }
 
 .p-home-topbutton-caption{
+    white-space: pre-wrap;
+}
 
+.div-home-section{
+    margin-top:10px;
+}
+
+.div-home-section-title{
+    text-align: center;
+}
+
+.div-home-section-title > div{
+    border-bottom-style:solid;
+    border-bottom-width: 2px;
+    border-bottom-color: #e54372;
+    display: inline-block;
+    margin:auto;
+    margin-bottom:10px;
+}
+
+.div-home-section-title p{
+    font-size:24px;
+    margin-bottom:1px;
+    color:#e54372;
+}
+
+.p-home-section-about-description{
+    font-size: 20px;
+}
+
+.div-home-section-about-button{
+    text-align: right;
+}
+
+.a-home-section-about-button{
+    margin-top:40px;
+    color: #fff;
+    background-color: #f19ab3;
+    margin-left:auto;
+}
+
+
+.a-home-section-button > p{
+    margin:5px 10px;
+    font-size: 20px;
 }
