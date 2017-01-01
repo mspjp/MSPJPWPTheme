@@ -13,9 +13,8 @@
 
 .p-home-captionleft{
     position: absolute;
-    top:140px;
-    left: 10px;
-    font-size: 38px;
+    top:20%;
+    left: 20px;
     color: white;
     font-weight: bold;
     width: 40%;
@@ -24,42 +23,55 @@
 
 .p-home-captionright{
     position: absolute;
-    bottom:40px;
-    right: 20px;
-    font-size: 34px;
+    bottom:5%;
+    right: 5px;
     color: white;
     font-weight: bold;
-    width: 50%;
+    width:55%;
     text-decoration-line: underline;
+    text-align: right;
 }
 
-@media screen and (max-width:480px){
-    .p-home-captionright {
-        font-size: 20px;
-        bottom:10px;
-    }
+@media screen and (min-width:961px) {
+    /*pc用のcssを記述*/
     .p-home-captionleft{
-        top:10px;
-        font-size:16px;
+        font-size:38px;
+    }
+    .p-home-captionright {
+        font-size: 32px;
     }
 }
-@media screen and (max-width:768px){
+
+@media only screen and (min-width:376px) and (max-width:960px) {
+    /*tablet用のcssを記述*/
+    .p-home-captionleft{
+        font-size:20px;
+    }
     .p-home-captionright {
         font-size: 20px;
     }
+}
+
+@media screen and (max-width:375px) {
+    /*スマホ用のcssを記述*/
     .p-home-captionleft{
-        top:60px;
-        font-size:24px;
+        font-size:10px;
+    }
+    .p-home-captionright {
+        font-size: 12px;
     }
 }
+
+
 
 .div-home-intro{
 }
 
 .div-home-topbutton{
-    width:200px;
-    height:200px;
+    width:220px;
+    height:180px;
     margin:auto;
+    text-align: center;
     color: #fff;
 }
 
@@ -77,4 +89,19 @@
 
 .div-home-topbutton-right{
     background-color: #709dc1;
+}
+
+.i-home-topbutton-icon{
+    font-size:100px;
+}
+
+.p-home-topbutton-title{
+    text-decoration: underline;
+    font-size:24px;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+.p-home-topbutton-caption{
+
 }

@@ -2,34 +2,46 @@
 include('htmlhead.php');
 ?>
 
-<div class="container">
-
-    <div class="row">
-        <div class="div-home-eyecatchback">
-            <img src="<?php echo get_template_directory_uri() . "/img/top-eyecatch.jpg" ?>" width="100%"/>
-            <div class="div-home-eyecatchover">
-                <p class="p-home-captionleft">Microsoftテクノロジーの"楽しさ"を伝えることが我々のミッションです</p>
-                <p class="p-home-captionright">Microsoft Student Partners Japan</p>
+<div class="row" style="width: 100%;">
+    <div class="div-home-eyecatchback">
+        <img src="<?php echo get_template_directory_uri() . "/img/top-eyecatch.jpg" ?>" width="100%"/>
+        <div class="div-home-eyecatchover">
+            <div class="p-home-captionleft">
+                <p>Microsoftテクノロジーの</p>
+                <p>"楽しさ"を伝えることが</p>
+                <p>我々のミッションです</p>
             </div>
+            <p class="p-home-captionright">Microsoft Student Partners Japan</p>
         </div>
     </div>
+</div>
 
+<div class="container">
+    <div class="row div-home-nav">
+        <?php include('navbar.php'); ?>
+    </div>
     <div class="row div-home-intro">
         <div class="col-sm-4 dic-home-topbutton-container">
             <a>
                 <div class="div-home-topbutton div-home-topbutton-left">
-                    <i class="fa fa-laptop" aria-hidden="true"></i>
+                    <i class="fa fa-laptop i-home-topbutton-icon" aria-hidden="true"></i>
+                    <p class="p-home-topbutton-title">勉強系に行く</p>
+                    <p class="p-home-topbutton-caption">MSPは全国で学生向け勉強会を開催しています</p>
                 </div>
             </a>
         </div>
         <div class="col-sm-4 dic-home-topbutton-container">
             <div class="div-home-topbutton div-home-topbutton-center">
-
+                <i class="fa fa-trophy i-home-topbutton-icon" aria-hidden="true"></i>
+                <p class="p-home-topbutton-title">コンテストに出る</p>
+                <p class="p-home-topbutton-caption">ImagineCupはあなたのアイデアで世界と競うことができます</p>
             </div>
         </div>
         <div class="col-sm-4 dic-home-topbutton-container">
             <div class="div-home-topbutton div-home-topbutton-right">
-
+                <i class="fa fa-twitter i-home-topbutton-icon" aria-hidden="true"></i>
+                <p class="p-home-topbutton-title">フォローする</p>
+                <p class="p-home-topbutton-caption">学生に役に立つMSテクノロジー情報を発信しています</p>
             </div>
         </div>
     </div>
