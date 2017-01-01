@@ -76,7 +76,7 @@
 }
 
 .dic-home-topbutton-container{
-
+    text-align: center;
 }
 
 .div-home-topbutton-left{
@@ -109,6 +109,7 @@
 
 .div-home-section{
     margin-top:10px;
+    text-align: center;
 }
 
 .div-home-section-title{
@@ -130,15 +131,16 @@
     color:#e54372;
 }
 
-.p-home-section-about-description{
+.p-home-section-description{
     font-size: 20px;
+    text-align: left;
 }
 
-.div-home-section-about-button{
+.div-home-section-button{
     text-align: right;
 }
 
-.a-home-section-about-button{
+.a-home-section-button{
     margin-top:40px;
     color: #fff;
     background-color: #f19ab3;
@@ -149,4 +151,50 @@
 .a-home-section-button > p{
     margin:5px 10px;
     font-size: 20px;
+}
+
+.div-home-section-title-recent > div{
+    border-bottom-color: #01bc88;
+}
+
+.div-home-section-title-recent p{
+    color:#01bc88;
+}
+
+.a-home-section-button-recent{
+    background-color: #01bc88;
+}
+
+.div-home-section-recent{
+    display: flex;
+}
+
+.div-home-section-recent>div{
+    position: relative;
+    width:100%;
+    margin-left:auto;
+    margin-top:auto;
+}
+
+.div-home-section-recent>div>div{
+    position: absolute;
+    bottom:0px;
+    width:320px;
+    background-color: #01bc88;
+    opacity: 0.9;
+    color: #fff;
+    left:0px;
+    right:0px;
+    margin:auto;
+    padding:5px;
+}
+
+@media screen and (max-width:768px) {
+    .div-home-section-recent{
+        display: block;
+    }
+}
+
+.p-home-section-recent-date{
+    text-align: left;
 }

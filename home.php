@@ -51,15 +51,58 @@ include('htmlhead.php');
     </div>
 
     <div class="row div-home-section">
-        <div class="div-home-section-title">
+        <div class="div-home-section-title div-home-section-title-about">
             <div>
                 <p>Microsoft Studnet Partnersとは</p>
             </div>
         </div>
-        <p class="p-home-section-about-description">Microsoftの製品技術(VisualStudioやOfficeなど)の楽しさを学生に伝えるために活動を行う有志の学生団体です。</p>
-        <p class="p-home-section-about-description">SNSで情報発信を行ったり、全国でハンズオンを開いたりしています。</p>
+        <p class="p-home-section-description">
+            Microsoftの製品技術(VisualStudioやOfficeなど)の楽しさを学生に伝えるために活動を行う有志の学生団体です。</p>
+        <p class="p-home-section-description">SNSで情報発信を行ったり、全国でハンズオンを開いたりしています。</p>
         <div class="div-home-section-button">
-            <a class="a-home-section-button btn">
+            <a class="btn a-home-section-button a-home-section-button-about">
+                <p>もっと詳しく知る <i class="fa fa-angle-right" aria-hidden="true"></i></p>
+            </a>
+        </div>
+    </div>
+
+    <div class="row div-home-section">
+        <div class="div-home-section-title div-home-section-title-recent">
+            <div>
+                <p>最新情報</p>
+            </div>
+        </div>
+        <div class="div-home-section-recent">
+            <?php
+            $myQuery = new WP_Query();
+            $param = array(
+                'paged' => 0,
+                'posts_per_page' => '3',
+                'post_type' => array('blog'),
+                'post_status' => 'publish',
+                'orderby' => 'date',
+                'order' => 'DESC'
+            );
+            $myQuery->query($param);
+            if ($myQuery->have_posts()) :
+                while ($myQuery->have_posts()) : $myQuery->the_post(); ?>
+                    <div class="col-sm-4">
+                        <img class="" width="320px" src="<?php echo get_thumbnail_url(has_post_thumbnail()) ?>" alt="">
+                        <div>
+                            <p class="p-home-section-recent-date"><?php the_time('Y/n/j'); ?></p>
+                            <p><?php echo mb_substr(get_the_title(), 0, 100); ?></p>
+                        </div>
+                    </div>
+                    <?php
+                endwhile; // 繰り返し処理終了
+            else : // ここから記事が見つからなかった場合の処理
+                include('no-article.php');
+            endif;
+            ?>
+        </div>
+
+        <div class="div-home-section-button">
+            <a class="btn a-home-section-button a-home-section-button-recent">
                 <p>もっと詳しく知る <i class="fa fa-angle-right" aria-hidden="true"></i></p>
             </a>
         </div>

@@ -30,6 +30,8 @@ body {
     border-style: none;
     border-bottom-style: solid;
     border-width: 1px;
+    border-color: #7f7f7f;
+    margin-bottom: 10px;
 }
 
 .ul-menu-main li:first-child a{
