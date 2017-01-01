@@ -156,6 +156,18 @@
     font-size: 20px;
 }
 
+.div-home-section-title-about > div{
+    border-bottom-color: #e54372;
+}
+
+.div-home-section-title-about p{
+    color:#e54372;
+}
+
+.a-home-section-button-about{
+    background-color: #f19ab3;
+}
+
 .div-home-section-title-recent > div{
     border-bottom-color: #01bc88;
 }
@@ -229,4 +241,35 @@
 .div-home-section-subrecent>a>div{
     margin-left:20px;
     color: #595959;
+}
+
+.div-home-section-title-imagine > div{
+    border-bottom-color: #b7ca3e;
+}
+
+.div-home-section-title-imagine p{
+    color:#b7ca3e;
+}
+
+.a-home-section-button-imagine{
+    background-color: #b7ca3e;
+}
+
+.div-home-section-imagine-description>.col-sm-6{
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+.div-home-section-imagine-description>.col-sm-6 p{
+    margin-top:20px;
+    font-size: 20px;
+}
+
+.div-home-section-imagine-register{
+    width: 100%;
+}
+
+.div-home-section-imagine-register>p{
+    font-size:28px;
+    font-weight:bold;
 }
