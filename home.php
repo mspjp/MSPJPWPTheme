@@ -2,7 +2,7 @@
 include('htmlhead.php');
 ?>
 
-<div class="row" style="width: 100%;">
+<div class="div-home-eyecatch">
     <div class="div-home-eyecatchback">
         <img src="<?php echo get_template_directory_uri() . "/img/top-eyecatch.jpg" ?>" width="100%"/>
         <div class="div-home-eyecatchover">
