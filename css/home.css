@@ -18,7 +18,6 @@
     color: white;
     font-weight: bold;
     width: 40%;
-    text-shadow: 5px,5px,1px,#999999;
 }
 
 .p-home-captionright{
@@ -108,7 +107,7 @@
 }
 
 .div-home-section{
-    margin-top:10px;
+    margin-top:30px;
     text-align: center;
 }
 
@@ -169,24 +168,33 @@
     display: flex;
 }
 
-.div-home-section-recent>div{
-    position: relative;
+.div-home-section-recent>div>a{
+    padding:0px;
+}
+
+.div-home-section-recent>div>a>img{
     width:100%;
+}
+
+
+.div-home-section-recent>a>div{
+    position: relative;
     margin-left:auto;
     margin-top:auto;
 }
 
-.div-home-section-recent>div>div{
+.div-home-section-recent>div>a>div{
     position: absolute;
     bottom:0px;
-    width:320px;
+    right:15px;
+    left:15px;
     background-color: #01bc88;
     opacity: 0.9;
     color: #fff;
-    left:0px;
-    right:0px;
     margin:auto;
-    padding:5px;
+}
+.div-home-section-recent>div>a>div>p{
+    white-space: pre-wrap;
 }
 
 @media screen and (max-width:768px) {
@@ -197,4 +205,24 @@
 
 .p-home-section-recent-date{
     text-align: left;
+}
+
+.div-home-section-subrecent{
+    margin-top:20px;
+}
+
+.div-home-section-subrecent>a{
+    max-width:800px;
+    background-color: #dedede;
+    display: flex;
+    padding:5px;
+    margin: 5px auto;
+}
+
+.div-home-section-subrecent>a>img{
+}
+
+.div-home-section-subrecent>a>div{
+    margin-left:20px;
+    color: #595959;
 }
