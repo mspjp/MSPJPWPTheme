@@ -1,0 +1,80 @@
+.div-home-eyecatchback{
+    position:relative;
+}
+
+.div-home-eyecatchover{
+    position: absolute;
+    top:0;
+    left:0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.p-home-captionleft{
+    position: absolute;
+    top:140px;
+    left: 10px;
+    font-size: 38px;
+    color: white;
+    font-weight: bold;
+    width: 40%;
+    text-shadow: 5px,5px,1px,#999999;
+}
+
+.p-home-captionright{
+    position: absolute;
+    bottom:40px;
+    right: 20px;
+    font-size: 34px;
+    color: white;
+    font-weight: bold;
+    width: 50%;
+    text-decoration-line: underline;
+}
+
+@media screen and (max-width:480px){
+    .p-home-captionright {
+        font-size: 20px;
+        bottom:10px;
+    }
+    .p-home-captionleft{
+        top:10px;
+        font-size:16px;
+    }
+}
+@media screen and (max-width:768px){
+    .p-home-captionright {
+        font-size: 20px;
+    }
+    .p-home-captionleft{
+        top:60px;
+        font-size:24px;
+    }
+}
+
+.div-home-intro{
+}
+
+.div-home-topbutton{
+    width:200px;
+    height:200px;
+    margin:auto;
+    color: #fff;
+}
+
+.dic-home-topbutton-container{
+
+}
+
+.div-home-topbutton-left{
+    background-color: #01bc88;
+}
+
+.div-home-topbutton-center{
+    background-color: #d1dd83;
+}
+
+.div-home-topbutton-right{
+    background-color: #709dc1;
+}
