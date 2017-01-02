@@ -8,6 +8,10 @@ body {
     font-size: 16px;
 }
 
+a{
+    color: #595959;
+}
+
 .ul-menu-main{
     margin: 10px auto;
     display: table;
@@ -60,6 +64,11 @@ body {
     text-align: center;
 }
 
+.div-section-title{
+    margin-top:60px;
+    margin-bottom: 30px;
+}
+
 
 .div-section-title > div{
     border-bottom-style:solid;
@@ -104,7 +113,7 @@ body {
     border-bottom-style: solid;
     border-bottom-color: #e54372;
     border-bottom-width: 2px;
-    margin-bottom: 60px;
+    margin-bottom: 10px;
 }
 
 .div-header-row>h1 {
@@ -147,4 +156,10 @@ footer{
     font-size: 28px;
     font-weight: bold;
     margin-top:20px;
+}
+
+.p-archiveprofile-hire{
+    font-size: 22px;
+    width:65%;
+    margin:auto;
 }
