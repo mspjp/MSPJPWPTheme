@@ -564,4 +564,3 @@ function mysite_feed_request($vars)
 
 add_filter('request', 'mysite_feed_request');
 
-?>

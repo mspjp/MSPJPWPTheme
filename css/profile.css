@@ -95,9 +95,12 @@
     margin-top:15px;
     text-align: left;
     font-size:22px;
+    width: 100%;
 }
 
 .p-archiveprofile-catch{
     text-align: left;
     font-size:18px;
+    width: 100%;
+    white-space: pre-wrap;
 }

@@ -170,6 +170,7 @@
     color: #fff;
     margin:auto;
 }
+
 .div-home-section-recent>div>a>div>p{
     white-space: pre-wrap;
 }
@@ -197,6 +198,7 @@
 }
 
 .div-home-section-subrecent>a>img{
+    height: 80px;
 }
 
 .div-home-section-subrecent>a>div{

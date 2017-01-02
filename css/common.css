@@ -12,6 +12,17 @@ a{
     color: #595959;
 }
 
+a:hover{
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+}
+
+img{
+    max-width: 100%;
+    height:auto;
+}
+
 .ul-menu-main{
     margin: 10px auto;
     display: table;
@@ -34,8 +45,15 @@ a{
     border-style: none;
     border-bottom-style: solid;
     border-width: 1px;
-    border-color: #7f7f7f;
+    border-color: #CfCfCf;
     margin-bottom: 20px;
+}
+
+.ul-menu-main > li > a:hover{
+    border-bottom-style: solid;
+    border-bottom-color: #e54372;
+    border-bottom-width: 1px;
+    background-color: inherit;
 }
 
 .ul-menu-main li:first-child a{
@@ -116,9 +134,12 @@ a{
     margin-bottom: 10px;
 }
 
-.div-header-row>h1 {
+.div-header-row>a>h1 {
     font-weight:bold;
 }
+
+
+
 
 .span-header-highlight{
     color: #e54372;
