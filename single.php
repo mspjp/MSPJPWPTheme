@@ -19,7 +19,7 @@
                 if (has_post_thumbnail()):
                     ?>
                     <div class="div-single-thumbnail"
-                         style="background-image: url(<?php echo get_thumbnail_url(has_post_thumbnail()) ?>)">
+                         style="background-image: url(<?php echo get_thumbnail_full_url(has_post_thumbnail()) ?>)">
                     </div>
                     <?php
                 endif;

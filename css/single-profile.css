@@ -1,0 +1,29 @@
+.div-singleprofile-row{
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;/*ブラー効果でボヤけた部分を非表示*/
+    position: relative;
+}
+
+.div-singleprofile-content:before{
+    content: "";
+    position: absolute;
+    background-clip: content-box;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    top: 0;
+    left: 0;
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
+}
+
+.div-singleprofile-content{
+    padding: 30px;
+    position: relative;
+}
+
+.div-singleprofile-row:before{
+}
