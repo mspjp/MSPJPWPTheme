@@ -1,0 +1,55 @@
+.div-profile-section-title{
+    font-weight:bold;
+}
+
+.div-profile-section{
+    display: flex;
+}
+
+.div-profile-section2{
+    background-color: #f4f3f4;
+    display: flex;
+}
+
+@media screen and (max-width:768px) {
+    .div-profile-section{
+        display: block;
+    }
+    .div-profile-section2{
+        display: block;
+    }
+}
+
+.p-profile-section-title{
+    font-size: 32px;
+    margin-top:20px;
+    font-weight:bold;
+}
+
+
+.p-profile-section-caption{
+    font-size:24px;
+}
+
+.p-profile-section-caption-intro{
+    margin-top: 60px;
+}
+
+.p-profile-section-caption-seminar{
+    margin-top: 20px;
+}
+.a-profile-section-button-seminar{
+    background-color: #01bc88;
+}
+
+.a-profile-section-button-pr{
+    background-color: #f19ab3;
+}
+
+.a-profile-section-button-contest{
+    background-color: #b7ca3e;
+}
+
+.a-profile-section-button-lab{
+    background-color: #4577a0;
+}

@@ -50,24 +50,24 @@ include('htmlhead.php');
         </div>
     </div>
 
-    <div class="row div-home-section">
-        <div class="div-home-section-title div-home-section-title-about">
+    <div class="row div-section">
+        <div class="div-section-title div-home-section-title-about">
             <div>
                 <p>Microsoft Studnet Partnersとは</p>
             </div>
         </div>
-        <p class="p-home-section-description">
+        <p class="p-section-description">
             Microsoftの製品技術(VisualStudioやOfficeなど)の楽しさを学生に伝えるために活動を行う有志の学生団体です。</p>
-        <p class="p-home-section-description">SNSで情報発信を行ったり、全国でハンズオンを開いたりしています。</p>
-        <div class="div-home-section-button">
-            <a class="btn a-home-section-button a-home-section-button-about">
+        <p class="p-section-description">SNSで情報発信を行ったり、全国でハンズオンを開いたりしています。</p>
+        <div class="div-section-button">
+            <a class="btn a-section-button a-home-section-button-about">
                 <p>もっと詳しく知る <i class="fa fa-angle-right" aria-hidden="true"></i></p>
             </a>
         </div>
     </div>
 
-    <div class="row div-home-section">
-        <div class="div-home-section-title div-home-section-title-recent">
+    <div class="row div-section">
+        <div class="div-section-title div-home-section-title-recent">
             <div>
                 <p>最新情報</p>
             </div>
@@ -134,23 +134,23 @@ include('htmlhead.php');
             ?>
         </div>
 
-        <div class="div-home-section-button">
-            <a class="btn a-home-section-button a-home-section-button-recent">
+        <div class="div-home-button">
+            <a class="btn a-section-button a-home-section-button-recent">
                 <p>グローバルサイト <i class="fa fa-angle-right" aria-hidden="true"></i></p>
             </a>
-            <a class="btn a-home-section-button a-home-section-button-recent">
+            <a class="btn a-section-button a-home-section-button-recent">
                 <p>もっと詳しく知る <i class="fa fa-angle-right" aria-hidden="true"></i></p>
             </a>
         </div>
     </div>
 
-    <div class="row div-home-section">
-        <div class="row div-home-section-title div-home-section-title-imagine">
+    <div class="row div-section">
+        <div class="row div-section-title div-home-section-title-imagine">
             <div>
                 <p>Imagine Cup</p>
             </div>
         </div>
-        <div class="row div-home-section-imagine-description">
+        <div class="row div-section-imagine-description">
             <div class="col-sm-6">
                 <img src="<?php echo get_template_directory_uri() . "/img/imaginecup.jpg" ?>" width="80%"/>
             </div>
@@ -178,15 +178,15 @@ include('htmlhead.php');
                 </div>
             </div>
         </div>
-        <div class="div-home-section-button">
-            <a class="btn a-home-section-button a-home-section-button-imagine">
+        <div class="div-section-button">
+            <a class="btn a-section-button a-home-section-button-imagine">
                 <p>もっと詳しく知る <i class="fa fa-angle-right" aria-hidden="true"></i></p>
             </a>
         </div>
     </div>
 
-    <div class="row div-home-section">
-        <div class="div-home-section-title div-home-section-title-tech">
+    <div class="row div-section">
+        <div class="div-section-title div-home-section-title-tech">
             <div>
                 <p>技術情報</p>
             </div>
@@ -229,8 +229,8 @@ include('htmlhead.php');
                     include('no-article.php');
                 endif;
                 ?>
-                <div class="div-home-section-button">
-                    <a class="btn a-home-section-button a-home-section-button-tech">
+                <div class="div-section-button">
+                    <a class="btn a-section-button a-home-section-button-tech">
                         <p>他の情報 <i class="fa fa-angle-right" aria-hidden="true"></i></p>
                     </a>
                 </div>
@@ -272,8 +272,8 @@ include('htmlhead.php');
                     include('no-article.php');
                 endif;
                 ?>
-                <div class="div-home-section-button">
-                    <a class="btn a-home-section-button a-home-section-button-tech">
+                <div class="div-section-button">
+                    <a class="btn a-section-button a-home-section-button-tech">
                         <p>他の情報 <i class="fa fa-angle-right" aria-hidden="true"></i></p>
                     </a>
                 </div>

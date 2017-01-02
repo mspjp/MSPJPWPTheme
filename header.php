@@ -4,14 +4,10 @@ include('htmlhead.php');
 <!-- Header -->
 <header>
     <div class="container">
-        <div class="box">
-
-            <div class="box__left">
-
-                <h1 class="title"
-                <a href="/">Microsoft Student Partners JAPAN</a>
-                </h1>
-            </div>
+        <div class="row div-header-row">
+            <h1
+            <a href="/">Microsoft <span class="span-header-highlight">Student Partners JAPAN</span></a>
+            </h1>
             <div>
                 <?php include('navbar.php'); ?>
             </div>
