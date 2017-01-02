@@ -111,7 +111,8 @@
 }
 
 .div-home-section{
-    margin-top:30px;
+    margin-top:50px;
+
     text-align: center;
 }
 
@@ -129,7 +130,7 @@
 }
 
 .div-home-section-title p{
-    font-size:24px;
+    font-size:32px;
     margin-bottom:1px;
     color:#e54372;
 }
@@ -229,7 +230,7 @@
 
 .div-home-section-subrecent>a{
     max-width:800px;
-    background-color: #dedede;
+    background-color: #f4f3f4;
     display: flex;
     padding:5px;
     margin: 5px auto;
@@ -291,4 +292,48 @@
 
 .p-home-section-imagine-register-sub{
     font-weight:bold;
+}
+
+
+.div-home-section-title-tech > div{
+    border-bottom-color: #4577a0;
+}
+
+.div-home-section-title-tech p{
+    color:#4577a0;
+}
+
+.a-home-section-button-tech{
+    background-color: #4577a0;
+}
+
+.div-home-section-tech>.col-sm-6>p{
+    font-size:28px;
+    font-weight:bold;
+}
+
+.div-home-section-tech>.col-sm-6>p>i{
+    font-size: 32px;
+    color: #4577a0;
+}
+
+.div-home-section-tech>div>a{
+    max-width:800px;
+    background-color: #f4f3f4;
+    display: flex;
+    padding:5px;
+    margin: 5px auto;
+    text-align: left;
+}
+
+.div-home-section-tech>div>a>img{
+}
+
+.div-home-section-tech>div>a>div{
+    margin-left:20px;
+    color: #595959;
+}
+
+.div-home-section-tech>div>a>div>p{
+    white-space: pre-wrap;
 }

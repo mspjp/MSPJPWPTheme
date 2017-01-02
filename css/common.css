@@ -56,3 +56,36 @@ body {
     }
 }
 
+footer{
+    width:100%;
+    background-color: #f4f3f4;
+    padding:20px;
+    margin-top:100px;
+    border-top-style: solid;
+    border-top-width: 2px;
+    border-top-color: #dedede;
+}
+
+.div-footer-social{
+    width:60%;
+    margin:auto;
+}
+
+.div-footer-social>div>a{
+    font-size:56px;
+    color: #595959;
+}
+
+.div-footer-social>div{
+    text-align: center;
+}
+
+.div-footer-copyright{
+    text-align: center;
+}
+
+.footer-name{
+    font-size: 28px;
+    font-weight: bold;
+    margin-top:20px;
+}

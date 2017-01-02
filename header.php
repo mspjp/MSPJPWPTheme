@@ -18,6 +18,3 @@ include('htmlhead.php');
         </div>
     </div>
 </header>
-<!-- /Header -->
-<!-- Main -->
-<div class="container">
