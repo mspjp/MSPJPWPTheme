@@ -273,3 +273,22 @@
     font-size:28px;
     font-weight:bold;
 }
+
+.div-home-section-imagine-register-caption{
+    width: 70%;
+    display: table;
+    margin:auto;
+}
+
+.div-home-section-imagine-register-caption>div{
+    display: table-cell;
+}
+
+.p-home-section-imagine-register-title{
+    color: #b7ca3e;
+    font-weight:bold;
+}
+
+.p-home-section-imagine-register-sub{
+    font-weight:bold;
+}

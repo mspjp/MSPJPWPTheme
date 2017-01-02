@@ -161,6 +161,22 @@ include('htmlhead.php');
         </div>
         <div class="div-home-section-imagine-register">
             <p>ImagineCup出場の流れ</p>
+            <div>
+                <img width="60%" src="<?php echo get_template_directory_uri() . "/img/imagine_register.png" ?>">
+                <div class="div-home-section-imagine-register-caption">
+                    <div class="col-sm-4">
+                        <p class="p-home-section-imagine-register-title">アイデアの提出</p>
+                        <p class="p-home-section-imagine-register-sub">○月○日</p>
+                    </div>
+                    <div class="col-sm-4">
+                        <p class="p-home-section-imagine-register-title">開発</p>
+                    </div>
+                    <div class="col-sm-4">
+                        <p class="p-home-section-imagine-register-title">プレゼンビデオの作成</p>
+                        <p class="p-home-section-imagine-register-sub">○月○日</p>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="div-home-section-button">
             <a class="btn a-home-section-button a-home-section-button-imagine">
