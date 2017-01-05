@@ -3,7 +3,7 @@ include('htmlhead.php');
 ?>
 <!-- Header -->
 <header>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row div-header-row">
             <a href="/">
                 <h1>

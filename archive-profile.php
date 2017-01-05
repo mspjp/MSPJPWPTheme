@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 
-    <div class="container">
+    <div class="container-fluid">
         <div class="row div-section">
             <div class="div-section-title div-archiveprofile-section-title">
                 <div>

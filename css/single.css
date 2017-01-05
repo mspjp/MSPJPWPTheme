@@ -1,6 +1,15 @@
 .div-single-container{
     margin-top:30px;
 }
+.div-single-container a{
+    text-decoration: underline;
+}
+.div-single-container img{
+    margin-top: 5px; /* 画像の上の余白*/
+    display: inline-block;
+    box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.8); /*横方向　下方向　ぼかし　広がり　色 */
+
+}
 .p-single-title{
     font-weight: bold;
     font-size:24px;
@@ -21,6 +30,7 @@
     border-bottom-style: dotted;
     border-bottom-width: 2px;
     border-color: #7f7f7f;
+    font-weight: bold;
 }
 
 .div-single-post h2{
@@ -30,9 +40,10 @@
 }
 
 .div-single-post h3{
-    border-bottom-style: dotted;
+    border-bottom-style: none;
     border-bottom-width: 2px;
     border-color: #7f7f7f;
+    font-weight: bold;
 }
 
 .div-single-widget .widget{

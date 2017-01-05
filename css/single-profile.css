@@ -5,25 +5,88 @@
     z-index: 0;
     overflow: hidden;/*ブラー効果でボヤけた部分を非表示*/
     position: relative;
-}
-
-.div-singleprofile-content:before{
-    content: "";
-    position: absolute;
-    background-clip: content-box;
-    width: 100%;
-    height: 100%;
-    padding: 30px;
-    top: 0;
-    left: 0;
-    -webkit-filter: blur(5px);
-    filter: blur(5px);
+    color: #fff;
 }
 
 .div-singleprofile-content{
-    padding: 30px;
-    position: relative;
+    width:100%;
+    height:450px;
+    padding:50px;
+    position: absolute;
+    top:0px;
+    background-color: rgba(0,0,0,0.3);
+    display:flex
 }
 
-.div-singleprofile-row:before{
+.div-singleprofile-back{
+    filter: blur(15px);
+    -webkit-filter: blur(15px);
+    background-size: 100% auto;
+    width:100%;
+    height:450px;
+    background-position: center center;
+}
+
+.div-singleprofile-icon{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-size: 100% auto;
+    background-position: center center;
+    background-repeat: repeat;
+}
+
+.div-singleprofile-thumbnail{
+    text-align: center;
+}
+
+.div-singleprofile-thumbnail div{
+    margin:auto;
+    margin-top:40px;
+}
+
+.p-singleprofile-name{
+    margin-top:10px;
+    font-size:32px;
+    font-weight:bold;
+}
+
+.p-singleprofile-field{
+    font-size:22px;
+}
+
+.span-singleprofile-field-value{
+    margin-left:80px;
+}
+
+.div-singleprofile-field-wrap{
+    margin-top:60px;
+
+}
+
+.span-singleprofile-field-nick{
+    margin-left:10px;
+}
+
+.span-singleprofile-field-grade{
+    margin-left: 10px;
+}
+
+@media screen and (max-width:768px) {
+    .div-singleprofile-content{
+        display: block;
+    }
+    .div-singleprofile-back,.div-singleprofile-content{
+        height: 700px;
+    }
+    .p-singleprofile-field{
+        font-size:16px;
+    }
+    .span-singleprofile-field-value{
+        margin-left: 10px;
+    }
+    .div-singleprofile-content{
+        padding-left:5px;
+        padding-right:5px;
+    }
 }

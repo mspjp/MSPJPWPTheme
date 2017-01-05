@@ -1,0 +1,55 @@
+.div-archive-container{
+}
+
+.div-archive-section-title{
+    margin-top:10px;
+}
+
+.p-archive-top-title{
+    font-size:28px;
+    font-weight:bold;
+    margin-top:20px;
+}
+
+.div-archive-section-recent{
+    display: flex;
+    text-align: left;
+    margin-top:30px;
+}
+
+.a-archive-subsubrecent{
+    height:300px;
+}
+
+@media screen and (max-width:768px) {
+    .div-archive-section-recent{
+        display: block;
+    }
+    .a-archive-subsubrecent{
+        height:auto;
+    }
+}
+
+
+.img-archive-recent-thumbnail {
+    width: 100%;
+}
+
+.a-archive-subrecent{
+    position: relative;
+}
+
+
+
+.a-archive-subrecent > a > div{
+    position: absolute;
+    bottom:0px;
+    height:100px;
+    background-color: #fff;
+    width: 100%;
+}
+
+.p-archive-sub-title{
+    font-weight:bold;
+    font-size:20px;
+}
