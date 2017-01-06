@@ -204,3 +204,23 @@ footer{
     background-color: #e54372;
     color:#fff;
 }
+
+.a-widget-recent{
+    display:flex;
+    margin-top:10px;
+    text-decoration: none;
+}
+
+.a-widget-recent >div{
+    width: 20%;
+}
+
+.a-widget-recent > div > img{
+    width:100%;
+    height:auto;
+}
+
+.a-widget-recent > span{
+    width:80%;
+    font-size: 14px;
+}

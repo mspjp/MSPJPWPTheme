@@ -2,8 +2,8 @@
 <?php wp_link_pages(); ?>
     <script type="text/javascript">
         $(function(){
-            $('img').css('opacity','0');
-            $('img').on('inview',function(event, isInView, visiblePartX, visiblePartY){
+            $('.div-single-post img').css('opacity','0');
+            $('.div-single-post img').on('inview',function(event, isInView, visiblePartX, visiblePartY){
                 var target = $(this);
                 setTimeout(function(){
                     if(isInView){

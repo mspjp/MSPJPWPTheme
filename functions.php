@@ -64,23 +64,28 @@ function get_thumbnail_full_url($has_post_thumbnail = false)
     }
 }
 
-function get_twitter_url(){
+function get_twitter_url()
+{
     return "http://twitter.com/_mspjp";
 }
 
-function get_facebook_url(){
+function get_facebook_url()
+{
     return "https://www.facebook.com/mspjp";
 }
 
-function get_rss_url(){
+function get_rss_url()
+{
     return "/rss";
 }
 
-function get_github_url(){
+function get_github_url()
+{
     return "https://github.com/mspjp";
 }
 
-function get_seminar_url(){
+function get_seminar_url()
+{
     return "https://mspjp.connpass.com";
 }
 
@@ -583,4 +588,116 @@ function mysite_feed_request($vars)
 }
 
 add_filter('request', 'mysite_feed_request');
+
+class Recent_Widget extends WP_Widget
+{
+    /**
+     * Widgetを登録する
+     */
+    function __construct()
+    {
+        parent::__construct(
+            'recent_widget', // Base ID
+            '最近の投稿', // Name
+            array('description' => '最近のカスタム投稿を表示します',) // Args
+        );
+    }
+
+    /**
+     * 表側の Widget を出力する
+     *
+     * @param array $args 'register_sidebar'で設定した「before_title, after_title, before_widget, after_widget」が入る
+     * @param array $instance Widgetの設定項目
+     */
+    public function widget($args, $instance)
+    {
+        $title = $instance['title'];
+        $custom_id = $instance['custom_id'];
+        echo $args['before_widget'];
+
+        if($title != '') {
+            echo '<h2>' . $title . '</h2>';
+        }
+        $myQuery = new WP_Query();
+        $param = array(
+            'paged' => 0,
+            'posts_per_page' => '5',
+            'post_type' => array($custom_id),
+            'post_status' => 'publish',
+            'orderby' => 'date',
+            'order' => 'DESC',
+            'offset' => '0'
+        );
+        $myQuery->query($param);
+        if ($myQuery->have_posts()) :
+            while ($myQuery->have_posts()) : $myQuery->the_post(); ?>
+                <a class="a-widget-recent" href="<?php the_permalink(); ?>">
+                    <div>
+                    <img src="<?php echo get_thumbnail_url(has_post_thumbnail()) ?>" alt="">
+                    </div>
+                    <span><?php echo mb_substr(get_the_title(),0,35).'...' ?></span>
+
+                </a>
+
+                <?php
+            endwhile; // 繰り返し処理終了
+        else : // ここから記事が見つからなかった場合の処理
+        endif;
+
+        echo $args['after_widget'];
+    }
+
+    /** Widget管理画面を出力する
+     *
+     * @param array $instance 設定項目
+     * @return string|void
+     */
+    public function form($instance)
+    {
+        $title = $instance['title'];
+        $title_name = $this->get_field_name('title');
+        $title_id = $this->get_field_id('title');
+        ?>
+        <p>
+            <label for="<?php echo $title_id; ?>">ウィジェットタイトル:</label>
+            <input class="widefat" id="<?php echo $title_id; ?>" name="<?php echo $title_name; ?>" type="text"
+                   value="<?php echo esc_attr($title); ?>">
+        </p>
+        <?php
+        $custom = $instance['custom_id'];
+        $custom_name = $this->get_field_name('custom_id');
+        $custom_id = $this->get_field_id('custom_id');
+        ?>
+        <p>
+            <label for="<?php echo $custom_id; ?>">カスタム投稿のID:</label>
+            <input class="widefat" id="<?php echo $custom_id; ?>" name="<?php echo $custom_name; ?>" type="text"
+                   value="<?php echo esc_attr($custom); ?>">
+        </p>
+        <?php
+    }
+
+    /** 新しい設定データが適切なデータかどうかをチェックする。
+     * 必ず$instanceを返す。さもなければ設定データは保存（更新）されない。
+     *
+     * @param array $new_instance form()から入力された新しい設定データ
+     * @param array $old_instance 前回の設定データ
+     * @return array               保存（更新）する設定データ。falseを返すと更新しない。
+     */
+    function update($new_instance, $old_instance)
+    {
+        return $new_instance;
+    }
+}
+
+add_action('widgets_init', function () {
+    register_widget('Recent_Widget');  //WidgetをWordPressに登録する
+    register_sidebar(array(  //「サイドバー」を登録する
+        'name' => 'サイドバー(上部)',
+        'id' => 'recent_widget',
+        'before_widget' => '<div>',
+        'after_widget' => '</div>',
+        'before_title' => '',
+        'after_title' => '',
+    ));
+});
 

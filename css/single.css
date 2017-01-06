@@ -1,10 +1,10 @@
 .div-single-container{
     margin-top:30px;
 }
-.div-single-container a{
+.div-single-post a{
     text-decoration: underline;
 }
-.div-single-container img{
+.div-single-post img{
     margin-top: 5px; /* 画像の上の余白*/
     display: inline-block;
     box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.8); /*横方向　下方向　ぼかし　広がり　色 */
