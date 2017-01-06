@@ -18,17 +18,7 @@
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <style>
-        @font-face {
-            font-family: 'mplus';
-            src: url(<?php echo get_template_directory_uri(); ?>'/font/circle-mplus-1p-regular.ttf') format("truetype"),
-            url(<?php echo get_template_directory_uri(); ?>'/font/circle-mplus-1p-bold.ttf') format("truetype");
-        }
-        body{
-            font-family: 'mplus',游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
-
-        }
-    </style>
+    <link rel="stylesheet" href="http://mplus-webfonts.sourceforge.jp/mplus_webfonts.css">
 
     <?php
     if (is_singular()) wp_enqueue_script("comment-reply");
