@@ -1,7 +1,11 @@
 <?php get_header(); ?>
 <!-- main -->
 <div id="main">
-    <h2><?php echo esc_html($taxonomy->name) ?>に関連する新着タイトル</h2>
+    <h2><?php
+        if ($terms = get_the_terms($post->ID, 'tech')) {
+            echo esc_html($terms[0]->name);
+        }
+        ?>に関連する新着タイトル</h2>
     <!-- recentposts -->
     <div id="recentposts">
         <?php

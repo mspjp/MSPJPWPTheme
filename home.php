@@ -2,6 +2,23 @@
 include('htmlhead.php');
 ?>
 
+<script type="text/javascript">
+    $(function(){
+        $('.p-home-captionleft').css('opacity','0');
+        $('.p-home-captionright').css('opacity','0');
+        setTimeout(function(){
+            $('.p-home-captionleft').animate({
+                opacity:1.0
+            },1000);
+        },500);
+        setTimeout(function(){
+            $('.p-home-captionright').animate({
+                opacity:1.0
+            },1000);
+        },1500);
+    });
+</script>
+
 <div class="div-home-eyecatch">
     <div class="div-home-eyecatchback">
         <img src="<?php echo get_template_directory_uri() . "/img/top-eyecatch.jpg" ?>" width="100%"/>
@@ -22,7 +39,7 @@ include('htmlhead.php');
     </div>
     <div class="row div-home-intro">
         <div class="col-sm-4 dic-home-topbutton-container">
-            <a class="btn">
+            <a class="btn" href="<?php get_seminar_url() ?>" target="_blank">
                 <div class="div-home-topbutton div-home-topbutton-left">
                     <i class="fa fa-laptop i-home-topbutton-icon" aria-hidden="true"></i>
                     <p class="p-home-topbutton-title">勉強系に行く</p>
@@ -40,7 +57,7 @@ include('htmlhead.php');
             </a>
         </div>
         <div class="col-sm-4 dic-home-topbutton-container">
-            <a class="btn">
+            <a class="btn" href="<?php get_twitter_url() ?>" target="_blank">
                 <div class="div-home-topbutton div-home-topbutton-right">
                     <i class="fa fa-twitter i-home-topbutton-icon" aria-hidden="true"></i>
                     <p class="p-home-topbutton-title">フォローする</p>
@@ -60,7 +77,7 @@ include('htmlhead.php');
             Microsoftの製品技術(VisualStudioやOfficeなど)の楽しさを学生に伝えるために活動を行う有志の学生団体です。</p>
         <p class="p-section-description">SNSで情報発信を行ったり、全国でハンズオンを開いたりしています。</p>
         <div class="div-section-button">
-            <a class="btn a-section-button a-home-section-button-about">
+            <a class="btn a-section-button a-home-section-button-about" href="/profile">
                 <p>もっと詳しく知る <i class="fa fa-angle-right" aria-hidden="true"></i></p>
             </a>
         </div>
@@ -138,7 +155,7 @@ include('htmlhead.php');
             <a class="btn a-section-button a-home-section-button-recent">
                 <p>グローバルサイト <i class="fa fa-angle-right" aria-hidden="true"></i></p>
             </a>
-            <a class="btn a-section-button a-home-section-button-recent">
+            <a class="btn a-section-button a-home-section-button-recent" href="/blog">
                 <p>もっと詳しく知る <i class="fa fa-angle-right" aria-hidden="true"></i></p>
             </a>
         </div>
@@ -230,7 +247,7 @@ include('htmlhead.php');
                 endif;
                 ?>
                 <div class="div-section-button">
-                    <a class="btn a-section-button a-home-section-button-tech">
+                    <a class="btn a-section-button a-home-section-button-tech" href="/article">
                         <p>他の情報 <i class="fa fa-angle-right" aria-hidden="true"></i></p>
                     </a>
                 </div>
@@ -273,7 +290,7 @@ include('htmlhead.php');
                 endif;
                 ?>
                 <div class="div-section-button">
-                    <a class="btn a-section-button a-home-section-button-tech">
+                    <a class="btn a-section-button a-home-section-button-tech" href="/article">
                         <p>他の情報 <i class="fa fa-angle-right" aria-hidden="true"></i></p>
                     </a>
                 </div>

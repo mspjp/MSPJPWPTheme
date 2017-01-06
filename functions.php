@@ -64,6 +64,26 @@ function get_thumbnail_full_url($has_post_thumbnail = false)
     }
 }
 
+function get_twitter_url(){
+    return "http://twitter.com/_mspjp";
+}
+
+function get_facebook_url(){
+    return "https://www.facebook.com/mspjp";
+}
+
+function get_rss_url(){
+    return "/rss";
+}
+
+function get_github_url(){
+    return "https://github.com/mspjp";
+}
+
+function get_seminar_url(){
+    return "https://mspjp.connpass.com";
+}
+
 // カスタムメニューの「場所」を設定
 register_nav_menu('header-nav', 'ヘッダーのナビゲーション');
 

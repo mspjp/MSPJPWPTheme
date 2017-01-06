@@ -1,5 +1,22 @@
 <?php get_header(); ?>
 <?php wp_link_pages(); ?>
+    <script type="text/javascript">
+        $(function(){
+            $('.div-section img').css('opacity','0');
+            $('.div-section img').on('inview',function(event, isInView, visiblePartX, visiblePartY){
+                var target = $(this);
+                setTimeout(function(){
+                    if(isInView){
+                        target.stop().animate({
+                            opacity:1
+                        },500);
+                    }else{
+                    }
+                },500);
+
+            });
+        });
+    </script>
     <div class="container div-archive-container">
         <div class="row div-section">
             <div class="div-section-title div-archive-section-title">
@@ -180,6 +197,17 @@
             </div>
         </div>
 
-
+    </div>
+    <div class="navigation">
+        <?php
+        if (get_previous_posts_link()): ?>
+            <div class="align-left"><?php previous_posts_link('&laquo; %title'); ?></div>
+            <?php
+        endif;
+        if (get_next_posts_link()): ?>
+            <div class="align-right"><?php next_posts_link('%title &raquo;'); ?></div>
+            <?php
+        endif;
+        ?>
     </div>
 <?php get_footer(); ?>

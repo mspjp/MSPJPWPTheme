@@ -1,5 +1,21 @@
 <?php get_header(); ?>
+    <script type="text/javascript">
+        $(function(){
+            $('.div-section').css('opacity','0');
+            $('.div-section').on('inview',function(event, isInView, visiblePartX, visiblePartY){
+                var target = $(this);
+                setTimeout(function(){
+                    if(isInView){
+                        target.stop().animate({
+                            opacity:1
+                        },500);
+                    }else{
+                    }
+                },500);
 
+            });
+        });
+    </script>
 
     <div class="container-fluid">
         <div class="row div-section">
@@ -25,7 +41,7 @@
                 <p class="p-archiveprofile-section-caption p-archiveprofile-section-caption-seminar">
                     MSPは学生に向けて、Microsoftのテクノロジーを楽しく使ってもらうために全国で勉強会やハンズオンを開いています</p>
                 <div class="div-section-button">
-                    <a class="btn a-section-button a-archiveprofile-section-button-seminar">
+                    <a class="btn a-section-button a-archiveprofile-section-button-seminar" href="<?php get_seminar_url() ?>" target="_blank">
                         <p>勉強会情報 <i class="fa fa-angle-right" aria-hidden="true"></i></p>
                     </a>
                 </div>
@@ -43,10 +59,10 @@
                 <p class="p-archiveprofile-section-caption p-archiveprofile-section-caption-intro">
                     Microsoftの学生向け情報をより多くの学生の皆様に届くように、WebサイトやSNSでの広報活動を行っています</p>
                 <div class="div-section-button">
-                    <a class="btn a-section-button a-archiveprofile-section-button-pr">
+                    <a class="btn a-section-button a-archiveprofile-section-button-pr" href="/blog">
                         <p>Web記事 <i class="fa fa-angle-right" aria-hidden="true"></i></p>
                     </a>
-                    <a class="btn a-section-button a-archiveprofile-section-button-pr">
+                    <a class="btn a-section-button a-archiveprofile-section-button-pr" href="<?php get_twitter_url() ?>">
                         <p>SNS <i class="fa fa-angle-right" aria-hidden="true"></i></p>
                     </a>
                     <a class="btn a-section-button a-archiveprofile-section-button-pr">
@@ -63,7 +79,7 @@
                     MicrosoftテクノロジーのITコンテストであるImagineCupに、学生がより気軽に出場できるように支援を行っています</p>
                 <div class="div-section-button">
                     <a class="btn a-section-button a-archiveprofile-section-button-contest">
-                        <p>勉強会情報 <i class="fa fa-angle-right" aria-hidden="true"></i></p>
+                        <p>ImagineCup情報 <i class="fa fa-angle-right" aria-hidden="true"></i></p>
                     </a>
                 </div>
             </div>
@@ -187,7 +203,7 @@
                     <p>Join Us!</p>
                 </div>
             </div>
-            <p class="p-archiveprofile-hire">Microsoft Student PartnersはMicrosoftテクノロジーを学生に広めたいという強い意志を持ち、自発的に活動をしてくれる学生を募集しています。気になった方は <a href="http://twitter.com/garicchi">@_mspjp</a> までご連絡ください</p>
+            <p class="p-archiveprofile-hire">Microsoft Student PartnersはMicrosoftテクノロジーを学生に広めたいという強い意志を持ち、自発的に活動をしてくれる学生を募集しています。気になった方は <a href="<?php get_twitter_url() ?>">@_mspjp</a> までご連絡ください</p>
             <img src="<?php echo get_template_directory_uri() . "/img/profile_all.jpg" ?>" width="70%">
         </div>
     </div>

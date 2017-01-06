@@ -1,5 +1,22 @@
 <?php get_header(); ?>
 <?php wp_link_pages(); ?>
+    <script type="text/javascript">
+        $(function(){
+            $('img').css('opacity','0');
+            $('img').on('inview',function(event, isInView, visiblePartX, visiblePartY){
+                var target = $(this);
+                setTimeout(function(){
+                    if(isInView){
+                        target.stop().animate({
+                            opacity:1
+                        },500);
+                    }else{
+                    }
+                },500);
+
+            });
+        });
+    </script>
     <div class="container div-single-container">
 
         <div class="col-md-8">
