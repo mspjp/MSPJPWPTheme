@@ -14,6 +14,13 @@
                 },500);
 
             });
+
+            $('.nav-item').on('click',function(){
+                $('.tab-content').css('opacity','0');
+                $('.tab-content').animate({
+                    opacity:1
+                },500);
+            });
         });
     </script>
 
