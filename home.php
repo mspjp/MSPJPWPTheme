@@ -39,7 +39,7 @@ include('htmlhead.php');
     </div>
     <div class="row div-home-intro">
         <div class="col-sm-4 dic-home-topbutton-container">
-            <a class="btn" href="<?php get_seminar_url() ?>" target="_blank">
+            <a class="btn" href="<?php echo get_seminar_url() ?>" target="_blank">
                 <div class="div-home-topbutton div-home-topbutton-left">
                     <i class="fa fa-laptop i-home-topbutton-icon" aria-hidden="true"></i>
                     <p class="p-home-topbutton-title">勉強系に行く</p>
@@ -48,7 +48,7 @@ include('htmlhead.php');
             </a>
         </div>
         <div class="col-sm-4 dic-home-topbutton-container">
-            <a class="btn" href="<?php get_imagine_url() ?>">
+            <a class="btn" href="<?php echo get_imagine_url() ?>">
                 <div class="div-home-topbutton div-home-topbutton-center">
                     <i class="fa fa-trophy i-home-topbutton-icon" aria-hidden="true"></i>
                     <p class="p-home-topbutton-title">コンテストに出る</p>
@@ -57,7 +57,7 @@ include('htmlhead.php');
             </a>
         </div>
         <div class="col-sm-4 dic-home-topbutton-container">
-            <a class="btn" href="<?php get_twitter_url() ?>" target="_blank">
+            <a class="btn" href="<?php echo get_twitter_url() ?>" target="_blank">
                 <div class="div-home-topbutton div-home-topbutton-right">
                     <i class="fa fa-twitter i-home-topbutton-icon" aria-hidden="true"></i>
                     <p class="p-home-topbutton-title">フォローする</p>
@@ -196,7 +196,7 @@ include('htmlhead.php');
             </div>
         </div>
         <div class="div-section-button">
-            <a class="btn a-section-button a-home-section-button-imagine" href="<?php get_imagine_url() ?>">
+            <a class="btn a-section-button a-home-section-button-imagine" href="<?php echo get_imagine_url() ?>">
                 <p>もっと詳しく知る <i class="fa fa-angle-right" aria-hidden="true"></i></p>
             </a>
         </div>
