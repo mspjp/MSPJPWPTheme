@@ -29,5 +29,4 @@ else : // ここから記事が見つからなかった場合の処理
 endif;
 ?>
 
-</body>
-</html>
+<?php get_footer(); ?>
