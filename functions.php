@@ -89,6 +89,10 @@ function get_seminar_url()
     return "https://mspjp.connpass.com";
 }
 
+function get_imagine_url(){
+    return "/special/imaginecup";
+}
+
 // カスタムメニューの「場所」を設定
 register_nav_menu('header-nav', 'ヘッダーのナビゲーション');
 

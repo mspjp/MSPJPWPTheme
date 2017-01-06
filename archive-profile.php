@@ -78,7 +78,7 @@
                 <p class="p-archiveprofile-section-caption p-archiveprofile-section-caption-contest">
                     MicrosoftテクノロジーのITコンテストであるImagineCupに、学生がより気軽に出場できるように支援を行っています</p>
                 <div class="div-section-button">
-                    <a class="btn a-section-button a-archiveprofile-section-button-contest">
+                    <a class="btn a-section-button a-archiveprofile-section-button-contest" href="<?php get_imagine_url() ?>">
                         <p>ImagineCup情報 <i class="fa fa-angle-right" aria-hidden="true"></i></p>
                     </a>
                 </div>
