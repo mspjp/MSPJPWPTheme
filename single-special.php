@@ -9,6 +9,10 @@ include('htmlhead.php');
 </style>
 
 <?php
+    echo get_field('custom_html');
+?>
+
+<?php
 if (have_posts()) : // WordPress ループ
     while (have_posts()) :
         the_post(); // 繰り返し処理開始
