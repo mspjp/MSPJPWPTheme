@@ -4,13 +4,15 @@ include('htmlhead.php');
 
 <style>
     <?php
-    echo get_field('custom_css');
+    $field =  get_field('custom_css');
+    $field_unescape = htmlspecialchars_decode($field,ENT_QUOTES);
+    echo $field_unescape;
     ?>
 </style>
 
 <?php
     $field =  get_field('custom_html');
-    $field_unescape = htmlspecialchars_decode($field);
+    $field_unescape = htmlspecialchars_decode($field,ENT_QUOTES);
     echo $field_unescape;
 ?>
 
