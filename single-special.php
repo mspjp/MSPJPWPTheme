@@ -9,7 +9,9 @@ include('htmlhead.php');
 </style>
 
 <?php
-    echo get_field('custom_html');
+    $field =  get_field('custom_html');
+    $field_unescape = htmlspecialchars_decode($field);
+    echo $field_unescape;
 ?>
 
 <?php
