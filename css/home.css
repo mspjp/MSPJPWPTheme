@@ -12,7 +12,7 @@
     left:0;
     bottom: 0;
     right: 0;
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(0,0,0,0.2);
 }
 
 .p-home-captionleft{
@@ -22,6 +22,7 @@
     color: white;
     font-weight: bold;
     width: 40%;
+    text-shadow: 2px 2px rgba(0,0,0,0.4);
 }
 
 .p-home-captionright{
@@ -33,6 +34,7 @@
     width:55%;
     text-decoration-line: underline;
     text-align: right;
+    text-shadow: 2px 2px rgba(0,0,0,0.4);
 }
 
 @media screen and (min-width:961px) {
@@ -97,7 +99,7 @@
 }
 
 .div-home-topbutton-center{
-    background-color: #d1dd83;
+    background-color: #b7ca3e;
 }
 
 .div-home-topbutton-right{
@@ -179,6 +181,12 @@
     opacity: 0.9;
     color: #fff;
     margin:auto;
+    top:60%;
+    transition: top 0.3s ease 0s;
+}
+
+.div-home-section-recent>div>a>div:hover{
+    top:20%;
 }
 
 .div-home-section-recent>div>a>div>p{

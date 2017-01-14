@@ -38,8 +38,7 @@
                 <img src="<?php echo get_template_directory_uri() . "/img/profile_intro.jpg" ?>" width="100%">
             </div>
             <div class="col-sm-7">
-                <p class="p-archiveprofile-section-caption p-archiveprofile-section-caption-intro">Microsoft Student
-                    Partners(MSP)とはMicrosoftテクノロジーの良さを学生に知ってもらうために活動を行っている学生団体です</p>
+                <p class="p-archiveprofile-section-caption p-archiveprofile-section-caption-intro">Microsoft Student Partners(MSP)とはMicrosoftテクノロジーの良さを学生に知ってもらうために活動を行っている学生団体です</p>
             </div>
         </div>
         <div class="row div-section div-archiveprofile-section2">
@@ -72,7 +71,7 @@
                     <a class="btn a-section-button a-archiveprofile-section-button-pr" href="<?php echo get_twitter_url() ?>">
                         <p>SNS <i class="fa fa-angle-right" aria-hidden="true"></i></p>
                     </a>
-                    <a class="btn a-section-button a-archiveprofile-section-button-pr">
+                    <a class="btn a-section-button a-archiveprofile-section-button-pr" href="https://msp-times.net/">
                         <p>海外向け <i class="fa fa-angle-right" aria-hidden="true"></i></p>
                     </a>
                 </div>

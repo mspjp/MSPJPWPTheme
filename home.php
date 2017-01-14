@@ -151,8 +151,8 @@ include('htmlhead.php');
             ?>
         </div>
 
-        <div class="div-home-button">
-            <a class="btn a-section-button a-home-section-button-recent">
+        <div class="div-section-button">
+            <a class="btn a-section-button a-home-section-button-recent" href="https://msp-times.net/">
                 <p>グローバルサイト <i class="fa fa-angle-right" aria-hidden="true"></i></p>
             </a>
             <a class="btn a-section-button a-home-section-button-recent" href="/blog">
