@@ -17,20 +17,36 @@ include('htmlhead.php');
             },1000);
         },1500);
 
-        $.get('http://garicchi.hatenablog.jp/rss',function(data) {
-            $(data).find('item').each(function () {
+        $.get('http://mspjp.hatenablog.com/rss',function(data) {
+            $(data).find('item').each(function (index) {
+                if(index >= 6){
+                    return false;
+                }
                 var entry = $(this);
                 var entryElement =
-                    '<li>' +
-                        '<a href="{url}">' +
-                            '<img src="{img}" />' +
-                            '<p>{title}</p>' +
+                    '<div class="col-sm-4 div-home-blog">' +
+                        '<a class="link-home-blog" href="{url}">' +
+                            '<img src="{img}" class="img-home-blog" />' +
+                            '<p class="date-home-blog">{date}</p>' +
+                            '<div class="title-home-blog">' +
+                    '           <p>{title}</p>' +
+                    '       </div>' +
                         '</a>' +
-                    '</li>';
-                entryElement = entryElement.replace('{img}',entry.find('enclosure').attr('url'))
-                entryElement = entryElement.replace('{url}',entry.find('link').text())
-                entryElement = entryElement.replace('{title}',entry.find('title').text())
-                $('#ul-recent').append(entryElement);
+                    '</div>';
+                var pubDate = new Date(entry.find('pubDate').text());
+                pubDate = pubDate.getFullYear()+'/'+(pubDate.getMonth()+1)+'/'+pubDate.getDate();
+
+                entryElement = entryElement.replace('{img}',entry.find('enclosure').attr('url'));
+                entryElement = entryElement.replace('{url}',entry.find('link').text());
+                entryElement = entryElement.replace('{title}',entry.find('title').text());
+                //entryElement = entryElement.replace('{category}',entry.find('category').first().text());
+                entryElement = entryElement.replace('{date}',pubDate);
+
+                if(index<3) {
+                    $('.div-home-section-recent1').append(entryElement);
+                }else{
+                    $('.div-home-section-recent2').append(entryElement);
+                }
             });
         });
     });
@@ -106,46 +122,16 @@ include('htmlhead.php');
                 <p>最新情報</p>
             </div>
         </div>
-        <div class="div-home-section-recent">
-            <ul id="ul-recent">
-            </ul>
+        <div class="div-home-section-recent1 row">
         </div>
-
-        <div class="div-home-section-subrecent">
-            <?php
-            $myQuery = new WP_Query();
-            $param = array(
-                'paged' => 0,
-                'posts_per_page' => '4',
-                'post_type' => array('blog'),
-                'post_status' => 'publish',
-                'orderby' => 'date',
-                'order' => 'DESC',
-                'offset' => '3'
-            );
-            $myQuery->query($param);
-            if ($myQuery->have_posts()) :
-                while ($myQuery->have_posts()) : $myQuery->the_post(); ?>
-                    <a class="btn" href="<?php the_permalink(); ?>">
-                        <img class="" height="60px" src="<?php echo get_thumbnail_url(has_post_thumbnail()) ?>" alt="">
-                        <div>
-                            <p class="p-home-section-recent-date"><?php the_time('Y/n/j'); ?></p>
-                            <p><?php echo mb_substr(get_the_title(), 0, 100); ?></p>
-                        </div>
-                    </a>
-                    <?php
-                endwhile; // 繰り返し処理終了
-            else : // ここから記事が見つからなかった場合の処理
-                include('no-article.php');
-            endif;
-            ?>
+        <div class="div-home-section-recent2 row">
         </div>
 
         <div class="div-section-button">
             <a class="btn a-section-button a-home-section-button-recent" href="https://msp-times.net/">
                 <p>グローバルサイト <i class="fa fa-angle-right" aria-hidden="true"></i></p>
             </a>
-            <a class="btn a-section-button a-home-section-button-recent" href="/blog">
+            <a class="btn a-section-button a-home-section-button-recent" href="http://mspjp.hatenablog.com/" target="_blank">
                 <p>もっと詳しく知る <i class="fa fa-angle-right" aria-hidden="true"></i></p>
             </a>
         </div>
@@ -173,14 +159,14 @@ include('htmlhead.php');
                 <div class="div-home-section-imagine-register-caption">
                     <div class="col-sm-4">
                         <p class="p-home-section-imagine-register-title">アイデアの提出</p>
-                        <p class="p-home-section-imagine-register-sub">○月○日</p>
+                        <p class="p-home-section-imagine-register-sub">未定</p>
                     </div>
                     <div class="col-sm-4">
                         <p class="p-home-section-imagine-register-title">開発</p>
                     </div>
                     <div class="col-sm-4">
                         <p class="p-home-section-imagine-register-title">プレゼンビデオの作成</p>
-                        <p class="p-home-section-imagine-register-sub">○月○日</p>
+                        <p class="p-home-section-imagine-register-sub">未定</p>
                     </div>
                 </div>
             </div>
@@ -198,6 +184,7 @@ include('htmlhead.php');
                 <p>技術情報</p>
             </div>
         </div>
+        <p class="p-section-description">MSP Japanは現在技術情報をQiita Organizationへの移行を進めています。もうしばらくお待ちください</p>
         <div class="div-home-section-tech">
             <div class="col-sm-6">
                 <p><i class="fa fa-code" aria-hidden="true"></i> デベロッパー向け</p>
