@@ -90,7 +90,7 @@ function get_seminar_url()
 }
 
 function get_imagine_url(){
-    return "http://mspjp.hatenablog.com";
+    return "http://mspjp.hatenablog.com/archive/category/Imagine%20Cup";
 }
 
 function get_blog_url(){
