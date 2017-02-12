@@ -90,7 +90,11 @@ function get_seminar_url()
 }
 
 function get_imagine_url(){
-    return "/special/imaginecup";
+    return "http://mspjp.hatenablog.com";
+}
+
+function get_blog_url(){
+    return "http://mspjp.hatenablog.com";
 }
 
 // カスタムメニューの「場所」を設定

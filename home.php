@@ -131,7 +131,7 @@ include('htmlhead.php');
             <a class="btn a-section-button a-home-section-button-recent" href="https://msp-times.net/">
                 <p>グローバルサイト <i class="fa fa-angle-right" aria-hidden="true"></i></p>
             </a>
-            <a class="btn a-section-button a-home-section-button-recent" href="http://mspjp.hatenablog.com/" target="_blank">
+            <a class="btn a-section-button a-home-section-button-recent" href="<? echo get_blog_url() ?>" target="_blank">
                 <p>もっと詳しく知る <i class="fa fa-angle-right" aria-hidden="true"></i></p>
             </a>
         </div>

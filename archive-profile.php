@@ -66,7 +66,7 @@
                 <p class="p-archiveprofile-section-caption p-archiveprofile-section-caption-intro">
                     Microsoftの学生向け情報をより多くの学生の皆様に届くように、WebサイトやSNSでの広報活動を行っています</p>
                 <div class="div-section-button">
-                    <a class="btn a-section-button a-archiveprofile-section-button-pr" href="/blog">
+                    <a class="btn a-section-button a-archiveprofile-section-button-pr" href="<? echo get_blog_url() ?>">
                         <p>Web記事 <i class="fa fa-angle-right" aria-hidden="true"></i></p>
                     </a>
                     <a class="btn a-section-button a-archiveprofile-section-button-pr" href="<?php echo get_twitter_url() ?>">
@@ -103,7 +103,7 @@
                 <p class="p-archiveprofile-section-caption p-archiveprofile-section-caption-lab">
                     MSPでは内部に研究グループを設け、コンピュータ・サイエンスに特化したメンバーによる最新技術の技術研究を行っています</p>
                 <div class="div-section-button">
-                    <a class="btn a-section-button a-archiveprofile-section-button-lab">
+                    <a class="btn a-section-button a-archiveprofile-section-button-lab" href="<?php echo get_blog_url()?>">
                         <p>研究情報 <i class="fa fa-angle-right" aria-hidden="true"></i></p>
                     </a>
                 </div>
