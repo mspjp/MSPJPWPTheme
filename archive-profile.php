@@ -22,6 +22,7 @@
                 },500);
             });
         });
+
     </script>
 
     <div class="container-fluid">

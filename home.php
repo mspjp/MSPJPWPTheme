@@ -16,6 +16,23 @@ include('htmlhead.php');
                 opacity:1.0
             },1000);
         },1500);
+
+        $.get('http://garicchi.hatenablog.jp/rss',function(data) {
+            $(data).find('item').each(function () {
+                var entry = $(this);
+                var entryElement =
+                    '<li>' +
+                        '<a href="{url}">' +
+                            '<img src="{img}" />' +
+                            '<p>{title}</p>' +
+                        '</a>' +
+                    '</li>';
+                entryElement = entryElement.replace('{img}',entry.find('enclosure').attr('url'))
+                entryElement = entryElement.replace('{url}',entry.find('link').text())
+                entryElement = entryElement.replace('{title}',entry.find('title').text())
+                $('#ul-recent').append(entryElement);
+            });
+        });
     });
 </script>
 
@@ -90,35 +107,8 @@ include('htmlhead.php');
             </div>
         </div>
         <div class="div-home-section-recent">
-            <?php
-            $myQuery = new WP_Query();
-            $param = array(
-                'paged' => 0,
-                'posts_per_page' => '3',
-                'post_type' => array('blog'),
-                'post_status' => 'publish',
-                'orderby' => 'date',
-                'order' => 'DESC'
-            );
-            $myQuery->query($param);
-            if ($myQuery->have_posts()) :
-                while ($myQuery->have_posts()) : $myQuery->the_post(); ?>
-                    <div class="col-sm-4">
-                        <a class="btn" href="<?php the_permalink(); ?>">
-                            <img class="" src="<?php echo get_thumbnail_url(has_post_thumbnail()) ?>"
-                                 alt="">
-                            <div>
-                                <p class="p-home-section-recent-date"><?php the_time('Y/n/j'); ?></p>
-                                <p><?php echo mb_substr(get_the_title(), 0, 100); ?></p>
-                            </div>
-                        </a>
-                    </div>
-                    <?php
-                endwhile; // 繰り返し処理終了
-            else : // ここから記事が見つからなかった場合の処理
-                include('no-article.php');
-            endif;
-            ?>
+            <ul id="ul-recent">
+            </ul>
         </div>
 
         <div class="div-home-section-subrecent">
