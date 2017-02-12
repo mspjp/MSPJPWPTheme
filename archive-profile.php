@@ -48,7 +48,7 @@
                 <p class="p-archiveprofile-section-caption p-archiveprofile-section-caption-seminar">
                     MSPは学生に向けて、Microsoftのテクノロジーを楽しく使ってもらうために全国で勉強会やハンズオンを開いています</p>
                 <div class="div-section-button">
-                    <a class="btn a-section-button a-archiveprofile-section-button-seminar" href="<?php get_seminar_url() ?>" target="_blank">
+                    <a class="btn a-section-button a-archiveprofile-section-button-seminar" href="<?php echo get_seminar_url() ?>" target="_blank">
                         <p>勉強会情報 <i class="fa fa-angle-right" aria-hidden="true"></i></p>
                     </a>
                 </div>

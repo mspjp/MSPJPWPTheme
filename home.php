@@ -26,7 +26,7 @@ include('htmlhead.php');
                 var entryElement =
                     '<div class="col-sm-4 div-home-blog">' +
                         '<a class="link-home-blog" href="{url}">' +
-                            '<img src="{img}" class="img-home-blog" />' +
+                            '<img width="100%" height="auto" src="{img}" class="img-home-blog" />' +
                             '<p class="date-home-blog">{date}</p>' +
                             '<div class="title-home-blog">' +
                     '           <p>{title}</p>' +
