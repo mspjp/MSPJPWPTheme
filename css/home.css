@@ -192,6 +192,7 @@
 .title-home-blog{
     position: absolute;
     bottom:0px;
+    left:0px;
     background-color: #01bc88;
     opacity: 0.9;
     color: #fff;
