@@ -76,7 +76,7 @@ function get_facebook_url()
 
 function get_rss_url()
 {
-    return "/rss";
+    return "http://mspjp.hatenablog.com/rss";
 }
 
 function get_github_url()
