@@ -184,7 +184,12 @@ include('htmlhead.php');
                 <p>技術情報</p>
             </div>
         </div>
-        <p class="p-section-description">MSP Japanは現在技術情報をQiita Organizationへの移行を進めています。もうしばらくお待ちください</p>
+        <p class="p-section-description">MSP JapanのQiita Organizationができました！今後はこちらに技術情報を投稿していきます！</p>
+        <div class="div-section-button">
+            <a class="btn a-section-button a-home-section-button-tech" href="http://qiita.com/organizations/mspjp/activities">
+                <p>Qiita <i class="fa fa-angle-right" aria-hidden="true"></i></p>
+            </a>
+        </div>
         <div class="div-home-section-tech">
             <div class="col-sm-6">
                 <p><i class="fa fa-code" aria-hidden="true"></i> デベロッパー向け</p>
