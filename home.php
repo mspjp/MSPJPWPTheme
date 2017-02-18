@@ -103,7 +103,7 @@ include('htmlhead.php');
     <div class="row div-section">
         <div class="div-section-title div-home-section-title-about">
             <div>
-                <p>Microsoft Studnet Partnersとは</p>
+                <p>Microsoft Student Partnersとは</p>
             </div>
         </div>
         <p class="p-section-description">
